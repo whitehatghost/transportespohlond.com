@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Transportes Pohlond · Sitio en construcción</title>
+<meta name="description" content="Transportes Pohlond: más de 20 años en transporte de carga y cargas especiales en todo Costa Rica. Camiones con montacargas y grúa. Cotice por WhatsApp al 8983 8585.">
+<meta name="theme-color" content="#0b1736">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CR">
+<meta property="og:title" content="Transportes Pohlond">
+<meta property="og:description" content="Transporte de carga y cargas especiales en todo Costa Rica. Cotice por WhatsApp al 8983 8585.">
+<meta property="og:image" content="https://transportespohlond.com/img/og.jpg">
+<link rel="icon" href="img/icono.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Instrument+Serif:ital@1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/noche.webp">
+<script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Transportes Pohlond",
+  "description": "Transporte de carga y cargas especiales en todo Costa Rica: camiones con montacargas y grúa, maquinaria pesada, esculturas y equipos delicados.",
+  "url": "https://transportespohlond.com/",
+  "logo": "https://transportespohlond.com/img/logo.webp",
+  "telephone": "+506 8983 8585",
+  "email": "nlosilla@transportespohlond.com",
+  "areaServed": { "@type": "Country", "name": "Costa Rica" },
+  "sameAs": ["https://www.facebook.com/transportesgrupopohlond"]
+}
+</script>
+<style>
+/* Same system as the full site: navy ink, one orange accent, the truck livery stripe as signature */
+:root{
+  --ink:#0b1736;--ink-2:#101f47;--orange:#ec5022;--orange-d:#d2421a;--amber:#f9a91a;--rust:#87431b;
+  --line:rgba(255,255,255,.13);--muted:rgba(255,255,255,.66);
+  --disp:"Montserrat",system-ui,sans-serif;--serif:"Instrument Serif",Georgia,serif;--body:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"Geist Mono",ui-monospace,Menlo,Consolas,monospace;
+  --g:clamp(20px,4vw,56px);--out:cubic-bezier(.2,.7,.2,1);--ease:cubic-bezier(.7,0,.2,1)
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;overflow-x:hidden}
+body{margin:0;min-height:100vh;min-height:100svh;background:var(--ink);color:#fff;font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;overflow-x:clip}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+svg{fill:none}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.wrap{width:100%;max-width:1336px;margin:0 auto;padding:0 var(--g)}
+
+/* Stage: the night photo with headlights, text on the solid side */
+.stage{position:relative;flex:1;display:flex;flex-direction:column;overflow:hidden}
+.stage>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:74% 58%;z-index:0}
+.stage::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(11,23,54,.98) 0%,rgba(11,23,54,.94) 38%,rgba(11,23,54,.55) 62%,rgba(11,23,54,.15) 85%),linear-gradient(0deg,rgba(11,23,54,.9) 0%,rgba(11,23,54,0) 35%)}
+.glow{position:absolute;z-index:1;width:var(--s,200px);height:var(--s,200px);margin:calc(var(--s,200px)/-2) 0 0 calc(var(--s,200px)/-2);border-radius:50%;background:radial-gradient(circle,rgba(255,226,170,.85) 0%,rgba(255,178,70,.32) 28%,rgba(255,140,40,0) 68%);mix-blend-mode:screen;opacity:0;pointer-events:none}
+.js .stage>img{filter:brightness(.3) saturate(.45);transition:filter 2.4s ease .2s}
+.lit .stage>img{filter:saturate(.95)}
+.lit .glow{animation:ignite 1.7s .9s forwards}
+.lit .glow.g2{animation-delay:1.2s}
+@keyframes ignite{0%{opacity:0}16%{opacity:1}24%{opacity:.2}36%{opacity:.95}44%{opacity:.45}60%,100%{opacity:1}}
+
+.top{position:relative;z-index:2;padding:26px 0}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand img{height:40px;width:auto}
+.lang{display:flex;height:36px;border:1px solid rgba(255,255,255,.24);border-radius:6px;overflow:hidden}
+.lang button{background:none;border:0;padding:0 11px;cursor:pointer;font:500 12px/1 var(--mono);letter-spacing:.08em;color:rgba(255,255,255,.66)}
+.lang button[aria-pressed="true"]{background:#fff;color:var(--ink)}
+
+.main{position:relative;z-index:2;flex:1;display:flex;align-items:center;padding:clamp(24px,5vh,64px) 0 clamp(36px,6vh,72px)}
+.copy{max-width:660px}
+.eyebrow{display:flex;align-items:center;gap:12px;margin:0;font:400 12.5px/1.3 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--orange);animation:live 1.6s infinite}
+@keyframes live{0%,100%{box-shadow:0 0 0 0 rgba(236,80,34,.6)}70%{box-shadow:0 0 0 9px rgba(236,80,34,0)}}
+.build{position:relative;width:min(320px,70%);height:6px;margin:18px 0 0;border-radius:3px;overflow:hidden;background:rgba(255,255,255,.08)}
+.build::before{content:"";position:absolute;inset:0;width:45%;border-radius:3px;background:linear-gradient(90deg,var(--amber),var(--orange),var(--rust));animation:run 2.2s var(--ease) infinite}
+@keyframes run{0%{transform:translateX(-100%)}100%{transform:translateX(230%)}}
+h1{margin:30px 0 0;font:900 clamp(34px,5.2vw,74px)/1.02 var(--disp);letter-spacing:-.022em;text-transform:uppercase}
+h1 em{display:block;font:italic 400 1.18em/1 var(--serif);letter-spacing:-.005em;text-transform:none;color:var(--orange);margin-top:.04em}
+.lead{margin:24px 0 0;max-width:520px;font-size:18px;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:11px;height:56px;padding:0 26px;border-radius:6px;border:1px solid transparent;font:600 16px/1 var(--body);text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s,transform .2s}
+.btn svg{width:21px;height:21px;flex:none}
+.btn:hover{transform:translateY(-1px)}
+.btn-wa{background:#25d366;color:#fff}
+.btn-wa:hover{background:#1ebe5a}
+.btn-l{border-color:rgba(255,255,255,.3);color:#fff}
+.btn-l:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.tags{display:flex;flex-wrap:wrap;gap:8px 22px;margin:34px 0 0;padding:0;list-style:none;font:400 11.5px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.tags li{display:flex;align-items:center;gap:8px}
+.tags li::before{content:"";width:5px;height:5px;background:var(--amber)}
+
+/* Contact cards */
+.contact{position:relative;z-index:2;padding-bottom:clamp(28px,4vh,44px)}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.card{display:flex;flex-direction:column;gap:6px;padding:20px 20px 18px;border:1px solid var(--line);border-radius:10px;background:rgba(11,23,54,.62);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);text-decoration:none;transition:border-color .25s,background .25s,transform .25s var(--out)}
+.card:hover{border-color:rgba(255,255,255,.4);background:rgba(16,31,71,.8);transform:translateY(-3px)}
+.card .ic{width:40px;height:40px;border-radius:8px;display:grid;place-items:center;margin-bottom:8px;color:#fff}
+.card .ic svg{width:21px;height:21px}
+.ic.wa{background:#25d366}.ic.fb{background:#1877f2}.ic.mail{background:var(--orange)}.ic.job{background:var(--amber);color:var(--ink)}
+.card small{font:400 11px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.card b{font:700 16px/1.3 var(--disp);letter-spacing:-.005em;overflow-wrap:anywhere}
+.card span{font-size:14px;color:var(--muted)}
+
+/* Livery + footer */
+.livery{position:relative;z-index:2;display:grid;grid-template-rows:5px 9px 5px}
+.livery i{display:block;background:var(--amber);transform-origin:left}
+.livery i:nth-child(2){background:var(--orange)}
+.livery i:nth-child(3){background:var(--rust)}
+.js .livery i{transform:scaleX(0)}
+.lit .livery i{transform:none;transition:transform 1.3s var(--ease)}
+.lit .livery i:nth-child(2){transition-delay:.08s}
+.lit .livery i:nth-child(3){transition-delay:.16s}
+footer{background:#081129}
+footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:18px;padding-bottom:20px;font:400 12px/1.4 var(--mono);letter-spacing:.04em;color:rgba(255,255,255,.5)}
+.made{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:rgba(255,255,255,.62);transition:color .2s}
+.made:hover{color:#fff}
+.made img{height:30px;width:auto}
+
+/* Entrance */
+.js .fx{opacity:0;transform:translateY(16px)}
+.lit .fx{opacity:1;transform:none;transition:opacity .9s var(--out),transform .9s var(--out)}
+.lit .fx.d1{transition-delay:.1s}.lit .fx.d2{transition-delay:.2s}.lit .fx.d3{transition-delay:.3s}.lit .fx.d4{transition-delay:.45s}
+
+@media (max-width:1000px){.cards{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){
+  .stage>img{position:relative;inset:auto;height:240px;object-position:62% 50%;order:2}
+  .stage::before{display:none}
+  .stage{display:flex;flex-direction:column}
+  .top{order:0}.main{order:1}.contact{order:3;padding-top:20px}
+  .glow{display:none}
+  .brand img{height:32px}
+  .main{padding-top:14px}
+  .lead{font-size:16.5px}
+  .btn{flex:1 1 100%}
+  .card{background:var(--ink-2)}
+}
+@media (max-width:420px){.cards{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .fx,.js .livery i{opacity:1;transform:none}
+  .js .stage>img{filter:none}
+  .glow{opacity:1}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.1-1.3A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3 .8.8-2.95-.2-.3a8.2 8.2 0 1 1 6.9 3.78Zm4.5-6.15c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.55.12-.17.25-.64.8-.78.97-.14.16-.29.18-.53.06a6.7 6.7 0 0 1-3.34-2.92c-.25-.43.25-.4.72-1.34.08-.16.04-.3-.02-.43-.06-.12-.55-1.33-.76-1.820-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 0 0-.65.3 2.75 2.75 0 0 0-.86 2.04 4.77 4.77 0 0 0 1 2.53c.12.16 1.74 2.66 4.22 3.73 1.57.68 2.18.74 2.97.62.48-.07 1.46-.6 1.67-1.18.2-.58.2-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 22v-8.2h2.75l.41-3.2H13.5V8.56c0-.93.26-1.56 1.59-1.56h1.7V4.14A22.7 22.7 0 0 0 14.32 4C11.87 4 10.2 5.49 10.2 8.24v2.36H7.44v3.2h2.76V22h3.3Z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" d="M5 3.5h3.5l1.7 4.3-2.2 1.4a11 11 0 0 0 6.8 6.8l1.4-2.2 4.3 1.7V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.1 1.5 1.5 0 0 1 5 3.5Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3.5 5.5h17v13h-17z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="m3.5 6 8.5 7 8.5-7"/></symbol>
+  <symbol id="i-job" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M2.5 6h11v10h-11zM13.5 9.5h4l3.5 3.5v3h-7.5"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></g></symbol>
+</svg>
+
+<div class="stage">
+  <img src="img/noche.webp" alt="Camión Mack de Transportes Pohlond trasladando un montacargas, de noche" width="1640" height="525" fetchpriority="high">
+  <span class="glow" data-x=".728" data-y=".8" data-s=".6" aria-hidden="true"></span>
+
+  <header class="top">
+    <div class="wrap">
+      <a class="brand fx" href="./" aria-label="Transportes Pohlond"><img src="img/logo-blanco.webp" alt="Transportes Pohlond" width="799" height="218"></a>
+      <div class="lang fx" role="group" aria-label="Idioma"><button type="button" data-lang="es" aria-pressed="true">ES</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="wrap">
+      <div class="copy">
+        <p class="eyebrow fx"><i></i><span data-en="Website under construction">Sitio en construcción</span></p>
+        <div class="build fx" aria-hidden="true"></div>
+        <h1 class="fx d1"><span data-en="We’re building">Estamos construyendo</span> <em data-en="our new website.">nuestro nuevo sitio.</em></h1>
+        <p class="lead fx d2" data-en="Meanwhile, we keep moving cargo all over Costa Rica, from Limón to Guanacaste. Get a quote or reach us directly: we reply on WhatsApp.">Mientras tanto, seguimos moviendo carga en todo Costa Rica, de Limón a Guanacaste. Cotice o escríbanos directamente: le respondemos por WhatsApp.</p>
+        <div class="cta fx d3">
+          <a class="btn btn-wa" href="https://wa.me/50689838585?text=Hola%2C%20quiero%20cotizar%20un%20transporte" data-en-href="https://wa.me/50689838585?text=Hi%2C%20I%E2%80%99d%20like%20a%20quote%20for%20a%20transport%20job" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span data-en="Quote on WhatsApp">Cotizar por WhatsApp</span></a>
+          <a class="btn btn-l" href="tel:+50689838585"><svg><use href="#i-phone"/></svg><span data-en="Call 8983 8585">Llamar al 8983 8585</span></a>
+        </div>
+        <ul class="tags fx d4">
+          <li data-en="20+ years">Más de 20 años</li>
+          <li data-en="80+ trucks">Más de 80 camiones</li>
+          <li data-en="Nationwide">Todo el país</li>
+          <li data-en="Freight transport">Transporte de carga</li>
+          <li data-en="Special cargo">Cargas especiales</li>
+          <li data-en="Forklift on board">Montacargas a bordo</li>
+          <li data-en="Knuckle-boom crane">Grúa articulada</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <section class="contact" aria-label="Contacto" data-en-label="Contact">
+    <div class="wrap">
+      <div class="cards">
+        <a class="card fx d1" href="https://wa.me/50689838585?text=Hola%2C%20quiero%20cotizar%20un%20transporte" data-en-href="https://wa.me/50689838585?text=Hi%2C%20I%E2%80%99d%20like%20a%20quote%20for%20a%20transport%20job" target="_blank" rel="noopener">
+          <span class="ic wa"><svg><use href="#i-wa"/></svg></span><small data-en="WhatsApp and phone">WhatsApp y teléfono</small><b>+506 8983 8585</b><span data-en="Quotes and coordination">Cotizaciones y coordinación</span>
+        </a>
+        <a class="card fx d2" href="mailto:nlosilla@transportespohlond.com">
+          <span class="ic mail"><svg><use href="#i-mail"/></svg></span><small data-en="Email">Correo</small><b>nlosilla<wbr>@transportespohlond.com</b><span data-en="Administration">Administración</span>
+        </a>
+        <a class="card fx d3" href="mailto:rh-administracion@transportespohlond.com">
+          <span class="ic job"><svg><use href="#i-job"/></svg></span><small data-en="We’re hiring drivers · B1 B2 B3">Se solicitan choferes · B1 B2 B3</small><b>rh-administracion<wbr>@transportespohlond.com</b><span data-en="Send your résumé">Envíe su currículum</span>
+        </a>
+        <a class="card fx d4" href="https://www.facebook.com/transportesgrupopohlond" target="_blank" rel="noopener">
+          <span class="ic fb"><svg><use href="#i-fb"/></svg></span><small>Facebook</small><b>Transportes Pohlond</b><span data-en="Our work and job openings">Nuestros trabajos y vacantes</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="livery" aria-hidden="true"><i></i><i></i><i></i></div>
+<footer>
+  <div class="wrap">
+    <span data-en="© 2026 Transportes Pohlond · Costa Rica">© 2026 Transportes Pohlond · Costa Rica</span>
+    <a class="made" href="https://hacksincodigos.com" target="_blank" rel="noopener"><span data-en="Website by">Sitio desarrollado por</span><img src="img/hacksincodigos.webp" alt="HacksinCodigos" width="817" height="269"></a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+
+  // Entrance: lights on, headlights ignite, livery stripe runs across
+  requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.add('lit'); }); });
+
+  // Place the headlight glows over the photo, whatever the crop
+  var img = document.querySelector('.stage>img'), glows = document.querySelectorAll('.glow');
+  function place() {
+    var W = img.offsetWidth, H = img.offsetHeight, sc = Math.max(W / 1640, H / 525), rw = 1640 * sc, rh = 525 * sc;
+    var op = getComputedStyle(img).objectPosition.split(' ').map(parseFloat), ox = (W - rw) * op[0] / 100, oy = (H - rh) * op[1] / 100;
+    glows.forEach(function (g) {
+      g.style.left = (img.offsetLeft + ox + rw * g.dataset.x) + 'px';
+      g.style.top = (img.offsetTop + oy + rh * g.dataset.y) + 'px';
+      g.style.setProperty('--s', (rh * g.dataset.s) + 'px');
+    });
+  }
+  place(); addEventListener('resize', place); img.addEventListener('load', place);
+
+  // Spanish / English: each element carries its English text in data-en
+  var TITLE = { es: document.title, en: 'Transportes Pohlond · Website under construction' };
+  var lang = 'es';
+  try { lang = localStorage.getItem('pohlond-lang') === 'en' ? 'en' : 'es'; } catch (e) {}
+  function apply() {
+    root.lang = lang; document.title = TITLE[lang];
+    document.querySelectorAll('[data-en]').forEach(function (el) {
+      if (el.__es === undefined) el.__es = el.innerHTML;
+      el.innerHTML = lang === 'en' ? el.dataset.en : el.__es;
+    });
+    document.querySelectorAll('[data-en-href]').forEach(function (a) {
+      if (a.__esH === undefined) a.__esH = a.getAttribute('href');
+      a.setAttribute('href', lang === 'en' ? a.dataset.enHref : a.__esH);
+    });
+    document.querySelectorAll('[data-en-label]').forEach(function (el) {
+      if (el.__esL === undefined) el.__esL = el.getAttribute('aria-label');
+      el.setAttribute('aria-label', lang === 'en' ? el.dataset.enLabel : el.__esL);
+    });
+    document.querySelectorAll('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+  }
+  document.querySelectorAll('.lang button').forEach(function (b) {
+    b.addEventListener('click', function () { lang = b.dataset.lang; try { localStorage.setItem('pohlond-lang', lang); } catch (e) {} apply(); });
+  });
+  if (lang === 'en') apply();
+})();
+</script>
+</body>
+</html>
