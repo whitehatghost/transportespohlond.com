@@ -3,269 +3,2059 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Transportes Pohlond · Sitio en construcción</title>
-<meta name="description" content="Transportes Pohlond: más de 20 años en transporte de carga y cargas especiales en todo Costa Rica. Camiones con montacargas y grúa. Cotice por WhatsApp al 8983 8585.">
+<title>Transportes Pohlond · Transporte y cargas especiales en todo Costa Rica</title>
+<meta name="description" content="Más de 20 años en transporte de carga y cargas especiales en todo Costa Rica. Más de 80 camiones con montacargas y grúa para cargar, transportar y descargar. Cotice por WhatsApp al 8983 8585.">
 <meta name="theme-color" content="#0b1736">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_CR">
-<meta property="og:title" content="Transportes Pohlond">
-<meta property="og:description" content="Transporte de carga y cargas especiales en todo Costa Rica. Cotice por WhatsApp al 8983 8585.">
+<meta property="og:url" content="https://transportespohlond.com/">
+<meta property="og:title" content="Transportes Pohlond · Transporte y cargas especiales en todo Costa Rica">
+<meta property="og:description" content="Más de 20 años y más de 80 camiones con montacargas y grúa. Cotice por WhatsApp al 8983 8585.">
 <meta property="og:image" content="https://transportespohlond.com/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="canonical" href="https://transportespohlond.com/">
 <link rel="icon" href="img/icono.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Instrument+Serif:ital@1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/noche.webp">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.webp" media="(min-width:761px)">
+<link rel="preload" as="image" href="img/hero-movil.webp" media="(max-width:760px)">
 <script>document.documentElement.classList.add('js');</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": "https://transportespohlond.com/#empresa",
   "name": "Transportes Pohlond",
-  "description": "Transporte de carga y cargas especiales en todo Costa Rica: camiones con montacargas y grúa, maquinaria pesada, esculturas y equipos delicados.",
+  "description": "Empresa costarricense con más de 20 años en transporte de carga y cargas especiales en todo el país. Más de 80 camiones con montacargas y grúa para cargar, transportar y descargar.",
   "url": "https://transportespohlond.com/",
   "logo": "https://transportespohlond.com/img/logo.webp",
+  "image": "https://transportespohlond.com/img/og.jpg",
   "telephone": "+506 8983 8585",
   "email": "nlosilla@transportespohlond.com",
-  "areaServed": { "@type": "Country", "name": "Costa Rica" },
-  "sameAs": ["https://www.facebook.com/transportesgrupopohlond", "https://www.instagram.com/transportespohlond/"]
+  "address": {
+    "@type": "PostalAddress",
+        "addressCountry": "CR"
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "Costa Rica" }
+  ],
+  "sameAs": ["https://www.facebook.com/transportesgrupopohlond", "https://www.instagram.com/transportespohlond/"],
+  "contactPoint": [
+    { "@type": "ContactPoint", "contactType": "customer service", "telephone": "+506 8983 8585", "availableLanguage": "es" },
+    { "@type": "ContactPoint", "contactType": "human resources", "email": "rh-administracion@transportespohlond.com", "availableLanguage": "es" }
+  ],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Transporte de carga" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cargas especiales" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Camión con montacargas para carga y descarga" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Entregas en todo Costa Rica" } }
+  ]
 }
 </script>
 <style>
-/* Same system as the full site: navy ink, one orange accent, the truck livery stripe as signature */
+/* Brand: the four bars of the Pohlond logo (amber, orange, rust, navy) are the same stripe painted on the trucks. */
 :root{
-  --ink:#0b1736;--ink-2:#101f47;--orange:#ec5022;--orange-d:#d2421a;--amber:#f9a91a;--rust:#87431b;
-  --line:rgba(255,255,255,.13);--muted:rgba(255,255,255,.66);
+  --ink:#0b1736;--ink-2:#101f47;--navy:#1e3264;--orange:#ec5022;--orange-d:#d2421a;--amber:#f9a91a;--rust:#87431b;
+  --paper:#f3f4f7;--white:#fff;--text:#0b1736;--muted:#596379;--line:#dde1e8;--line-d:rgba(255,255,255,.13);
   --disp:"Montserrat",system-ui,sans-serif;--serif:"Instrument Serif",Georgia,serif;--body:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"Geist Mono",ui-monospace,Menlo,Consolas,monospace;
-  --g:clamp(20px,4vw,56px);--out:cubic-bezier(.2,.7,.2,1);--ease:cubic-bezier(.7,0,.2,1)
+  --w:1240px;--g:clamp(20px,4vw,48px);--hh:76px;--ease:cubic-bezier(.7,0,.2,1);--out:cubic-bezier(.2,.7,.2,1)
 }
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;overflow-x:hidden}
-body{margin:0;min-height:100vh;min-height:100svh;background:var(--ink);color:#fff;font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;overflow-x:clip}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;background:var(--white);color:var(--text);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:clip}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
 svg{fill:none}
-:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
-.wrap{width:100%;max-width:1336px;margin:0 auto;padding:0 var(--g)}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+section[id],footer[id]{scroll-margin-top:var(--hh)}
+.wrap{width:100%;max-width:calc(var(--w) + var(--g)*2);margin:0 auto;padding:0 var(--g)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* Stage: the night photo with headlights, text on the solid side */
-.stage{position:relative;flex:1;display:flex;flex-direction:column;overflow:hidden}
-.stage>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:74% 58%;z-index:0}
-.stage::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(11,23,54,.98) 0%,rgba(11,23,54,.94) 38%,rgba(11,23,54,.55) 62%,rgba(11,23,54,.15) 85%),linear-gradient(0deg,rgba(11,23,54,.9) 0%,rgba(11,23,54,0) 35%)}
-.glow{position:absolute;z-index:1;width:var(--s,200px);height:var(--s,200px);margin:calc(var(--s,200px)/-2) 0 0 calc(var(--s,200px)/-2);border-radius:50%;background:radial-gradient(circle,rgba(255,226,170,.85) 0%,rgba(255,178,70,.32) 28%,rgba(255,140,40,0) 68%);mix-blend-mode:screen;opacity:0;pointer-events:none}
-.js .stage>img{filter:brightness(.3) saturate(.45);transition:filter 2.4s ease .2s}
-.lit .stage>img{filter:saturate(.95)}
-.lit .glow{animation:ignite 1.7s .9s forwards}
-.lit .glow.g2{animation-delay:1.2s}
-@keyframes ignite{0%{opacity:0}16%{opacity:1}24%{opacity:.2}36%{opacity:.95}44%{opacity:.45}60%,100%{opacity:1}}
+/* Type */
+.disp,h1,h2,h3{font-family:var(--disp);font-weight:800;letter-spacing:-.02em;margin:0}
+h2{font-size:clamp(27px,3.6vw,52px);line-height:1.04;font-weight:900;text-transform:uppercase;letter-spacing:-.012em}
+h1 em,h2 em{font-family:var(--serif);font-style:italic;font-weight:400;text-transform:none;letter-spacing:-.005em;font-size:1.16em;line-height:.9;color:var(--orange)}
+h3{font-size:clamp(19px,1.8vw,24px);line-height:1.2;font-weight:700;letter-spacing:-.01em}
+.label{display:flex;align-items:center;gap:12px;margin:0 0 22px;font:500 12px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
+.label::before{content:"";width:22px;height:2px;background:currentColor}
+.lede{font-size:18px;color:var(--muted);max-width:520px;margin:0}
+.dark .lede{color:rgba(255,255,255,.68)}
 
-.top{position:relative;z-index:2;padding:26px 0}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand img{height:40px;width:auto}
-.lang{display:flex;height:36px;border:1px solid rgba(255,255,255,.24);border-radius:6px;overflow:hidden}
-.lang button{background:none;border:0;padding:0 11px;cursor:pointer;font:500 12px/1 var(--mono);letter-spacing:.08em;color:rgba(255,255,255,.66)}
-.lang button[aria-pressed="true"]{background:#fff;color:var(--ink)}
-
-.main{position:relative;z-index:2;flex:1;display:flex;align-items:center;padding:clamp(24px,5vh,64px) 0 clamp(36px,6vh,72px)}
-.copy{max-width:660px}
-.eyebrow{display:flex;align-items:center;gap:12px;margin:0;font:400 12.5px/1.3 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.72)}
-.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--orange);animation:live 1.6s infinite}
-@keyframes live{0%,100%{box-shadow:0 0 0 0 rgba(236,80,34,.6)}70%{box-shadow:0 0 0 9px rgba(236,80,34,0)}}
-.build{position:relative;width:min(320px,70%);height:6px;margin:18px 0 0;border-radius:3px;overflow:hidden;background:rgba(255,255,255,.08)}
-.build::before{content:"";position:absolute;inset:0;width:45%;border-radius:3px;background:linear-gradient(90deg,var(--amber),var(--orange),var(--rust));animation:run 2.2s var(--ease) infinite}
-@keyframes run{0%{transform:translateX(-100%)}100%{transform:translateX(230%)}}
-h1{margin:30px 0 0;font:900 clamp(34px,5.2vw,74px)/1.02 var(--disp);letter-spacing:-.022em;text-transform:uppercase}
-h1 em{display:block;font:italic 400 1.18em/1 var(--serif);letter-spacing:-.005em;text-transform:none;color:var(--orange);margin-top:.04em}
-.lead{margin:24px 0 0;max-width:520px;font-size:18px;color:var(--muted)}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:11px;height:56px;padding:0 26px;border-radius:6px;border:1px solid transparent;font:600 16px/1 var(--body);text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s,transform .2s}
-.btn svg{width:21px;height:21px;flex:none}
-.btn:hover{transform:translateY(-1px)}
-.btn-wa{background:#25d366;color:#fff}
-.btn-wa:hover{background:#1ebe5a}
-.btn-l{border-color:rgba(255,255,255,.3);color:#fff}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 26px;border-radius:6px;border:1px solid transparent;font:600 15.5px/1 var(--body);text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .2s,border-color .2s,color .2s}
+.btn svg{width:19px;height:19px;flex:none}
+.btn .ar{width:17px;height:17px;transition:transform .25s var(--out)}
+.btn:hover .ar{transform:translateX(4px)}
+.btn-o{background:var(--orange);color:#fff}
+.btn-o:hover{background:var(--orange-d)}
+.btn-l{border-color:rgba(255,255,255,.28);color:#fff}
 .btn-l:hover{border-color:#fff;background:rgba(255,255,255,.06)}
-.tags{display:flex;flex-wrap:wrap;gap:8px 22px;margin:34px 0 0;padding:0;list-style:none;font:400 11.5px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55)}
-.tags li{display:flex;align-items:center;gap:8px}
-.tags li::before{content:"";width:5px;height:5px;background:var(--amber)}
+.btn-k{border-color:var(--line);color:var(--ink);background:#fff}
+.btn-k:hover{border-color:var(--ink)}
+.tlink{display:inline-flex;align-items:center;gap:8px;font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:3px}
+.tlink svg{width:16px;height:16px;transition:transform .25s var(--out)}
+.tlink:hover svg{transform:translateX(4px)}
 
-/* Contact cards */
-.contact{position:relative;z-index:2;padding-bottom:clamp(28px,4vh,44px)}
-.cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-.card{display:flex;flex-direction:column;gap:6px;padding:20px 20px 18px;border:1px solid var(--line);border-radius:10px;background:rgba(11,23,54,.62);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);text-decoration:none;transition:border-color .25s,background .25s,transform .25s var(--out)}
-.card:hover{border-color:rgba(255,255,255,.4);background:rgba(16,31,71,.8);transform:translateY(-3px)}
-.card .ic{width:40px;height:40px;border-radius:8px;display:grid;place-items:center;margin-bottom:8px;color:#fff}
-.card .ic svg{width:21px;height:21px}
-.ic.wa{background:#25d366}.ic.fb{background:#1877f2}.ic.ig{background:linear-gradient(45deg,#f58529,#dd2a7b 50%,#8134af)}.ic.mail{background:var(--orange)}.ic.job{background:var(--amber);color:var(--ink)}
-.card small{font:400 11px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5)}
-.card b{font:700 16px/1.3 var(--disp);letter-spacing:-.005em;overflow-wrap:anywhere}
-.card span{font-size:14px;color:var(--muted)}
-.card b.em{font-size:13.5px;overflow-wrap:normal;word-break:normal}
-
-/* Livery + footer */
-.livery{position:relative;z-index:2;display:grid;grid-template-rows:5px 9px 5px}
-.livery i{display:block;background:var(--amber);transform-origin:left}
+/* Livery stripe */
+.livery{display:grid;grid-template-rows:5px 9px 5px}
+.livery i{display:block;background:var(--amber)}
 .livery i:nth-child(2){background:var(--orange)}
 .livery i:nth-child(3){background:var(--rust)}
-.js .livery i{transform:scaleX(0)}
-.lit .livery i{transform:none;transition:transform 1.3s var(--ease)}
-.lit .livery i:nth-child(2){transition-delay:.08s}
-.lit .livery i:nth-child(3){transition-delay:.16s}
-footer{background:#081129}
-footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:18px;padding-bottom:20px;font:400 12px/1.4 var(--mono);letter-spacing:.04em;color:rgba(255,255,255,.5)}
+
+/* Demo strip + header */
+.demo{position:relative;z-index:60;height:30px;display:flex;align-items:center;justify-content:center;background:#060d22;color:rgba(255,255,255,.62);font:400 12px/1 var(--mono);letter-spacing:.04em}
+.demo b{color:#fff;font-weight:500;margin-left:6px}
+.top{position:absolute;top:0;left:0;right:0;z-index:50;height:var(--hh);color:#fff;transition:background .3s,box-shadow .3s}
+.top.solid{position:fixed;top:0;background:rgba(11,23,54,.94);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line-d)}
+.top .wrap{height:100%;display:flex;align-items:center;gap:36px}
+.brand{flex:none;display:block}
+.brand img{height:36px;width:auto}
+.nav{display:flex;gap:30px;margin-right:auto}
+.nav a{font-size:14.5px;font-weight:500;text-decoration:none;color:rgba(255,255,255,.74);transition:color .2s;position:relative;padding:6px 0}
+.nav a:hover{color:#fff}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--out)}
+.nav a:hover::after{transform:scaleX(1)}
+.top-act{display:flex;align-items:center;gap:10px;margin-left:auto}
+.lang{display:flex;height:36px;border:1px solid rgba(255,255,255,.24);border-radius:6px;overflow:hidden;flex:none}
+.lang button{background:none;border:0;padding:0 11px;cursor:pointer;font:500 12px/1 var(--mono);letter-spacing:.08em;color:rgba(255,255,255,.66);transition:background .2s,color .2s}
+.lang button:hover{color:#fff}
+.lang button[aria-pressed="true"]{background:#fff;color:var(--ink)}
+.ib{width:40px;height:40px;display:grid;place-items:center;border-radius:6px;border:1px solid rgba(255,255,255,.24);color:#fff;transition:background .2s,border-color .2s;flex:none}
+.ib:hover{background:#1877f2;border-color:#1877f2}
+.ib svg{width:19px;height:19px}
+.ib.wa{background:#25d366;border-color:#25d366}
+.ib.wa:hover{background:#1ebe5a;border-color:#1ebe5a}
+.ib.wa svg{width:21px;height:21px}
+.top .btn{height:42px;padding:0 18px;font-size:14.5px}
+.menu-b{display:none;width:42px;height:42px;border:1px solid rgba(255,255,255,.24);border-radius:6px;background:none;cursor:pointer;place-items:center;flex:none}
+.menu-b i{display:block;width:18px;height:1.5px;background:#fff;box-shadow:0 -6px 0 #fff,0 6px 0 #fff}
+.mnav{position:fixed;inset:0;z-index:70;background:var(--ink);color:#fff;display:flex;flex-direction:column;padding:22px var(--g) 32px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.menu-open .mnav{opacity:1;visibility:visible}
+.mnav-h{display:flex;align-items:center;justify-content:space-between}
+.mnav-h img{height:32px;width:auto}
+.mnav-x{width:44px;height:44px;border:1px solid var(--line-d);border-radius:6px;background:none;color:#fff;display:grid;place-items:center;cursor:pointer}
+.mnav-x svg{width:20px;height:20px}
+.mnav nav{display:flex;flex-direction:column;margin-top:48px}
+.mnav nav a{font:900 25px/1.1 var(--disp);text-transform:uppercase;letter-spacing:-.01em;text-decoration:none;padding:14px 0;border-bottom:1px solid var(--line-d)}
+.mnav .btn{margin-top:auto}
+@media (max-width:1100px){.nav{display:none}.menu-b{display:grid}}
+@media (max-width:620px){.top .btn,.top .ib.ig{display:none}.brand img{height:28px}.top .wrap{gap:8px}.top-act{gap:6px}.ib,.menu-b{width:38px;height:38px}.lang button{padding:0 8px}}
+
+/* Hero */
+.hero{background:var(--ink);color:#fff;padding-top:calc(var(--hh) + clamp(36px,6vw,84px));overflow:hidden}
+.hero-meta{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.eyebrow{margin:0;display:flex;align-items:center;gap:10px;font:400 12.5px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange)}
+.hire{display:inline-flex;align-items:center;gap:10px;padding:8px 8px 8px 14px;border:1px solid var(--line-d);border-radius:999px;text-decoration:none;font-size:13.5px;color:rgba(255,255,255,.82);transition:border-color .2s}
+.hire:hover{border-color:rgba(255,255,255,.4)}
+.hire b{font:500 11px/1 var(--mono);letter-spacing:.1em;background:var(--amber);color:var(--ink);padding:5px 8px;border-radius:999px}
+.hire svg{width:15px;height:15px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(0,1fr);gap:48px;align-items:end;margin-top:clamp(28px,4vw,48px);padding-bottom:clamp(44px,5.5vw,76px)}
+.hero h1{font-size:clamp(29px,4.8vw,72px);line-height:1.02;font-weight:900;text-transform:uppercase;letter-spacing:-.022em}
+.hero h1 em{font-size:1.24em;line-height:.95}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}
+.hero h1 .ln>span{display:block;white-space:nowrap}
+.hero h1 b{font-weight:inherit;color:var(--orange)}
+.hero .lead{font-size:18px;line-height:1.6;color:rgba(255,255,255,.72);margin:0;max-width:440px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-ph{position:relative;margin:0;height:clamp(240px,31vw,500px);overflow:hidden;background:var(--ink-2)}
+.hero-ph img{width:100%;height:100%;object-fit:cover;object-position:60% 50%;filter:saturate(.9) contrast(1.04)}
+.hero-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,23,54,.5),rgba(11,23,54,0) 26%,rgba(11,23,54,0) 74%,rgba(11,23,54,.3))}
+.cap{position:absolute;z-index:1;right:var(--g);bottom:18px;font:400 11.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.86);background:rgba(11,23,54,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:8px 10px;border-radius:4px}
+.spec{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0;padding:34px 0 42px}
+.spec div{padding:0 24px;border-left:1px solid var(--line-d)}
+.spec div:first-child{padding-left:0;border-left:0}
+.spec dt{font:400 11.5px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.spec dd{margin:10px 0 0;font:700 17px/1.35 var(--disp);letter-spacing:-.005em}
+.spec a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3);white-space:nowrap}
+.spec a:hover{border-color:var(--orange)}
+
+/* Hero load sequence: the stripe runs across like a truck passing, uncovering the photo */
+.js .hero .ln>span{transform:translateY(105%)}
+.js .hero .fx{opacity:0;transform:translateY(14px)}
+.js .hero .livery i{transform:scaleX(0);transform-origin:left}
+.js .hero-ph img{clip-path:inset(0 100% 0 0);transform:scale(1.06)}
+.hero.go .ln>span{transform:none;transition:transform 1s var(--out)}
+.hero.go .ln:nth-child(2)>span{transition-delay:.08s}
+.hero.go .ln:nth-child(3)>span{transition-delay:.16s}
+.hero.go .fx{opacity:1;transform:none;transition:opacity .8s .45s,transform .8s .45s var(--out)}
+.hero.go .fx.f2{transition-delay:.55s}
+.hero.go .livery i{transform:none;transition:transform 1.25s var(--ease)}
+.hero.go .livery i:nth-child(1){transition-delay:.25s}
+.hero.go .livery i:nth-child(2){transition-delay:.33s}
+.hero.go .livery i:nth-child(3){transition-delay:.41s}
+.hero.go .hero-ph img{clip-path:inset(0 0 0 0);transform:none;transition:clip-path 1.3s .3s var(--ease),transform 2.4s .3s var(--out)}
+
+/* Sections */
+.sec{padding:clamp(84px,10vw,150px) 0}
+.paper{background:var(--paper)}
+.dark{background:var(--ink);color:#fff}
+.head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:48px;align-items:end;margin-bottom:clamp(44px,5vw,72px)}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .9s var(--out),transform .9s var(--out)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+html:not(.js) .rv{opacity:1;transform:none}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:48px;align-items:start}
+.about-grid>.label{margin-top:.9em}
+.statement{margin:0;font:400 clamp(29px,3.4vw,50px)/1.13 var(--serif);letter-spacing:-.005em;color:var(--ink)}
+.statement span{color:#8a93a6}
+.about-act{margin-top:36px}
+.pair{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(16px,2vw,28px);margin-top:clamp(56px,7vw,96px)}
+.pair figure{margin:0}
+.pair .ph{overflow:hidden;border-radius:4px;background:var(--paper)}
+.pair img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.03)}
+.pair figure:first-child .ph{aspect-ratio:4/3}
+.pair figure:last-child{margin-top:clamp(40px,8vw,120px)}
+.pair figure:last-child .ph{aspect-ratio:4/5}
+.pair figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:14px;font:400 11.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+/* Services */
+.svc-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,5vw,80px);align-items:start}
+.svc-media{position:sticky;top:calc(var(--hh) + 32px);aspect-ratio:5/4;border-radius:4px;overflow:hidden;background:var(--ink)}
+.svc-media figure{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .6s}
+.svc-media figure.on{opacity:1}
+.svc-media img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.04);transform:scale(1.04);transition:transform 1.6s var(--out)}
+.svc-media figure.on img{transform:none}
+.svc-media .cap{bottom:16px;right:16px}
+.svc-row{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 24px;padding:32px 0 32px 28px;border-top:1px solid var(--line)}
+.svc-row:last-child{border-bottom:1px solid var(--line)}
+.svc-row::before{content:"";position:absolute;left:0;top:32px;bottom:32px;width:2px;background:var(--orange);transform:scaleY(0);transform-origin:top;transition:transform .45s var(--out)}
+.svc-row h3{transition:color .3s}
+.svc-row p{grid-column:1/-1;margin:0;color:var(--muted);max-width:560px}
+.svc-row .tag{align-self:center;font:400 11.5px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:right}
+.svc-row .mimg{display:none}
+.svc-row .mm{grid-column:1/-1;height:38px;width:auto;margin:2px 0 4px}
+@media (min-width:961px){
+  .js .svc-row h3{color:#a3abbb}
+  .js .svc-row.on h3{color:var(--ink)}
+  .svc-row.on::before{transform:none}
+}
+
+/* What we move */
+.ct-list{border-top:1px solid var(--line-d)}
+.ct-row{display:grid;grid-template-columns:168px minmax(0,1.1fr) minmax(0,1.3fr) 170px;gap:32px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line-d);transition:background .3s}
+.ct-row:hover{background:rgba(255,255,255,.025)}
+.ct-th{aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--ink-2)}
+.ct-th img{width:100%;height:100%;object-fit:cover;filter:saturate(.88) contrast(1.04);transition:transform .8s var(--out)}
+.ct-row:hover .ct-th img{transform:scale(1.06)}
+.ct-row h3{font-size:clamp(21px,2vw,28px)}
+.ct-row p{margin:0;color:rgba(255,255,255,.66);font-size:16px}
+.ct-row .tag{font:400 11.5px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--amber);text-align:right}
+.frag{display:grid;place-items:center;height:100%;background:repeating-linear-gradient(135deg,#13224d 0 10px,#112048 10px 20px)}
+.frag span{display:flex;flex-direction:column;align-items:center;gap:6px;border:2px solid var(--orange);color:var(--orange);padding:8px 12px 7px;border-radius:3px;transform:rotate(-6deg);font:500 13px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase}
+.frag svg{width:30px;height:18px}
+
+/* Process: a real sequence, so it is numbered */
+.steps{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,4vw,64px);padding-top:44px}
+.steps::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--line)}
+.steps .run{position:absolute;left:0;right:0;top:-1px;height:3px;background:linear-gradient(90deg,var(--amber),var(--orange) 50%,var(--rust));transform:scaleX(0);transform-origin:left;transition:transform 1.6s var(--ease)}
+.steps.in .run{transform:none}
+.step .num{display:block;font:500 13px/1 var(--mono);letter-spacing:.1em;color:var(--orange);margin-bottom:22px}
+.step h3{font-size:clamp(26px,2.6vw,36px);margin-bottom:14px}
+.step p{margin:0;color:var(--muted)}
+.proc-foot{display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;margin-top:clamp(48px,6vw,80px);padding-top:32px;border-top:1px solid var(--line)}
+.proc-foot p{margin:0 auto 0 0;color:var(--muted);max-width:560px}
+
+/* Night band */
+.band{position:relative;min-height:clamp(420px,44vw,600px);display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--ink)}
+.band>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:0% 55%;filter:saturate(.95)}
+.band::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(11,23,54,.97) 0%,rgba(11,23,54,.94) 40%,rgba(11,23,54,.5) 62%,rgba(11,23,54,0) 85%)}
+.band .wrap{position:relative;z-index:2}
+.band h2{font-size:clamp(29px,3.9vw,56px);max-width:640px}
+.band p{margin:22px 0 0;max-width:440px;color:rgba(255,255,255,.74)}
+.band .label{color:var(--amber)}
+
+/* Quote */
+.q-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,6vw,96px);align-items:start}
+.q-aside h2{margin-bottom:22px}
+.checks{list-style:none;margin:32px 0 0;padding:0}
+.checks li{display:flex;gap:12px;padding:14px 0;border-top:1px solid var(--line);font-size:16px}
+.checks li:last-child{border-bottom:1px solid var(--line)}
+.checks svg{width:20px;height:20px;color:var(--orange);flex:none;margin-top:2px}
+.direct{display:grid;gap:4px;margin-top:32px}
+.direct a{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:500;padding:6px 0}
+.direct a:hover{color:var(--orange)}
+.direct svg{width:19px;height:19px;color:var(--muted)}
+.q{background:#fff;border:1px solid var(--line);border-radius:10px;padding:clamp(24px,3.4vw,44px);display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;box-shadow:0 40px 80px -50px rgba(11,23,54,.35)}
+.q-title{grid-column:1/-1;margin:0 0 4px;font:800 20px/1.2 var(--disp);letter-spacing:-.01em}
+.f{display:flex;flex-direction:column;gap:8px;min-width:0}
+.f.full{grid-column:1/-1}
+.f label{font:400 11.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.f input,.f select,.f textarea{width:100%;height:52px;border:1px solid var(--line);border-radius:6px;background:#fff;padding:0 14px;font-size:16px;transition:border-color .2s,box-shadow .2s;outline:0}
+.f select{appearance:none;-webkit-appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%23596379' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 16px center;padding-right:40px}
+.f textarea{height:116px;padding:13px 14px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(30,50,100,.12)}
+.q .btn{grid-column:1/-1;justify-self:start}
+.q-note{grid-column:1/-1;margin:0;font-size:13.5px;color:var(--muted)}
+
+/* Jobs */
+.jobs-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,96px);align-items:start}
+.jobs h2{margin-bottom:22px}
+.lic{display:flex;align-items:center;gap:8px;margin-top:28px;font:400 11.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.lic span{font:500 13px/1 var(--mono);letter-spacing:.06em;color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:8px 10px}
+.lic span:first-of-type{margin-left:6px}
+.req{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:28px}
+.req li{display:flex;gap:10px;padding:12px 0;border-top:1px solid var(--line);font-size:15.5px;line-height:1.45}
+.req svg{width:18px;height:18px;color:var(--orange);flex:none;margin-top:2px}
+.drop{display:flex;align-items:center;gap:16px;margin-top:28px;padding:18px 20px;border:1.5px dashed #b6bdcb;border-radius:10px;background:var(--paper);cursor:pointer;transition:border-color .2s,background .2s}
+.drop:hover,.drop.over{border-color:var(--orange);background:#fff6f1}
+.drop.ok{border-style:solid;border-color:#1f8a4c;background:#f1faf4}
+.drop .ic{width:46px;height:46px;border-radius:8px;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+.drop.ok .ic{background:#1f8a4c}
+.drop .ic svg{width:22px;height:22px}
+#dropT{display:block;font-weight:600}
+#dropS{display:block;font-size:14px;color:var(--muted)}
+.jobs-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.jobs-alt{margin:16px 0 0;font-size:14.5px;color:var(--muted)}
+.jobs-alt a{color:var(--ink);font-weight:500}
+.rh-note{display:flex;gap:12px;align-items:flex-start;margin:16px 0 0;padding:14px 16px;border-left:2px solid var(--orange);background:var(--paper);font-size:15px}
+.rh-note svg{width:20px;height:20px;color:var(--orange);flex:none;margin-top:2px}
+
+/* Chat (recruiting agent + floating assistant) */
+.chat{display:flex;flex-direction:column;height:580px;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 50px 90px -50px rgba(11,23,54,.45)}
+.chat-h{display:flex;align-items:center;gap:12px;padding:14px 14px 14px 16px;background:var(--ink);color:#fff}
+.av{width:38px;height:38px;border-radius:8px;background:#fff;display:grid;place-items:center;flex:none}
+.av img{width:24px;height:24px}
+.who{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+.who b{font:600 15px/1.2 var(--body)}
+.who small{display:flex;align-items:center;gap:7px;font:400 11.5px/1 var(--mono);color:rgba(255,255,255,.62)}
+.live{width:7px;height:7px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 3px rgba(61,220,132,.18)}
+.ai{font:500 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--amber);border:1px solid rgba(249,169,26,.4);padding:6px 9px;border-radius:999px;white-space:nowrap}
+.chat-x{width:34px;height:34px;border:0;background:none;color:rgba(255,255,255,.8);border-radius:6px;display:grid;place-items:center;cursor:pointer;flex:none}
+.chat-x:hover{background:rgba(255,255,255,.08);color:#fff}
+.chat-x svg{width:18px;height:18px}
+.chat-b{flex:1;overflow-y:auto;padding:20px 16px;display:flex;flex-direction:column;gap:10px;background:var(--paper);overscroll-behavior:contain}
+.msg{max-width:86%;padding:11px 14px;border-radius:12px;font-size:14.5px;line-height:1.45;animation:pop .3s var(--out)}
+.msg.bot{align-self:flex-start;background:#fff;border:1px solid var(--line);border-top-left-radius:3px}
+.msg.me{align-self:flex-end;background:var(--navy);color:#fff;border-top-right-radius:3px}
+.msg.file{display:flex;align-items:center;gap:10px}
+.msg.file svg{width:22px;height:22px;flex:none}
+.msg.file small{display:block;opacity:.7;font-size:12px}
+.typing{align-self:flex-start;display:flex;gap:4px;padding:13px 14px;background:#fff;border:1px solid var(--line);border-radius:12px;border-top-left-radius:3px}
+.typing i{width:6px;height:6px;border-radius:50%;background:#9aa3b5;animation:blink 1.1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+.opts{align-self:flex-end;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px;max-width:92%}
+.opt{padding:9px 14px;border:1px solid var(--navy);border-radius:999px;background:#fff;color:var(--navy);font-size:14px;font-weight:500;cursor:pointer;transition:background .2s,color .2s}
+.opt:hover{background:var(--navy);color:#fff}
+.ficha{align-self:stretch;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;animation:pop .35s var(--out)}
+.ficha-h{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;background:var(--ink);color:#fff;font:500 12px/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.ficha-h span{font-size:10.5px;letter-spacing:.06em;background:#1f8a4c;padding:5px 8px;border-radius:999px;white-space:nowrap}
+.ficha-h span.no{background:var(--orange)}
+.ficha dl{display:grid;grid-template-columns:auto minmax(0,1fr);margin:0;padding:4px 14px 10px}
+.ficha dt,.ficha dd{padding:8px 0;border-bottom:1px solid var(--line)}
+.ficha dt{font:400 11.5px/1.4 var(--mono);color:var(--muted);padding-right:16px}
+.ficha dd{margin:0;font-size:14px;font-weight:500;overflow-wrap:anywhere}
+.ficha dt:nth-last-of-type(1),.ficha dd:last-child{border-bottom:0}
+.chat-b .btn{height:auto;color:#fff;background:#1f9d55;border-radius:999px}
+.chat-b .btn:hover{background:#178547}
+.chat-b .btn svg{width:17px;height:17px}
+.chat-f{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line);background:#fff}
+.chat-f input{flex:1;min-width:0;height:44px;border:1px solid var(--line);border-radius:8px;padding:0 12px;font-size:15px;outline:0}
+.chat-f input:focus{border-color:var(--navy)}
+.chat-f input:disabled{background:var(--paper)}
+.cbtn{width:44px;height:44px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--muted);display:grid;place-items:center;cursor:pointer;flex:none;transition:opacity .2s}
+.cbtn svg{width:19px;height:19px}
+.cbtn:disabled{opacity:.4;cursor:default}
+.cbtn.send{background:var(--orange);border-color:var(--orange);color:#fff}
+.cbtn.hot{border-color:var(--orange);color:var(--orange);animation:ring 1.6s infinite}
+.demo-note{margin:0;padding:0 12px 10px;background:#fff;text-align:center;font:400 10.5px/1.4 var(--mono);color:var(--muted)}
+@keyframes blink{0%,60%,100%{opacity:.35}30%{opacity:1}}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(236,80,34,.45)}100%{box-shadow:0 0 0 10px rgba(236,80,34,0)}}
+
+.cpanel{position:fixed;z-index:80;right:20px;bottom:92px;width:min(390px,calc(100vw - 24px));height:min(620px,calc(100dvh - 124px));opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .3s,transform .3s var(--out),visibility .3s}
+.cpanel.open{opacity:1;visibility:visible;transform:none}
+.cpanel .chat{height:100%}
+.fab-row{position:fixed;z-index:80;right:20px;bottom:20px;display:flex;align-items:center;gap:10px;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s,transform .3s var(--out),visibility .3s}
+.fab-row.vis{opacity:1;visibility:visible;transform:none}
+.fab{position:relative;width:58px;height:58px;border-radius:50%;border:0;background:var(--ink);color:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 14px 34px -10px rgba(11,23,54,.6)}
+.fab::after{content:"";position:absolute;top:4px;right:4px;width:11px;height:11px;border-radius:50%;background:var(--orange);border:2px solid var(--ink)}
+.fab.on::after{display:none}
+.fab svg{width:24px;height:24px}
+.fab .x,.fab.on .c{display:none}
+.fab.on .x{display:block}
+.fab-tip{display:none;align-items:center;gap:4px;padding:5px 5px 5px 16px;background:#fff;border:1px solid var(--line);border-radius:999px;box-shadow:0 14px 34px -14px rgba(11,23,54,.4);animation:pop .35s var(--out)}
+.fab-tip.show{display:flex}
+.tip-go{border:0;background:none;font-size:14px;font-weight:600;color:var(--ink);cursor:pointer;padding:6px 0}
+.tip-x{width:28px;height:28px;border:0;border-radius:50%;background:var(--paper);color:var(--muted);display:grid;place-items:center;cursor:pointer}
+.tip-x svg{width:13px;height:13px}
+@media (max-width:560px){.cpanel{right:8px;left:8px;width:auto;bottom:86px;height:calc(100dvh - 110px)}.fab-row{right:14px;bottom:14px}}
+
+/* Footer */
+.foot{background:var(--ink);color:#fff}
+.foot-cta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:end;padding:clamp(88px,10vw,150px) 0 clamp(64px,7vw,100px)}
+.foot-cta h2{font-size:clamp(34px,5.6vw,84px);line-height:1;letter-spacing:-.02em}
+.foot-cta h2 span{color:var(--orange)}
+.foot-cta p{margin:22px 0 0;max-width:500px;color:rgba(255,255,255,.66)}
+.foot-act{display:flex;flex-direction:column;align-items:stretch;gap:12px}
+.foot-cols{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:40px;padding:56px 0 64px;border-top:1px solid var(--line-d)}
+.foot-cols img{height:40px;width:auto}
+.foot-cols .about{margin:20px 0 0;color:rgba(255,255,255,.6);font-size:15.5px;max-width:320px}
+.foot-cols h3{font:400 11.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.48);margin:0 0 18px}
+.foot-cols ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.foot-cols li a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:rgba(255,255,255,.86);font-size:15.5px;overflow-wrap:anywhere}
+.foot-cols li a:hover{color:var(--amber)}
+.foot-cols li svg{width:17px;height:17px;flex:none;color:rgba(255,255,255,.5)}
+.foot-cols li small{display:block;font:400 11px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:3px}
 .made{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:rgba(255,255,255,.62);transition:color .2s}
 .made:hover{color:#fff}
 .made img{height:30px;width:auto}
+.foot-bot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:22px;padding-bottom:96px;font:400 12px/1.4 var(--mono);letter-spacing:.04em;color:rgba(255,255,255,.48)}
 
-/* Entrance */
-.js .fx{opacity:0;transform:translateY(16px)}
-.lit .fx{opacity:1;transform:none;transition:opacity .9s var(--out),transform .9s var(--out)}
-.lit .fx.d1{transition-delay:.1s}.lit .fx.d2{transition-delay:.2s}.lit .fx.d3{transition-delay:.3s}.lit .fx.d4{transition-delay:.45s}
-
-@media (max-width:1200px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media (max-width:1000px){.cards{grid-template-columns:1fr 1fr}}
-@media (max-width:760px){
-  .stage>img{position:relative;inset:auto;height:240px;object-position:62% 50%;order:2}
-  .stage::before{display:none}
-  .stage{display:flex;flex-direction:column}
-  .top{order:0}.main{order:1}.contact{order:3;padding-top:20px}
-  .glow{display:none}
-  .brand img{height:32px}
-  .main{padding-top:14px}
-  .lead{font-size:16.5px}
-  .btn{flex:1 1 100%}
-  .card{background:var(--ink-2)}
+/* Responsive */
+@media (max-width:1100px){
+  .ct-row{grid-template-columns:132px minmax(0,1fr) minmax(0,1.2fr)}
+  .ct-row .tag{grid-column:2/-1;text-align:left;margin-top:-14px}
 }
-@media (max-width:420px){.cards{grid-template-columns:1fr}}
+@media (max-width:960px){
+  .hero-grid,.head,.about-grid,.svc-grid,.q-grid,.jobs-grid,.foot-cta{grid-template-columns:1fr}
+  .hero-grid{gap:28px}
+  .head{gap:20px}
+  .about-grid{gap:0}
+  .spec{grid-template-columns:1fr 1fr;row-gap:26px}
+  .spec div:nth-child(3){padding-left:0;border-left:0}
+  .svc-media{display:none}
+  .svc-row{padding:28px 0}
+  .svc-row::before{display:none}
+  .svc-row .mimg{display:block;grid-column:1/-1;order:-1;aspect-ratio:16/10;border-radius:4px;overflow:hidden;margin-bottom:10px}
+  .svc-row .mimg img{width:100%;height:100%;object-fit:cover}
+  .steps{grid-template-columns:1fr;gap:36px}
+  .foot-act{flex-direction:row;flex-wrap:wrap}
+  .foot-cols{grid-template-columns:1fr 1fr}
+  .foot-cols>div:first-child{grid-column:1/-1}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .lede,.hero .lead{font-size:16.5px}
+  .hero-cta .btn,.foot-act .btn{flex:1 1 100%}
+  .spec dd{font-size:17px}
+  .spec div{padding:0 0 0 16px}
+  .pair{grid-template-columns:1fr}
+  .pair figure:last-child{margin-top:0}
+  .pair figure:last-child .ph{aspect-ratio:4/3}
+  .ct-row{grid-template-columns:96px minmax(0,1fr);gap:6px 18px;align-items:start}
+  .ct-th{grid-row:span 3}
+  .ct-row p{font-size:15px}
+  .ct-row .tag{grid-column:2;margin-top:4px}
+  .q{grid-template-columns:1fr}
+  .req{grid-template-columns:1fr}
+  .chat{height:540px}
+  .foot-cols{grid-template-columns:1fr}
+  .eyebrow{font-size:11px;letter-spacing:.1em}
+  .band{flex-direction:column;align-items:stretch;min-height:0}
+  .band>img{position:relative;height:250px;object-position:62% 50%}
+  .band::before{display:none}
+  .band .wrap{padding-top:40px;padding-bottom:64px}
+  .ct-row .frag span{padding:4px 5px 3px;font-size:8.5px;letter-spacing:.1em;border-width:1.5px}
+  .ct-row .frag svg{display:none}
+}
 @media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
-  .js .fx,.js .livery i{opacity:1;transform:none}
-  .js .stage>img{filter:none}
-  .glow{opacity:1}
+  .js .hero .ln>span,.js .hero .fx,.js .hero .livery i,.js .hero-ph img{transform:none;opacity:1;clip-path:none}
+  .rv{opacity:1;transform:none}
+  .steps .run{transform:none}
 }
+/* Route: pinned scroll story across a topographic map of the GAM */
+.route{background:var(--ink);color:#fff}
+.route-track{position:relative;height:340vh}
+.route-pin{position:sticky;top:0;height:100vh;height:100svh;display:flex;align-items:center;overflow:hidden;padding-top:var(--hh)}
+.route-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-areas:"head map" "side map";column-gap:clamp(36px,5vw,80px);align-items:center}
+.route-head{grid-area:head;align-self:end}
+.route-head .label{color:var(--amber)}
+.route-head h2{font-size:clamp(26px,3vw,44px)}
+.route-map{grid-area:map;position:relative;aspect-ratio:800/520;border:1px solid var(--line-d);border-radius:10px;overflow:hidden;background:radial-gradient(120% 90% at 40% 45%,#14285e 0%,#0d1b40 55%,#091330 100%)}
+.route-map svg{position:absolute;inset:0;width:100%;height:100%}
+.route-map::before{content:"";position:absolute;z-index:1;left:0;right:0;top:0;height:64px;background:linear-gradient(180deg,rgba(9,19,48,.95),rgba(9,19,48,0));pointer-events:none}
+.route-side{grid-area:side;align-self:start}
+.rsteps{list-style:none;margin:30px 0 0;padding:0}
+.rsteps li{display:grid;grid-template-columns:44px minmax(0,1fr);padding:16px 0;border-top:1px solid var(--line-d);opacity:.36;transition:opacity .4s}
+.rsteps li.on{opacity:1}
+.rsteps .num{font:500 12px/2 var(--mono);color:var(--amber)}
+.rsteps p{margin:0;font-size:15px;color:rgba(255,255,255,.7);max-height:0;overflow:hidden;opacity:0;transition:max-height .5s var(--out),opacity .4s,margin .4s}
+.rsteps li.on p{max-height:110px;opacity:1;margin-top:8px}
+.route-cta{margin-top:26px}
+.hud{position:absolute;z-index:2;left:16px;right:16px;top:14px;display:flex;justify-content:space-between;align-items:center;gap:12px;font:400 11px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);pointer-events:none}
+.hud b{font-weight:500;color:#fff;display:inline-flex;align-items:center;gap:8px}
+.hud b::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange);animation:live 1.6s infinite}
+.hud-bar{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.08)}
+.hud-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--amber),var(--orange),var(--rust));transform-origin:left;transform:scaleX(0)}
+.city circle{fill:#fff;opacity:.5}
+.city text{font:500 10.5px var(--mono);letter-spacing:.08em;fill:rgba(255,255,255,.48);text-transform:uppercase}
+.pin text{font:700 13px var(--disp);fill:#fff}
+.pin .halo{transform-box:fill-box;transform-origin:center;animation:halo 2.2s infinite}
+#pinB .halo{opacity:0;animation:none}
+#pinB.done .halo{animation:halo 2.2s infinite}
+#pinB .core{transition:fill .4s}
+#pinB.done .core{fill:#ec5022}
+@keyframes live{0%,100%{box-shadow:0 0 0 0 rgba(236,80,34,.6)}70%{box-shadow:0 0 0 8px rgba(236,80,34,0)}}
+@keyframes halo{0%{transform:scale(.35);opacity:.95}100%{transform:scale(1.5);opacity:0}}
+@media (max-height:720px) and (min-width:961px){.rsteps li{padding:11px 0}.route-cta{display:none}}
+@media (max-width:960px){
+  .route-track{height:300vh}
+  .route-grid{grid-template-columns:1fr;grid-template-areas:"head" "map" "side";row-gap:16px}
+  .route-head .label{margin-bottom:12px}
+  .route-head h2{font-size:clamp(24px,6.6vw,34px)}
+  .rsteps{margin-top:2px}
+  .rsteps li{padding:10px 0}
+  .rsteps p{font-size:14px}
+  .route-cta{display:none}
+  .hud{left:10px;right:10px;top:9px;font-size:9.5px;letter-spacing:.06em}
+  .hud>span:first-child{display:none}
+}
+
+/* Night band: headlights ignite when it comes into view */
+.js .band>img{filter:brightness(.3) saturate(.45);transition:filter 2.2s ease}
+.band.lit>img{filter:saturate(.95)}
+.glow{position:absolute;z-index:1;width:var(--s,200px);height:var(--s,200px);margin:calc(var(--s,200px)/-2) 0 0 calc(var(--s,200px)/-2);border-radius:50%;background:radial-gradient(circle,rgba(255,226,170,.85) 0%,rgba(255,178,70,.32) 28%,rgba(255,140,40,0) 68%);mix-blend-mode:screen;opacity:0;pointer-events:none}
+.band.lit .glow{animation:ignite 1.7s .45s forwards}
+.band.lit .glow.g2{animation-delay:.75s}
+@keyframes ignite{0%{opacity:0}16%{opacity:1}24%{opacity:.2}36%{opacity:.95}44%{opacity:.45}60%,100%{opacity:1}}
+
+/* Floating photo that follows the cursor over "Lo que transportamos" */
+.peek{position:fixed;left:0;top:0;z-index:45;width:340px;aspect-ratio:4/3;border-radius:6px;overflow:hidden;pointer-events:none;opacity:0;scale:.9;transition:opacity .25s,scale .4s var(--out);box-shadow:0 40px 80px -30px rgba(0,0,0,.65);will-change:transform}
+.peek.on{opacity:1;scale:1}
+.peek img{width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.04)}
+
+/* Hero photo drifts slower than the page; header carries a livery progress line */
+.hero-ph picture{position:absolute;left:0;right:0;top:-14%;bottom:0;display:block;will-change:transform}
+.top::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:linear-gradient(90deg,var(--amber),var(--orange),var(--rust));transform:scaleX(var(--p,0));transform-origin:left;opacity:0;transition:opacity .3s}
+.top.solid::after{opacity:1}
+@media (prefers-reduced-motion:reduce){
+  .route-track{height:auto}
+  .route-pin{position:relative;height:auto;padding:110px 0}
+  .rsteps li{opacity:1}
+  .rsteps p{max-height:none;opacity:1;margin-top:8px}
+  .js .band>img{filter:none}
+  .peek{display:none}
+}
+/* Social: WhatsApp and Facebook buttons */
+.social{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.soc{display:inline-flex;align-items:center;gap:9px;height:46px;padding:0 18px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;color:#fff;transition:filter .2s,transform .2s}
+.soc svg{width:20px;height:20px}
+.soc.wa{background:#25d366}
+.soc.fb{background:#1877f2}
+.soc.ig{background:linear-gradient(45deg,#f58529,#dd2a7b 50%,#8134af)}
+.ib.ig:hover{background:#dd2a7b;border-color:#dd2a7b}
+.soc:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.wa-float{position:fixed;z-index:79;right:22px;bottom:22px;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 14px 30px -8px rgba(18,140,70,.55);transition:bottom .35s var(--out),transform .2s,opacity .3s}
+.wa-float svg{width:30px;height:30px}
+.wa-float:hover{transform:scale(1.06)}
+.wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;animation:waRing 2.4s infinite}
+.fab-row.vis ~ .wa-float{bottom:94px}
+.chat-open .wa-float,.menu-open .wa-float{opacity:0;pointer-events:none}
+@keyframes waRing{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.5);opacity:0}}
+@media (max-width:560px){.wa-float{right:16px;bottom:16px;width:54px;height:54px}.fab-row.vis ~ .wa-float{bottom:84px}}
+@media (prefers-reduced-motion:reduce){.wa-float::before{display:none}}
+/* A1 · two paths in the hero */
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.path{position:relative;display:flex;flex-direction:column;gap:5px;min-height:122px;padding:18px 44px 18px 18px;border-radius:8px;text-decoration:none;color:#fff;transition:transform .25s var(--out),background .25s,border-color .25s}
+.path:hover{transform:translateY(-3px)}
+.p-move{background:var(--orange)}
+.p-move:hover{background:var(--orange-d)}
+.p-drive{border:1px solid rgba(255,255,255,.28)}
+.p-drive:hover{border-color:#fff;background:rgba(255,255,255,.05)}
+.path small{font:500 10.5px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;opacity:.82}
+.path b{font:800 17px/1.2 var(--disp);letter-spacing:-.01em;margin-top:auto}
+.path span{font-size:13.5px;opacity:.86}
+.path .ar{position:absolute;right:16px;top:18px;width:18px;height:18px;transition:transform .25s var(--out)}
+.path:hover .ar{transform:translateX(4px)}
+@media (max-width:640px){.paths{grid-template-columns:1fr}.path{min-height:0}}
+
+/* A4 · fleet cards + A3 · truck picker */
+.fleet{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.fc{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;transition:border-color .3s,box-shadow .3s,transform .3s var(--out)}
+.fc.pick{border-color:var(--orange);box-shadow:0 30px 60px -32px rgba(236,80,34,.55);transform:translateY(-6px)}
+.fc-ph{aspect-ratio:4/3;overflow:hidden;background:var(--paper)}
+.fc-ph img{width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.04)}
+.fc-b{padding:18px 18px 20px}
+.fc-k{margin:0 0 8px;font:500 11px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+.fc h3{font-size:18px;line-height:1.25}
+.fc-spec{margin:14px 0 0;display:grid;gap:10px}
+.fc-spec div{border-top:1px solid var(--line);padding-top:9px}
+.fc-spec dt{font:400 10.5px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.fc-spec dd{margin:3px 0 0;font-size:14.5px;line-height:1.4;font-weight:500}
+.pick-box{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:28px;margin-top:28px;padding:26px;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+.pick-box .label{margin-bottom:14px}
+.pq{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid var(--line);font-size:15.5px}
+.yn{display:flex;gap:6px;flex:none}
+.yn button{min-width:52px;height:38px;padding:0 12px;border:1px solid var(--line);border-radius:999px;background:#fff;font-weight:600;font-size:14px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.yn button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.pr{display:flex;flex-direction:column;justify-content:center;gap:14px;padding:24px;border-radius:10px;background:var(--ink);color:#fff}
+.pr-k{margin:0;font:500 11px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+.pr-t{margin:0;font:800 19px/1.3 var(--disp);letter-spacing:-.01em}
+.pr .btn{align-self:flex-start}
+@media (max-width:1100px){.fleet{grid-template-columns:1fr 1fr}}
+@media (max-width:960px){.pick-box{grid-template-columns:1fr}}
+@media (max-width:560px){.fleet{grid-template-columns:1fr}.pq{flex-direction:column;align-items:flex-start;gap:8px}}
+
+/* A9 · links to the cargo pages */
+.ct-a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+.ct-a svg{width:18px;height:18px;color:var(--amber);flex:none;transition:transform .25s var(--out)}
+.ct-a:hover{color:var(--amber)}
+.ct-a:hover svg{transform:translateX(4px)}
+
+/* A7 · Master Move + A5 · articulated crane */
+.mm-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(36px,5vw,80px);align-items:center}
+.mm-logo{height:58px;width:auto;margin-bottom:26px}
+.mm-sec h2{margin-bottom:20px}
+.mm-act{display:flex;flex-wrap:wrap;align-items:center;gap:16px 26px;margin-top:30px}
+.crane-wrap{border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,#f3f4f7,#fff 70%);padding:10px}
+.crane-wrap svg{display:block;width:100%;height:auto}
+@media (max-width:960px){.mm-grid{grid-template-columns:1fr}}
+
+/* A6 · coverage map */
+.cov-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(36px,5vw,80px);align-items:center}
+.cov-grid h2{margin-bottom:20px}
+.prov{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 30px;padding:0}
+.prov li{padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;font:500 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);transition:background .4s,color .4s,border-color .4s}
+.prov li.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.cr-map svg{display:block;width:100%;height:auto}
+.crd{fill:#c3cad8;transition:fill .6s}
+.crd.on{fill:#1e3264}
+.cr-route{stroke-dasharray:var(--l);stroke-dashoffset:var(--l);transition:stroke-dashoffset 1.4s var(--ease)}
+.cr-map.lit .cr-route{stroke-dashoffset:0}
+.cr-pin{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.4);transition:opacity .5s,transform .5s var(--out)}
+.cr-map.lit .cr-pin{opacity:1;transform:none}
+.cr-pin text{font:700 13px var(--disp);fill:#0b1736;paint-order:stroke;stroke:#f3f4f7;stroke-width:4px}
+.cr-pin .ring{transform-box:fill-box;transform-origin:center;animation:halo 2.4s infinite}
+@media (max-width:960px){.cov-grid{grid-template-columns:1fr}}
+
+/* A2 · three-step quote */
+.wiz-top{grid-column:1/-1;display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.wiz-top .q-title{margin:0}
+.wiz-n{font:400 11.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.wiz-bar{grid-column:1/-1;height:4px;border-radius:2px;background:var(--paper);overflow:hidden}
+.wiz-bar i{display:block;height:100%;width:33.4%;background:linear-gradient(90deg,var(--amber),var(--orange),var(--rust));transition:width .45s var(--out)}
+.step-f{display:none;grid-column:1/-1;grid-template-columns:1fr 1fr;gap:18px 20px;animation:pop .35s var(--out)}
+.step-f.on{display:grid}
+.sf-t{grid-column:1/-1;margin:4px 0 0;font:800 19px/1.25 var(--disp);letter-spacing:-.01em}
+.fl{font:400 11.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.chips{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:11px 15px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:14.5px;font-weight:500;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.wiz-nav{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+.wiz-nav .btn{height:50px}
+.wiz-nav [hidden]{display:none}
+.wiz-nav #wizBack{margin-right:auto}
+.wiz-nav .btn:disabled{opacity:.45;cursor:not-allowed}
+@media (max-width:640px){.step-f{grid-template-columns:1fr}}
+
+/* A8 · interactive requirements */
+.req-t{margin:26px 0 0;font:400 11.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.req{margin-top:12px}
+.req label{display:flex;gap:10px;cursor:pointer;width:100%}
+.req input{position:absolute;opacity:0;pointer-events:none}
+.req .box{width:19px;height:19px;flex:none;margin-top:1px;display:grid;place-items:center;border:1.5px solid #b6bdcb;border-radius:5px;transition:background .2s,border-color .2s}
+.req .box svg{width:13px;height:13px;margin:0;color:#fff;opacity:0;transition:opacity .2s}
+.req input:checked+.box{background:var(--orange);border-color:var(--orange)}
+.req input:checked+.box svg{opacity:1}
+.req input:focus-visible+.box{outline:2px solid var(--orange);outline-offset:2px}
+.req-meter{margin-top:14px}
+.rm-bar{height:6px;border-radius:3px;background:var(--paper);overflow:hidden}
+.rm-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--amber),var(--orange));transition:width .35s var(--out)}
+#reqMsg{margin:8px 0 0;font-size:14.5px;color:var(--muted)}
+#reqMsg.ok{color:#1f8a4c;font-weight:600}
+@media (prefers-reduced-motion:reduce){.cr-route{stroke-dashoffset:0}.cr-pin{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.1-1.3A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3 .8.8-2.95-.2-.3a8.2 8.2 0 1 1 6.9 3.78Zm4.5-6.15c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.55.12-.17.25-.64.8-.78.97-.14.16-.29.18-.53.06a6.7 6.7 0 0 1-3.34-2.92c-.25-.43.25-.4.72-1.34.08-.16.04-.3-.02-.43-.06-.12-.55-1.33-.76-1.820-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 0 0-.65.3 2.75 2.75 0 0 0-.86 2.04 4.77 4.77 0 0 0 1 2.53c.12.16 1.74 2.66 4.22 3.73 1.57.68 2.18.74 2.97.62.48-.07 1.46-.6 1.67-1.18.2-.58.2-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.1-1.3A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3 .8.8-2.95-.2-.3a8.2 8.2 0 1 1 6.9 3.78Zm4.5-6.15c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.55.12-.17.25-.64.8-.78.97-.14.16-.29.18-.53.06a6.7 6.7 0 0 1-3.34-2.92c-.25-.43.25-.4.72-1.34.08-.16.04-.3-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 0 0-.65.3 2.75 2.75 0 0 0-.86 2.04 4.77 4.77 0 0 0 1 2.53c.12.16 1.74 2.66 4.22 3.73 1.57.68 2.18.74 2.97.62.48-.07 1.46-.6 1.67-1.18.2-.58.2-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
   <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></symbol>
   <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 22v-8.2h2.75l.41-3.2H13.5V8.56c0-.93.26-1.56 1.59-1.56h1.7V4.14A22.7 22.7 0 0 0 14.32 4C11.87 4 10.2 5.49 10.2 8.24v2.36H7.44v3.2h2.76V22h3.3Z"/></symbol>
-  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" d="M5 3.5h3.5l1.7 4.3-2.2 1.4a11 11 0 0 0 6.8 6.8l1.4-2.2 4.3 1.7V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.1 1.5 1.5 0 0 1 5 3.5Z"/></symbol>
-  <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3.5 5.5h17v13h-17z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="m3.5 6 8.5 7 8.5-7"/></symbol>
-  <symbol id="i-job" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M2.5 6h11v10h-11zM13.5 9.5h4l3.5 3.5v3h-7.5"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></g></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" d="M3.5 5.5h17v13h-17z"/><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" d="m3.5 6 8.5 7 8.5-7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 1 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-clip" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="m20 11.5-7.9 7.9a5 5 0 0 1-7.1-7.1l8.5-8.5a3.3 3.3 0 0 1 4.7 4.7l-8.5 8.5a1.7 1.7 0 0 1-2.4-2.4l7.8-7.8"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path fill="currentColor" d="M3.4 20.6 21 12 3.4 3.4l-.1 6.7L15 12 3.3 13.9z"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V4M7.5 8.5 12 4l4.5 4.5"/><path d="M4 15v3.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V15"/></g></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></g></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M4 5.5h16v10.5H9l-5 4z"/><path d="M8.5 10.5h.01M12 10.5h.01M15.5 10.5h.01" stroke-width="2.6"/></g></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-redo" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v5h-5"/></g></symbol>
+  <symbol id="i-up" viewBox="0 0 30 18"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17V2M3 8l6-6 6 6M21 17V2M15 8l6-6 6 6"/></g></symbol>
 </svg>
 
-<div class="stage">
-  <img src="img/noche.webp" alt="Camión Mack de Transportes Pohlond trasladando un montacargas, de noche" width="1640" height="525" fetchpriority="high">
-  <span class="glow" data-x=".728" data-y=".8" data-s=".6" aria-hidden="true"></span>
 
-  <header class="top">
-    <div class="wrap">
-      <a class="brand fx" href="./" aria-label="Transportes Pohlond"><img src="img/logo-blanco.webp" alt="Transportes Pohlond" width="1200" height="356"></a>
-      <div class="lang fx" role="group" aria-label="Idioma"><button type="button" data-lang="es" aria-pressed="true">ES</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Transportes Pohlond, inicio"><img src="img/logo-blanco.webp" alt="Transportes Pohlond" width="1200" height="356"></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#flota">Flota</a>
+      <a href="#master-move">Master Move</a>
+      <a href="#cobertura">Cobertura</a>
+      <a href="#trabaje">Empleo</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="top-act">
+      <div class="lang" role="group" aria-label="Idioma"><button type="button" data-lang="es" aria-pressed="true">ES</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+      <a class="ib fb" href="https://www.facebook.com/transportesgrupopohlond" target="_blank" rel="noopener" aria-label="Facebook de Transportes Pohlond"><svg><use href="#i-fb"/></svg></a>
+      <a class="ib ig" href="https://www.instagram.com/transportespohlond/" target="_blank" rel="noopener" aria-label="Instagram de Transportes Pohlond"><svg><use href="#i-ig"/></svg></a>
+      <a class="ib wa js-wa" href="https://wa.me/50689838585?text=Hola%2C%20quiero%20cotizar%20un%20transporte" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp al 8983 8585"><svg><use href="#i-wa"/></svg></a>
+      <a class="btn btn-o" href="#cotizar">Cotizar</a>
+      <button class="menu-b" id="menuBtn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mnav"><i></i></button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main class="main">
+<div class="mnav" id="mnav" role="dialog" aria-label="Menú" inert>
+  <div class="mnav-h">
+    <img src="img/logo-blanco.webp" alt="Transportes Pohlond" width="1200" height="356">
+    <button class="mnav-x" id="mnavX" type="button" aria-label="Cerrar menú"><svg><use href="#i-x"/></svg></button>
+  </div>
+  <nav aria-label="Menú móvil">
+    <a href="#servicios">Servicios</a>
+    <a href="#flota">Flota</a>
+    <a href="#master-move">Master Move</a>
+    <a href="#cobertura">Cobertura</a>
+    <a href="#trabaje">Empleo</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <a class="btn btn-o js-wa" href="https://wa.me/50689838585?text=Hola%2C%20quiero%20cotizar%20un%20transporte" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp 8983 8585</a>
+</div>
+
+<main id="inicio">
+  <section class="hero" id="hero">
     <div class="wrap">
-      <div class="copy">
-        <p class="eyebrow fx"><i></i><span data-en="Website under construction">Sitio en construcción</span></p>
-        <div class="build fx" aria-hidden="true"></div>
-        <h1 class="fx d1"><span data-en="We’re building">Estamos construyendo</span> <em data-en="our new website.">nuestro nuevo sitio.</em></h1>
-        <p class="lead fx d2" data-en="Meanwhile, we keep moving cargo all over Costa Rica, from Limón to Guanacaste. Get a quote or reach us directly: we reply on WhatsApp.">Mientras tanto, seguimos moviendo carga en todo Costa Rica, de Limón a Guanacaste. Cotice o escríbanos directamente: le respondemos por WhatsApp.</p>
-        <div class="cta fx d3">
-          <a class="btn btn-wa" href="https://wa.me/50689838585?text=Hola%2C%20quiero%20cotizar%20un%20transporte" data-en-href="https://wa.me/50689838585?text=Hi%2C%20I%E2%80%99d%20like%20a%20quote%20for%20a%20transport%20job" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span data-en="Quote on WhatsApp">Cotizar por WhatsApp</span></a>
-          <a class="btn btn-l" href="tel:+50689838585"><svg><use href="#i-phone"/></svg><span data-en="Call 8983 8585">Llamar al 8983 8585</span></a>
+      <div class="hero-meta fx">
+        <p class="eyebrow">Transporte de carga especial · Costa Rica</p>
+        <a class="hire" href="#trabaje"><span>Se solicitan choferes</span><b>B1 · B2 · B3</b><svg><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="hero-grid">
+        <h1><span class="ln"><span>Cargamos,</span></span><span class="ln"><span>transportamos</span></span><span class="ln"><span><em>y descargamos.</em></span></span></h1>
+        <div class="hero-side fx f2">
+          <p class="lead">Camiones con montacargas o grúa a bordo para mover maquinaria, esculturas, vidrio y mercadería en todo Costa Rica, de Limón a Guanacaste.</p>
+          <div class="paths">
+            <a class="path p-move" href="#cotizar"><small>Clientes</small><b>Necesito mover algo</b><span>Cotice en 3 pasos</span><svg class="ar"><use href="#i-arrow"/></svg></a>
+            <a class="path p-drive" href="#trabaje"><small>Choferes</small><b>Quiero manejar con Pohlond</b><span>Licencias B1, B2 y B3</span><svg class="ar"><use href="#i-arrow"/></svg></a>
+          </div>
         </div>
-        <ul class="tags fx d4">
-          <li data-en="20+ years">Más de 20 años</li>
-          <li data-en="80+ trucks">Más de 80 camiones</li>
-          <li data-en="Nationwide">Todo el país</li>
-          <li data-en="Freight transport">Transporte de carga</li>
-          <li data-en="Master Move · specialized cargo">Master Move · cargas especializadas</li>
-          <li data-en="Forklift on board">Montacargas a bordo</li>
-          <li data-en="Knuckle-boom crane">Grúa articulada</li>
-        </ul>
       </div>
     </div>
-  </main>
-
-  <section class="contact" aria-label="Contacto" data-en-label="Contact">
+    <figure class="hero-ph">
+      <picture>
+        <source media="(max-width:760px)" srcset="img/hero-movil.webp" width="1080" height="478">
+        <img src="img/hero.webp" alt="Camión Mack de Transportes Pohlond trasladando un montacargas y una cargadora" width="1640" height="478" fetchpriority="high">
+      </picture>
+      <figcaption class="cap">Montacargas a bordo</figcaption>
+    </figure>
+    <div class="livery" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="wrap">
-      <div class="cards">
-        <a class="card fx d1" href="https://wa.me/50689838585?text=Hola%2C%20quiero%20cotizar%20un%20transporte" data-en-href="https://wa.me/50689838585?text=Hi%2C%20I%E2%80%99d%20like%20a%20quote%20for%20a%20transport%20job" target="_blank" rel="noopener">
-          <span class="ic wa"><svg><use href="#i-wa"/></svg></span><small data-en="WhatsApp and phone">WhatsApp y teléfono</small><b>+506 8983 8585</b><span data-en="Quotes and coordination">Cotizaciones y coordinación</span>
-        </a>
-        <a class="card fx d2" href="mailto:nlosilla@transportespohlond.com">
-          <span class="ic mail"><svg><use href="#i-mail"/></svg></span><small data-en="Email">Correo</small><b class="em">nlosilla<wbr>@transportespohlond.com</b><span data-en="Administration">Administración</span>
-        </a>
-        <a class="card fx d3" href="mailto:rh-administracion@transportespohlond.com">
-          <span class="ic job"><svg><use href="#i-job"/></svg></span><small data-en="We’re hiring drivers · B1 B2 B3">Se solicitan choferes · B1 B2 B3</small><b class="em">rh-administracion<wbr>@transportespohlond.com</b><span data-en="Send your résumé">Envíe su currículum</span>
-        </a>
-        <a class="card fx d4" href="https://www.facebook.com/transportesgrupopohlond" target="_blank" rel="noopener">
-          <span class="ic fb"><svg><use href="#i-fb"/></svg></span><small>Facebook</small><b>Transportes Pohlond</b><span data-en="Our work and job openings">Nuestros trabajos y vacantes</span>
-        </a>
-        <a class="card fx d4" href="https://www.instagram.com/transportespohlond/" target="_blank" rel="noopener">
-          <span class="ic ig"><svg><use href="#i-ig"/></svg></span><small>Instagram</small><b>@transportespohlond</b><span data-en="Photos of our work">Fotos de nuestros trabajos</span>
-        </a>
+      <dl class="spec fx f2">
+        <div><dt>Flota</dt><dd>Más de 80 camiones</dd></div>
+        <div><dt>Trayectoria</dt><dd>Más de 20 años</dd></div>
+        <div><dt>Cobertura</dt><dd>Todo Costa Rica</dd></div>
+        <div><dt>Cotizaciones</dt><dd><a class="js-wa" href="https://wa.me/50689838585?text=Hola%2C%20quiero%20cotizar%20un%20transporte" target="_blank" rel="noopener">WhatsApp 8983 8585</a></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="sec" id="empresa">
+    <div class="wrap">
+      <div class="about-grid">
+        <p class="label rv">La empresa</p>
+        <div>
+          <p class="statement rv">Transportes Pohlond es una empresa costarricense de transporte de carga, con más de 20 años de trayectoria y más de 80 camiones. <span>Llegamos con el equipo para subir y bajar la carga, así que su traslado no depende de montacargas ni de personal en el sitio.</span></p>
+          <div class="about-act rv d1"><a class="tlink" href="#servicios">Ver servicios <svg><use href="#i-arrow"/></svg></a></div>
+        </div>
+      </div>
+      <div class="pair">
+        <figure class="rv"><div class="ph"><img src="img/grua-tajo.webp" alt="Camión con grúa trabajando en un tajo" width="1040" height="780" loading="lazy"></div><figcaption><span>Grúa articulada</span><span>Carga pesada</span></figcaption></figure>
+        <figure class="rv d2"><div class="ph"><img src="img/montacargas.webp" alt="Montacargas cargando una caja grande" width="957" height="960" loading="lazy" style="object-position:45% 50%"></div><figcaption><span>Montacargas a bordo</span><span>Carga y descarga</span></figcaption></figure>
       </div>
     </div>
   </section>
-</div>
 
-<div class="livery" aria-hidden="true"><i></i><i></i><i></i></div>
-<footer>
+  <section class="sec paper" id="servicios">
+    <div class="wrap">
+      <div class="head">
+        <div class="rv"><p class="label">Servicios</p><h2>Del punto de carga al de entrega, <em>con el equipo a bordo.</em></h2></div>
+        <p class="lede rv d1">Desde mercadería y materiales hasta maquinaria y cargas delicadas, con el equipo adecuado para cada traslado, en todo Costa Rica.</p>
+      </div>
+      <div class="svc-grid">
+        <div class="svc-media" aria-hidden="true">
+          <figure class="on"><img src="img/svc-carga.webp" alt="" width="1580" height="416" loading="lazy" style="object-position:16% 50%"><figcaption class="cap">Plataforma</figcaption></figure>
+          <figure><img src="img/cargas-especiales.webp" alt="" width="1040" height="780" loading="lazy" style="object-position:60% 50%"><figcaption class="cap">Grúa articulada</figcaption></figure>
+          <figure><img src="img/montacargas-2.webp" alt="" width="957" height="960" loading="lazy" style="object-position:55% 50%"><figcaption class="cap">Montacargas a bordo</figcaption></figure>
+          <figure><img src="img/grua-contenedor.webp" alt="" width="490" height="640" loading="lazy" style="object-position:60% 50%"><figcaption class="cap">De Limón a Guanacaste</figcaption></figure>
+        </div>
+        <div class="svc-list">
+          <article class="svc-row rv" tabindex="0">
+            <div class="mimg"><img src="img/svc-carga.webp" alt="Camión de plataforma con carga amarrada y un montacargas a bordo" width="1580" height="416" loading="lazy" style="object-position:16% 50%"></div>
+            <h3>Transporte de carga</h3><span class="tag">Plataforma</span>
+            <p>Traslado de mercadería, materiales y equipo en camiones de plataforma, con la carga bien amarrada y protegida.</p>
+          </article>
+          <article class="svc-row rv" tabindex="0">
+            <div class="mimg"><img src="img/cargas-especiales.webp" alt="Camión con grúa cargando estructuras de acero" width="1040" height="780" loading="lazy"></div>
+            <h3>Cargas especiales</h3><span class="tag">Master Move</span>
+            <img class="mm" src="img/master-move.webp" alt="Master Move, división de cargas especializadas de Transportes Pohlond" width="1200" height="443" loading="lazy">
+            <p>Master Move es nuestra división de cargas especializadas, con el equipo más pesado y fuerte de la flota: maquinaria, estructuras, esculturas y vidrio, movidos con planificación, camión con grúa y maniobras cuidadosas.</p>
+          </article>
+          <article class="svc-row rv" tabindex="0">
+            <div class="mimg"><img src="img/montacargas-2.webp" alt="Montacargas descargando una caja grande junto al camión" width="957" height="960" loading="lazy"></div>
+            <h3>Camión con montacargas</h3><span class="tag">Montacargas a bordo</span>
+            <p>El montacargas viaja con el camión: cargamos, transportamos y descargamos en su sitio, sin esperar equipo de terceros.</p>
+          </article>
+          <article class="svc-row rv" tabindex="0">
+            <div class="mimg"><img src="img/grua-contenedor.webp" alt="Camión con grúa de Transportes Pohlond entregando una oficina contenedor" width="490" height="640" loading="lazy" style="object-position:60% 40%"></div>
+            <h3>Entregas en todo el país</h3><span class="tag">De Limón a Guanacaste</span>
+            <p>Entregas en todo Costa Rica, de Limón a Guanacaste, coordinadas con usted de principio a fin.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="flota">
+    <div class="wrap">
+      <div class="head">
+        <div class="rv"><p class="label">Flota</p><h2>Más de 80 camiones, <em>el equipo correcto para cada carga.</em></h2></div>
+        <p class="lede rv d1">Cada tipo de camión resuelve un trabajo distinto. Le asignamos el que su carga necesita; las capacidades exactas se las confirmamos al cotizar.</p>
+      </div>
+      <div class="fleet">
+        <article class="fc rv" data-truck="mont">
+          <div class="fc-ph"><img src="img/montacargas-2.webp" alt="Montacargas descargando una caja grande junto al camión" width="957" height="960" loading="lazy" style="object-position:55% 50%"></div>
+          <div class="fc-b"><p class="fc-k">Montacargas a bordo</p><h3>Camión plataforma con montacargas</h3>
+            <dl class="fc-spec"><div><dt>Hace</dt><dd>Carga, transporta y descarga</dd></div><div><dt>Ideal para</dt><dd>Tarimas, cajas, equipo y materiales</dd></div><div><dt>Ventaja</dt><dd>No depende de montacargas en el sitio</dd></div></dl></div>
+        </article>
+        <article class="fc rv d1" data-truck="grua">
+          <div class="fc-ph"><img src="img/grua-tajo.webp" alt="Camión con grúa trabajando en un tajo" width="1040" height="780" loading="lazy"></div>
+          <div class="fc-b"><p class="fc-k">Grúa articulada</p><h3>Camión grúa con brazo articulado</h3>
+            <dl class="fc-spec"><div><dt>Hace</dt><dd>Iza y coloca la carga</dd></div><div><dt>Ideal para</dt><dd>Estructuras, contenedores y esculturas</dd></div><div><dt>Ventaja</dt><dd>Levanta sobre obstáculos y deja la pieza en su lugar</dd></div></dl></div>
+        </article>
+        <article class="fc rv d2" data-truck="mm">
+          <div class="fc-ph"><img src="img/mack-montacargas.webp" alt="Camión Mack trasladando un montacargas rojo" width="940" height="353" loading="lazy" style="object-position:35% 50%"></div>
+          <div class="fc-b"><p class="fc-k">Master Move</p><h3>Cabezal con plataforma para equipo pesado</h3>
+            <dl class="fc-spec"><div><dt>Hace</dt><dd>Traslada maquinaria pesada</dd></div><div><dt>Ideal para</dt><dd>Montacargas, cargadores y equipo de obra</dd></div><div><dt>Ventaja</dt><dd>El equipo más pesado y fuerte de la flota</dd></div></dl></div>
+        </article>
+        <article class="fc rv d3" data-truck="plat">
+          <div class="fc-ph"><img src="img/svc-carga.webp" alt="Camión de plataforma con carga amarrada y un montacargas a bordo" width="1580" height="416" loading="lazy" style="object-position:18% 50%"></div>
+          <div class="fc-b"><p class="fc-k">Carga general</p><h3>Camión plataforma</h3>
+            <dl class="fc-spec"><div><dt>Hace</dt><dd>Fletes de mercadería y materiales</dd></div><div><dt>Ideal para</dt><dd>Materiales de construcción y mercadería</dd></div><div><dt>Ventaja</dt><dd>Carga amarrada y protegida en todo el país</dd></div></dl></div>
+        </article>
+      </div>
+      <div class="pick-box rv" id="picker">
+        <div>
+          <p class="label">¿Qué camión necesita?</p>
+          <div class="pq" data-q="pesada"><span>¿Es maquinaria pesada o equipo de obra?</span><span class="yn"><button type="button" data-v="1">Sí</button><button type="button" data-v="0">No</button></span></div>
+          <div class="pq" data-q="izar"><span>¿Hay que levantarla sobre un muro o meterla en un patio?</span><span class="yn"><button type="button" data-v="1">Sí</button><button type="button" data-v="0">No</button></span></div>
+          <div class="pq" data-q="fragil"><span>¿Es una pieza delicada, como una escultura o vidrio?</span><span class="yn"><button type="button" data-v="1">Sí</button><button type="button" data-v="0">No</button></span></div>
+          <div class="pq" data-q="montasitio"><span>¿Hay montacargas donde se carga y donde se entrega?</span><span class="yn"><button type="button" data-v="1">Sí</button><button type="button" data-v="0">No</button></span></div>
+        </div>
+        <div class="pr" aria-live="polite">
+          <p class="pr-k">Nuestra recomendación</p>
+          <p class="pr-t" id="pickT">Responda las preguntas y le decimos qué camión le sirve.</p>
+          <a class="btn btn-o js-wa" id="pickWa" href="https://wa.me/50689838585?text=Hola%2C%20quiero%20cotizar%20un%20transporte" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Cotizar por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dark" id="lo-que-transportamos">
+    <div class="wrap">
+      <div class="head">
+        <div class="rv"><p class="label" style="color:var(--amber)">Lo que transportamos</p><h2>Desde maquinaria <em>hasta esculturas.</em></h2></div>
+        <p class="lede rv d1">Cuando la carga es frágil, cada detalle cuenta: el embalaje, el amarre, la maniobra y la descarga.</p>
+      </div>
+      <div class="ct-list">
+        <article class="ct-row rv">
+          <div class="ct-th"><img src="img/escultura.webp" alt="Escultura izada con grúa y eslingas" width="260" height="288" loading="lazy"></div>
+          <h3><a class="ct-a" href="carga/esculturas-y-arte/">Esculturas y obras de arte<svg><use href="#i-arrow"/></svg></a></h3>
+          <p>Izadas con grúa y eslingas, con cada maniobra planificada para que lleguen intactas.</p>
+          <span class="tag">Grúa · eslingas</span>
+        </article>
+        <article class="ct-row rv">
+          <div class="ct-th frag" aria-hidden="true"><span><svg><use href="#i-up"/></svg>Frágil</span></div>
+          <h3><a class="ct-a" href="carga/vidrio-y-cargas-fragiles/">Vidrio y piezas frágiles<svg><use href="#i-arrow"/></svg></a></h3>
+          <p>Embalaje, amarre y manejo cuidadoso de principio a fin. Lo frágil viaja protegido.</p>
+          <span class="tag">Embalaje · amarre</span>
+        </article>
+        <article class="ct-row rv">
+          <div class="ct-th"><img src="img/mack-montacargas.webp" alt="Camión Mack trasladando un montacargas rojo" width="940" height="353" loading="lazy" style="object-position:30% 50%"></div>
+          <h3><a class="ct-a" href="carga/maquinaria/">Maquinaria y equipo<svg><use href="#i-arrow"/></svg></a></h3>
+          <p>Montacargas a bordo. Grúa cuando la carga lo pide.</p>
+          <span class="tag">Plataforma · grúa</span>
+        </article>
+        <article class="ct-row rv">
+          <div class="ct-th"><img src="img/svc-carga.webp" alt="Camión de plataforma con carga amarrada y un montacargas a bordo" width="1580" height="416" loading="lazy" style="object-position:22% 50%"></div>
+          <h3><a class="ct-a" href="carga/mercaderia-y-materiales/">Mercadería y materiales<svg><use href="#i-arrow"/></svg></a></h3>
+          <p>Tarimas, cajas y materiales de obra, cargados y descargados en su sitio.</p>
+          <span class="tag">Montacargas</span>
+        </article>
+        <article class="ct-row rv">
+          <div class="ct-th"><img src="img/grua-carga.webp" alt="Grúa articulada descargando en la plataforma del camión" width="940" height="385" loading="lazy" style="object-position:32% 50%"></div>
+          <h3><a class="ct-a" href="carga/contenedores-y-estructuras/">Estructuras y contenedores<svg><use href="#i-arrow"/></svg></a></h3>
+          <p>Oficinas contenedor y estructuras de acero, colocadas con grúa donde usted las necesita.</p>
+          <span class="tag">Grúa articulada</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec mm-sec" id="master-move">
+    <div class="wrap mm-grid">
+      <div class="rv">
+        <img class="mm-logo" src="img/master-move.webp" alt="Master Move, división de cargas especializadas de Transportes Pohlond" width="1200" height="443" loading="lazy">
+        <p class="label">División de cargas especializadas</p>
+        <h2>Lo más pesado, <em>con el equipo más fuerte.</em></h2>
+        <p class="lede">Master Move es la división de Transportes Pohlond para cargas especializadas: maquinaria pesada, estructuras y piezas que requieren grúa, planificación y maniobras cuidadosas.</p>
+        <ul class="checks">
+          <li><svg><use href="#i-check"/></svg>Cada maniobra se planifica antes de mover la carga.</li>
+          <li><svg><use href="#i-check"/></svg>Camión grúa con brazo articulado y plataformas para equipo pesado.</li>
+          <li><svg><use href="#i-check"/></svg>Servicio en todo Costa Rica.</li>
+        </ul>
+        <div class="mm-act">
+          <a class="btn btn-o js-wa" href="https://wa.me/50689838585?text=Hola%2C%20quiero%20solicitar%20un%20proyecto%20con%20Master%20Move" target="_blank" rel="noopener">Solicite un proyecto <svg class="ar"><use href="#i-arrow"/></svg></a>
+          <a class="tlink" href="master-move/">Conocer Master Move <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+      <div class="crane-wrap rv d1" id="crane">
+        <svg viewBox="0 0 640 400" role="img" aria-label="Ilustración de un camión grúa con brazo articulado levantando una caja">
+          <line x1="20" y1="330" x2="620" y2="330" stroke="#c9cfdb" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round"/>
+          <ellipse id="crSh" cx="0" cy="332" rx="34" ry="4" fill="#0b1736" opacity=".12"/>
+          <g id="crCrate"><rect width="64" height="50" rx="3" fill="#c48a4c" stroke="#87431b" stroke-width="2.5"/><path d="M4 4 60 46M60 4 4 46" stroke="#87431b" stroke-width="2.5"/><rect x="0" y="20" width="64" height="10" fill="#87431b" opacity=".35"/></g>
+          <line id="crRope" stroke="#0b1736" stroke-width="2"/>
+          <path id="crHook" d="M0 0v8a5 5 0 1 0 5 5" fill="none" stroke="#0b1736" stroke-width="2.5" stroke-linecap="round"/>
+          <rect x="262" y="276" width="318" height="12" rx="3" fill="#1a2340"/>
+          <rect x="270" y="262" width="200" height="14" rx="2" fill="#2a3550"/>
+          <rect x="480" y="212" width="90" height="76" rx="10" fill="#fff" stroke="#d5dae4" stroke-width="2"/>
+          <path d="M534 220h28a6 6 0 0 1 6 6v20h-34z" fill="#bcd3ea"/>
+          <rect x="482" y="252" width="86" height="5" fill="#f9a91a"/><rect x="482" y="257" width="86" height="5" fill="#ec5022"/><rect x="482" y="262" width="86" height="5" fill="#87431b"/>
+          <g fill="#111827"><circle cx="312" cy="308" r="22"/><circle cx="366" cy="308" r="22"/><circle cx="540" cy="308" r="22"/></g>
+          <g fill="#9aa3b5"><circle cx="312" cy="308" r="8"/><circle cx="366" cy="308" r="8"/><circle cx="540" cy="308" r="8"/></g>
+          <rect x="446" y="256" width="34" height="8" rx="2" fill="#1e3264"/>
+          <rect x="453" y="222" width="20" height="38" rx="3" fill="#ec5022"/>
+          <line id="crB1" stroke="#ec5022" stroke-width="15" stroke-linecap="round"/>
+          <line id="crB2" stroke="#f9a91a" stroke-width="11" stroke-linecap="round"/>
+          <circle id="crJ0" cx="463" cy="226" r="8" fill="#1e3264"/>
+          <circle id="crJ1" r="7" fill="#1e3264"/>
+          <circle id="crJ2" r="5" fill="#1e3264"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="route" id="proceso">
+    <div class="route-track" id="routeTrack">
+      <div class="route-pin">
+        <div class="wrap route-grid">
+          <div class="route-head">
+            <p class="label">Cómo trabajamos</p>
+            <h2>Así movemos <em>su carga.</em></h2>
+          </div>
+          <div class="route-map">
+            <div class="hud" aria-hidden="true"><span>Ruta de ejemplo</span><b class="hud-s" id="hudS">Cargando</b><span class="hud-c" id="hudC">9.932° N · 84.182° O</span></div>
+            <svg viewBox="0 0 800 520" role="img" aria-label="Mapa de la Gran Área Metropolitana con una ruta de ejemplo de Santa Ana a Heredia">
+              <defs>
+                <linearGradient id="rg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#f9a91a"/><stop offset=".55" stop-color="#ec5022"/><stop offset="1" stop-color="#c2581f"/></linearGradient>
+                <radialGradient id="halo"><stop offset="0" stop-color="#ec5022" stop-opacity=".6"/><stop offset="1" stop-color="#ec5022" stop-opacity="0"/></radialGradient>
+                <linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="#ffe6b8" stop-opacity=".55"/><stop offset="1" stop-color="#ffe6b8" stop-opacity="0"/></linearGradient>
+              </defs>
+              <g id="rcam">
+                <g id="topo" fill="none" stroke="#fff" stroke-opacity=".06" stroke-width="1"></g>
+                <g fill="none" stroke="#fff" stroke-opacity=".11" stroke-width="1.3">
+                  <path d="M180 119 Q205 150 233 186 Q236 230 235 275"/><path d="M180 119 Q262 120 346 152"/><path d="M233 186 Q290 160 346 152"/>
+                  <path d="M346 152 Q380 185 410 227"/><path d="M403 273 Q445 285 485 306 Q590 340 683 401"/><path d="M403 273 Q420 305 437 340"/>
+                </g>
+                <path id="rpath" d="M235 275 C262 292 284 302 308 299 C340 295 372 279 403 273 C418 262 414 242 410 227 C404 200 372 172 346 152" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round"/>
+                <path id="rtrail" d="M235 275 C262 292 284 302 308 299 C340 295 372 279 403 273 C418 262 414 242 410 227 C404 200 372 172 346 152" fill="none" stroke="url(#rg)" stroke-width="5" stroke-linecap="round"/>
+                <g class="city"><circle cx="180" cy="119" r="3.5"/><text x="168" y="111" text-anchor="end">Alajuela</text></g>
+                <g class="city"><circle cx="233" cy="186" r="3.5"/><text x="221" y="190" text-anchor="end">Belén</text></g>
+                <g class="city"><circle cx="410" cy="227" r="3.5"/><text x="422" y="231">Tibás</text></g>
+                <g class="city"><circle cx="403" cy="273" r="3.5"/><text x="416" y="288">San José</text></g>
+                <g class="city"><circle cx="308" cy="299" r="3.5"/><text x="308" y="322" text-anchor="middle">Escazú</text></g>
+                <g class="city"><circle cx="485" cy="306" r="3.5"/><text x="497" y="310">Curridabat</text></g>
+                <g class="city"><circle cx="437" cy="340" r="3.5"/><text x="449" y="353">Desamparados</text></g>
+                <g class="city"><circle cx="683" cy="401" r="3.5"/><text x="695" y="405">Cartago</text></g>
+                <g class="pin" id="pinA" transform="translate(235 275)"><circle class="halo" r="30" fill="url(#halo)"/><circle class="core" r="7" fill="#ec5022" stroke="#fff" stroke-width="2.5"/><text x="-16" y="5" text-anchor="end">Santa Ana</text></g>
+                <g class="pin" id="pinB" transform="translate(346 152)"><circle class="halo" r="30" fill="url(#halo)"/><circle class="core" r="7" fill="#0b1736" stroke="#fff" stroke-width="2.5"/><text x="16" y="5">Heredia</text></g>
+                <g id="rtruck" transform="translate(235 275)">
+                  <path d="M15 -5 L70 -24 L70 24 L15 5 Z" fill="url(#beam)"/>
+                  <g transform="translate(-15 -7.5)"><rect width="30" height="15" rx="3" fill="#fff"/><rect x="21" width="9" height="15" rx="2.5" fill="#ec5022"/><rect x="2.5" y="3" width="16" height="2.2" fill="#f9a91a"/><rect x="2.5" y="6.4" width="16" height="2.2" fill="#ec5022"/><rect x="2.5" y="9.8" width="16" height="2.2" fill="#87431b"/></g>
+                </g>
+              </g>
+            </svg>
+            <div class="hud-bar" aria-hidden="true"><i id="hudBar"></i></div>
+          </div>
+          <div class="route-side">
+            <ol class="rsteps" id="rsteps">
+              <li class="on"><span class="num">01</span><div><h3>Cargamos</h3><p>Con el montacargas propio subimos la carga al camión, sin depender de equipo en el sitio de origen.</p></div></li>
+              <li><span class="num">02</span><div><h3>Transportamos</h3><p>La carga viaja amarrada y protegida, en la plataforma adecuada para su tamaño y peso, a cualquier punto del país.</p></div></li>
+              <li><span class="num">03</span><div><h3>Descargamos</h3><p>Bajamos la carga donde usted la necesita, con montacargas o grúa. Menos tiempo y menos riesgo para su personal.</p></div></li>
+            </ol>
+            <a class="btn btn-o route-cta" href="#cotizar">Solicitar cotización <svg class="ar"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec paper" id="cobertura">
+    <div class="wrap cov-grid">
+      <div class="rv">
+        <p class="label">Cobertura</p>
+        <h2>Todo Costa Rica, <em>de Limón a Guanacaste.</em></h2>
+        <p class="lede">Nuestros camiones recorren las siete provincias. Usted nos dice dónde se recoge y dónde se entrega; nosotros llegamos.</p>
+        <ul class="prov" id="provList">
+          <li>Guanacaste</li><li>Puntarenas</li><li>Alajuela</li><li>Heredia</li><li>San José</li><li>Cartago</li><li>Limón</li>
+        </ul>
+        <a class="btn btn-k" href="#cotizar">Cotizar un traslado <svg class="ar"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="cr-map rv d1" id="crMap">
+        <svg viewBox="0 0 560 520" role="img" aria-label="Mapa de Costa Rica con las siete provincias">
+          <g id="crDots"></g>
+          <g id="crRoutes" fill="none" stroke="#ec5022" stroke-width="2.2" stroke-linecap="round"></g>
+          <g id="crPins"></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="band" aria-labelledby="band-t">
+    <img src="img/noche.webp" alt="" width="1640" height="525" loading="lazy">
+    <span class="glow" data-x=".728" data-y=".8" data-s=".6" aria-hidden="true"></span><span class="glow g2" data-x=".655" data-y=".3" data-s=".42" aria-hidden="true"></span>
+    <div class="wrap">
+      <div class="rv">
+        <p class="label">Día y noche</p>
+        <h2 id="band-t">Seguridad en <em>cada movimiento.</em></h2>
+        <p>Cada traslado se planifica para que su carga llegue completa, a tiempo y sin riesgos innecesarios.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec paper" id="cotizar">
+    <div class="wrap q-grid">
+      <div class="q-aside rv">
+        <p class="label">Cotizar</p>
+        <h2>Cuéntenos qué <em>necesita mover.</em></h2>
+        <p class="lede">Tres pasos y se abre WhatsApp con el mensaje listo y ordenado. Le respondemos con la cotización.</p>
+        <ul class="checks">
+          <li><svg><use href="#i-check"/></svg>Sin registros ni formularios largos.</li>
+          <li><svg><use href="#i-check"/></svg>Puede adjuntar fotos de la carga en el mismo chat.</li>
+          <li><svg><use href="#i-check"/></svg>Si prefiere, escríbanos directo al 8983 8585.</li>
+        </ul>
+        <div class="direct">
+          <a class="js-wa" href="https://wa.me/50689838585?text=Hola%2C%20quiero%20cotizar%20un%20transporte" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>+506 8983 8585</a>
+          <a href="mailto:nlosilla@transportespohlond.com"><svg><use href="#i-mail"/></svg>nlosilla@transportespohlond.com</a>
+        </div>
+      </div>
+      <form class="q wiz rv d1" id="qform" novalidate>
+        <div class="wiz-top"><p class="q-title">Solicitud de cotización</p><span class="wiz-n" id="wizN">Paso 1 de 3</span></div>
+        <div class="wiz-bar" aria-hidden="true"><i id="wizBar"></i></div>
+        <div class="step-f on" data-step="1" role="group" aria-labelledby="sf1">
+          <p class="sf-t" id="sf1">¿Qué necesita mover?</p>
+          <div class="chips" data-name="tipo">
+            <button type="button" class="chip">Maquinaria o equipo</button><button type="button" class="chip">Mercadería o materiales</button><button type="button" class="chip">Contenedor o estructura</button><button type="button" class="chip">Escultura u obra de arte</button><button type="button" class="chip">Vidrio o carga frágil</button><button type="button" class="chip">Otro</button>
+          </div>
+        </div>
+        <div class="step-f" data-step="2" role="group" aria-labelledby="sf2">
+          <p class="sf-t" id="sf2">¿Cómo es la carga?</p>
+          <div class="f"><label for="q-peso">Peso aproximado</label>
+            <select id="q-peso"><option>No estoy seguro</option><option>Menos de 1 tonelada</option><option>De 1 a 5 toneladas</option><option>De 5 a 15 toneladas</option><option>Más de 15 toneladas</option></select></div>
+          <div class="f"><label for="q-med">Medidas aproximadas</label><input id="q-med" type="text" placeholder="Ej.: 3 × 2 × 2 metros" autocomplete="off"></div>
+          <div class="f full"><span class="fl">¿Hace falta montacargas o grúa?</span>
+            <div class="chips" data-name="equipo"><button type="button" class="chip">Montacargas</button><button type="button" class="chip">Grúa</button><button type="button" class="chip">No sé, que me asesoren</button><button type="button" class="chip">No hace falta</button></div></div>
+        </div>
+        <div class="step-f" data-step="3" role="group" aria-labelledby="sf3">
+          <p class="sf-t" id="sf3">¿De dónde a dónde, y cuándo?</p>
+          <div class="f"><label for="q-origen">Dónde se recoge</label><input id="q-origen" type="text" placeholder="Ej.: Santa Ana" autocomplete="off"></div>
+          <div class="f"><label for="q-destino">Dónde se entrega</label><input id="q-destino" type="text" placeholder="Ej.: Heredia" autocomplete="off"></div>
+          <div class="f"><label for="q-fecha">Fecha aproximada</label><input id="q-fecha" type="text" placeholder="Ej.: próximo lunes"></div>
+          <div class="f"><label for="q-det">Detalles</label><input id="q-det" type="text" placeholder="Acceso, horario, etc." autocomplete="off"></div>
+        </div>
+        <div class="wiz-nav">
+          <button type="button" class="btn btn-k" id="wizBack" hidden>Atrás</button>
+          <button type="button" class="btn btn-o" id="wizNext" disabled>Siguiente <svg class="ar"><use href="#i-arrow"/></svg></button>
+          <button type="submit" class="btn btn-o" id="wizSend" hidden><svg><use href="#i-wa"/></svg>Enviar por WhatsApp</button>
+        </div>
+        <p class="q-note">Sus datos no se guardan en esta página; solo se pasan al mensaje de WhatsApp. Ahí mismo puede adjuntar fotos de la carga.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="sec jobs" id="trabaje">
+    <div class="wrap jobs-grid">
+      <div class="rv">
+        <p class="label">Trabaje con nosotros</p>
+        <h2>Se solicitan <em>choferes.</em></h2>
+        <p class="lede">Si tiene experiencia manejando camión y quiere trabajar dentro del GAM, envíenos sus documentos.</p>
+        <div class="lic" aria-label="Licencias aceptadas">Licencias <span>B1</span><span>B2</span><span>B3</span></div>
+        <p class="req-t">Marque lo que ya tiene:</p>
+        <ul class="req" id="req">
+          <li><label><input type="checkbox"><span class="box"><svg><use href="#i-check"/></svg></span><span>Licencia B1, B2 o B3 al día</span></label></li>
+          <li><label><input type="checkbox"><span class="box"><svg><use href="#i-check"/></svg></span><span>Currículum completo</span></label></li>
+          <li><label><input type="checkbox"><span class="box"><svg><use href="#i-check"/></svg></span><span>Experiencia mínima de 2 a 4 años, según el puesto</span></label></li>
+          <li><label><input type="checkbox"><span class="box"><svg><use href="#i-check"/></svg></span><span>Hoja de delincuencia</span></label></li>
+          <li><label><input type="checkbox"><span class="box"><svg><use href="#i-check"/></svg></span><span>Lista de trabajos anteriores de la CCSS</span></label></li>
+          <li><label><input type="checkbox"><span class="box"><svg><use href="#i-check"/></svg></span><span>3 referencias laborales</span></label></li>
+          <li><label><input type="checkbox"><span class="box"><svg><use href="#i-check"/></svg></span><span>Disponibilidad para trasladarse dentro del GAM</span></label></li>
+        </ul>
+        <div class="req-meter"><div class="rm-bar" aria-hidden="true"><i id="reqBar"></i></div><p id="reqMsg">0 de 7</p></div>
+        <label class="drop" id="drop" for="cvFile">
+          <span class="ic"><svg><use href="#i-upload"/></svg></span>
+          <span><b id="dropT">Suba aquí su currículum</b><span id="dropS">PDF, Word o foto. Arrástrelo o toque para elegirlo.</span></span>
+        </label>
+        <input type="file" id="cvFile" accept=".pdf,.doc,.docx,image/*" hidden>
+        <div class="jobs-actions">
+          <a class="btn btn-o js-wa" href="https://wa.me/50689838585?text=Hola%2C%20quiero%20aplicar%20como%20chofer" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enviar mi currículum por WhatsApp</a>
+        </div>
+        <p class="jobs-alt">También puede enviarlo a <a href="mailto:rh-administracion@transportespohlond.com">rh-administracion<wbr>@transportespohlond.com</a></p>
+      </div>
+      <div class="rv d1">
+        <div class="chat" id="recruit" aria-label="Asistente de reclutamiento">
+          <div class="chat-h">
+            <span class="av"><img src="img/icono.png" alt=""></span>
+            <span class="who"><b>Asistente de reclutamiento</b><small><span class="live"></span><span class="st">En línea</span></small></span>
+            <span class="ai">Asistente virtual</span>
+            <button class="chat-x js-restart" type="button" aria-label="Empezar de nuevo"><svg><use href="#i-redo"/></svg></button>
+          </div>
+          <div class="chat-b" aria-live="polite"></div>
+          <form class="chat-f">
+            <button class="cbtn js-attach" type="button" aria-label="Adjuntar currículum" disabled><svg><use href="#i-clip"/></svg></button>
+            <input type="text" placeholder="Escriba aquí…" aria-label="Mensaje" disabled>
+            <button class="cbtn send" type="submit" aria-label="Enviar" disabled><svg><use href="#i-send"/></svg></button>
+          </form>
+          <p class="demo-note">Esta página no guarda sus datos; usted los envía por WhatsApp.</p>
+        </div>
+        <p class="rh-note"><svg><use href="#i-doc"/></svg><span>Cada solicitud le llega a Recursos Humanos ordenada en una ficha.</span></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot" id="contacto">
   <div class="wrap">
-    <span data-en="© 2026 Transportes Pohlond · Serving all of Costa Rica">© 2026 Transportes Pohlond · Servicio en todo Costa Rica</span>
-    <a class="made" href="https://hacksincodigos.com" target="_blank" rel="noopener"><span data-en="Website by">Sitio desarrollado por</span><img src="img/hacksincodigos.webp" alt="HacksinCodigos" width="817" height="269"></a>
+    <div class="foot-cta">
+      <div class="rv">
+        <h2>¿Qué necesita <em>mover?</em></h2>
+        <p>Escríbanos por WhatsApp, por correo o en redes. Atendemos en todo Costa Rica.</p>
+      </div>
+      <div class="foot-act rv d1">
+        <a class="btn btn-o" href="#cotizar">Solicitar cotización <svg class="ar"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-l js-wa" href="https://wa.me/50689838585?text=Hola%2C%20quiero%20cotizar%20un%20transporte" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp 8983 8585</a>
+      </div>
+    </div>
+    <div class="foot-cols">
+      <div>
+        <img src="img/logo-blanco.webp" alt="Transportes Pohlond" width="1200" height="356" loading="lazy">
+        <p class="about">Más de 20 años en transporte de carga y cargas especiales en todo Costa Rica.</p>
+        <div class="social">
+          <a class="soc wa js-wa" href="https://wa.me/50689838585?text=Hola%2C%20quiero%20cotizar%20un%20transporte" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+          <a class="soc fb" href="https://www.facebook.com/transportesgrupopohlond" target="_blank" rel="noopener"><svg><use href="#i-fb"/></svg>Facebook</a>
+          <a class="soc ig" href="https://www.instagram.com/transportespohlond/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>Instagram</a>
+        </div>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <ul>
+          <li><a class="js-wa" href="https://wa.me/50689838585?text=Hola%2C%20quiero%20cotizar%20un%20transporte" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>+506 8983 8585</a></li>
+          <li><a href="mailto:nlosilla@transportespohlond.com"><svg><use href="#i-mail"/></svg><span>nlosilla<wbr>@transportespohlond.com</span></a></li>
+          <li><a href="#empresa"><svg><use href="#i-pin"/></svg>Servicio en todo Costa Rica</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Empleo</h3>
+        <ul>
+          <li><a href="#trabaje">Se solicitan choferes</a></li>
+          <li><a href="mailto:rh-administracion@transportespohlond.com"><span><small>Recursos Humanos</small>rh-administracion<wbr>@transportespohlond.com</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Síganos</h3>
+        <ul>
+          <li><a href="https://www.facebook.com/transportesgrupopohlond" target="_blank" rel="noopener"><svg><use href="#i-fb"/></svg>Facebook</a></li>
+          <li><a href="https://www.instagram.com/transportespohlond/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="livery" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap foot-bot">
+    <span>© 2026 Transportes Pohlond · Costa Rica</span>
+    <a class="made" href="https://hacksincodigos.com" target="_blank" rel="noopener"><span>Sitio desarrollado por</span><img src="img/hacksincodigos.webp" alt="HacksinCodigos" width="817" height="269" loading="lazy"></a>
   </div>
 </footer>
 
+<div class="cpanel" id="cpanel" role="dialog" aria-label="Asistente virtual de Transportes Pohlond">
+  <div class="chat" id="assist">
+    <div class="chat-h">
+      <span class="av"><img src="img/icono.png" alt=""></span>
+      <span class="who"><b>Asistente Pohlond</b><small><span class="live"></span><span class="st">En línea</span></small></span>
+      <span class="ai">Asistente virtual</span>
+      <button class="chat-x js-close" type="button" aria-label="Cerrar"><svg><use href="#i-x"/></svg></button>
+    </div>
+    <div class="chat-b" aria-live="polite"></div>
+    <form class="chat-f">
+      <button class="cbtn js-attach" type="button" aria-label="Adjuntar archivo" disabled><svg><use href="#i-clip"/></svg></button>
+      <input type="text" placeholder="Escriba aquí…" aria-label="Mensaje" disabled>
+      <button class="cbtn send" type="submit" aria-label="Enviar" disabled><svg><use href="#i-send"/></svg></button>
+    </form>
+    <p class="demo-note">Esta página no guarda sus datos; usted los envía por WhatsApp.</p>
+  </div>
+</div>
+<div class="peek" id="peek" aria-hidden="true"><img alt="" width="340" height="255"></div>
+<div class="fab-row" id="fabRow">
+  <span class="fab-tip" id="fabTip"><button class="tip-go js-open" type="button">¿Le ayudo a cotizar?</button><button class="tip-x" id="tipX" type="button" aria-label="Cerrar sugerencia"><svg><use href="#i-x"/></svg></button></span>
+  <button class="fab" id="fab" type="button" aria-label="Abrir asistente" aria-expanded="false" aria-controls="cpanel"><svg class="c"><use href="#i-chat"/></svg><svg class="x"><use href="#i-x"/></svg></button>
+</div>
+<a class="wa-float js-wa" href="https://wa.me/50689838585?text=Hola%2C%20quiero%20cotizar%20un%20transporte" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp al 8983 8585"><svg><use href="#i-wa"/></svg></a>
+
 <script>
+// Spanish / English switch. The page is written in Spanish; EN maps each Spanish string to its English version.
+// Static text nodes and attributes are swapped in place; the chat scripts call T() for their own strings.
 (function () {
-  var root = document.documentElement;
-
-  // Entrance: lights on, headlights ignite, livery stripe runs across
-  requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.add('lit'); }); });
-
-  // Place the headlight glows over the photo, whatever the crop
-  var img = document.querySelector('.stage>img'), glows = document.querySelectorAll('.glow');
-  function place() {
-    var W = img.offsetWidth, H = img.offsetHeight, sc = Math.max(W / 1640, H / 525), rw = 1640 * sc, rh = 525 * sc;
-    var op = getComputedStyle(img).objectPosition.split(' ').map(parseFloat), ox = (W - rw) * op[0] / 100, oy = (H - rh) * op[1] / 100;
-    glows.forEach(function (g) {
-      g.style.left = (img.offsetLeft + ox + rw * g.dataset.x) + 'px';
-      g.style.top = (img.offsetTop + oy + rh * g.dataset.y) + 'px';
-      g.style.setProperty('--s', (rh * g.dataset.s) + 'px');
-    });
-  }
-  place(); addEventListener('resize', place); img.addEventListener('load', place);
-
-  // Spanish / English: each element carries its English text in data-en
-  var TITLE = { es: document.title, en: 'Transportes Pohlond · Website under construction' };
+  var EN = {
+    'Transportes Pohlond · Transporte y cargas especiales en el GAM': 'Transportes Pohlond · Transport and special cargo in Costa Rica’s GAM',
+    'Demo preparado por': 'Demo prepared by',
+    'Servicios': 'Services', 'Cómo trabajamos': 'How we work', 'Por qué Pohlond': 'Why Pohlond', 'Trabaje con nosotros': 'Work with us', 'Contacto': 'Contact',
+    'Montacargas a bordo': 'Forklift on board',
+    'Transporte y': 'Transport &', 'Cargas': 'Special', 'especiales': 'cargo', 'en el GAM': 'in the GAM',
+    'Camiones con montacargas a bordo: cargamos, transportamos y descargamos': 'Trucks with a forklift on board: we load, haul and unload',
+    'su mercadería': 'your goods', 'en Santa Ana y toda la Gran Área Metropolitana': 'in Santa Ana and the entire Greater Metropolitan Area',
+    'Cotizar ahora': 'Get a quote', 'Empresa costarricense': 'Costa Rican company', 'Todo el GAM': 'The whole GAM', 'Se solicitan choferes': 'We’re hiring drivers',
+    'Transporte de carga': 'Freight transport', 'Cargas especiales': 'Special cargo', 'Camión con montacargas': 'Truck with forklift', 'Entregas en el GAM': 'Deliveries in the GAM',
+    'Maquinaria': 'Machinery', 'Materiales': 'Materials', 'Carga y descarga': 'Loading and unloading',
+    'Lo que': 'What we', 'movemos': 'move', 'por usted': 'for you',
+    'Desde mercadería y materiales hasta maquinaria y cargas delicadas, con el equipo adecuado para cada traslado en Santa Ana y todo el GAM.': 'From goods and materials to machinery and delicate loads, with the right equipment for every move in Santa Ana and across the GAM.',
+    'Traslado de mercadería, materiales y equipo en camiones de plataforma, con la carga bien amarrada y protegida.': 'Goods, materials and equipment moved on flatbed trucks, with the load properly strapped and protected.',
+    'Maquinaria, estructuras y cargas pesadas o delicadas que requieren planificación, camión con grúa y maniobras cuidadosas.': 'Machinery, structures and heavy or delicate loads that call for planning, a crane truck and careful handling.',
+    'El montacargas viaja con el camión: cargamos, transportamos y descargamos en su sitio, sin esperar equipo de terceros.': 'The forklift rides with the truck: we load, haul and unload at your site, with no waiting for third-party equipment.',
+    'Entregas dentro del GAM': 'Deliveries across the GAM',
+    'Entregas en Santa Ana, San José y el resto de la Gran Área Metropolitana, coordinadas con usted de principio a fin.': 'Deliveries in Santa Ana, San José and the rest of the Greater Metropolitan Area, coordinated with you from start to finish.',
+    'Llegamos con el montacargas a bordo, así su carga no espera equipo ni personal extra en ningún punto del recorrido.': 'We arrive with the forklift on board, so your load never waits for extra equipment or crew at any point of the trip.',
+    'Cargamos': 'We load', 'Transportamos': 'We haul', 'Descargamos': 'We unload', 'Cotizar mi traslado': 'Quote my move',
+    'Con el montacargas propio subimos la carga al camión, sin depender de equipo en el sitio de origen.': 'With our own forklift we put the load on the truck, without relying on equipment at the pickup site.',
+    'La carga viaja amarrada y protegida, en la plataforma adecuada para su tamaño y peso, a cualquier punto del GAM.': 'The load travels strapped and protected, on the right flatbed for its size and weight, to any point in the GAM.',
+    'Bajamos la carga donde usted la necesita, con montacargas o grúa. Menos tiempo y menos riesgo para su personal.': 'We set the load down where you need it, by forklift or crane. Less time and less risk for your staff.',
+    'Día y noche': 'Day and night', 'Seguridad en': 'Safety in', 'cada movimiento': 'every move',
+    'Cada traslado se planifica para que su carga llegue completa, a tiempo y sin riesgos innecesarios.': 'Every move is planned so your load arrives complete, on time and without unnecessary risk.',
+    '¡Contáctenos!': 'Contact us!',
+    // Immersive layer: film captions, kinetic type, word-by-word night headline, scroll story hint
+    'Camión con grúa': 'Crane truck', 'Seguridad': 'Safety', 'en': 'in', 'cada': 'every', 'movimiento': 'move',
+    'Desplácese para ver el recorrido': 'Scroll to follow the route',
+    'Cargas delicadas': 'Delicate cargo', 'desde maquinaria hasta esculturas': 'anything from machinery to sculptures',
+    'Frágil': 'Fragile', 'Esculturas': 'Sculptures', 'Vidrio': 'Glass', 'Contenedores': 'Containers',
+    'Maquinaria, estructuras, esculturas y vidrio: cargas pesadas o delicadas que se mueven con planificación, camión con grúa y maniobras cuidadosas.': 'Machinery, structures, sculptures and glass: heavy or delicate loads moved with a plan, a crane truck and careful handling.',
+    // "Lo que transportamos"
+    'Lo que transportamos': 'What we move', 'Cada pieza llega': 'Every piece arrives', 'como salió': 'the way it left',
+    'Cuando la carga es frágil, cada detalle cuenta: el embalaje, el amarre, la maniobra y la descarga.': 'When the load is fragile, every detail counts: the packing, the strapping, the lift and the drop-off.',
+    'Esculturas y obras de arte': 'Sculptures and artwork',
+    'Izadas con grúa y eslingas, con cada maniobra planificada para que lleguen intactas.': 'Lifted by crane on soft slings, every move planned so they arrive intact.',
+    'Vidrio y piezas frágiles': 'Glass and fragile pieces',
+    'Embalaje, amarre y manejo cuidadoso de principio a fin. Lo frágil viaja protegido.': 'Packed, strapped and handled with care from pickup to drop-off. Fragile travels protected.',
+    'Maquinaria y equipo': 'Machinery and equipment', 'Montacargas a bordo. Grúa cuando la carga lo pide.': 'Forklift on board. A crane when the load calls for one.',
+    'Mercadería y materiales': 'Goods and materials', 'Tarimas, cajas y materiales de obra, cargados y descargados en su sitio.': 'Pallets, crates and building materials, loaded and unloaded right on site.',
+    'Estructuras y contenedores': 'Structures and containers',
+    'Oficinas contenedor y estructuras de acero, colocadas con grúa donde usted las necesita.': 'Container offices and steel structures, set down by crane exactly where you need them.',
+    'Escultura izada con grúa y eslingas': 'Sculpture lifted by crane on slings',
+    'Montacargas Manitou asegurado sobre la plataforma del camión, de noche': 'Manitou forklift secured on the truck bed at night',
+    'Su carga, en manos de': 'Your cargo, in the hands of', 'quien tiene el equipo': 'those with the right equipment',
+    'Mover carga pesada sin el equipo correcto cuesta tiempo y pone en riesgo a su gente. Nosotros llegamos preparados.': 'Moving heavy loads without the right equipment costs time and puts your people at risk. We come prepared.',
+    'Seguridad en la carga': 'Cargo safety',
+    'Cada maniobra se planifica: amarre, protección de la mercadería y el equipo correcto para subirla y bajarla.': 'Every maneuver is planned: strapping, protecting the goods and the right equipment to load and unload them.',
+    'Montacargas propio': 'Our own forklift',
+    'El montacargas va en el camión. No depende de que haya equipo en el sitio de carga o de entrega.': 'The forklift travels on the truck. You don’t depend on equipment at the pickup or delivery site.',
+    'Cobertura en el GAM': 'Coverage across the GAM', 'Trabajamos desde Santa Ana en toda la Gran Área Metropolitana.': 'From Santa Ana, we work throughout the Greater Metropolitan Area.',
+    'Equipo': 'Equipment',
+    'Síganos en': 'Follow us on', 'Ahí publicamos nuestros trabajos, consejos para mover su carga y las vacantes para choferes.': 'We post our jobs, tips for moving your cargo and driver openings there.',
+    'Transporte y cargas especiales · Santa Ana': 'Transport and special cargo · Santa Ana', 'Seguir en Facebook': 'Follow on Facebook',
+    'Cotizar': 'Quote', 'Cuéntenos qué': 'Tell us what you', 'necesita mover': 'need to move',
+    'Llene estos datos y se abre WhatsApp con el mensaje listo. Le respondemos con la cotización.': 'Fill in these details and WhatsApp opens with the message ready. We’ll reply with your quote.',
+    'Sin registros ni formularios largos.': 'No sign-ups or long forms.', 'Puede adjuntar fotos de la carga en el mismo chat.': 'You can attach photos of the load in the same chat.',
+    'Si prefiere, escríbanos directo al 8983 8585.': 'Or message us directly at 8983 8585.',
+    'Solicitud de cotización': 'Quote request', 'Tipo de carga': 'Type of cargo', 'Mercadería': 'Goods', 'Maquinaria o equipo': 'Machinery or equipment',
+    'Materiales de construcción': 'Construction materials', 'Carga especial o delicada': 'Special or delicate cargo', 'Otro': 'Other',
+    'Fecha aproximada': 'Approximate date', 'Dónde se recoge': 'Pickup location', 'Dónde se entrega': 'Delivery location', 'Detalles': 'Details',
+    'Enviar por WhatsApp': 'Send via WhatsApp', 'Sus datos no se guardan en esta página; solo se pasan al mensaje de WhatsApp.': 'Your details aren’t stored on this page; they only go into the WhatsApp message.',
+    'Se solicitan': 'We’re hiring', 'choferes': 'drivers',
+    'Si tiene experiencia manejando camión y quiere trabajar dentro del GAM, envíenos sus documentos.': 'If you have truck-driving experience and want to work within the GAM, send us your documents.',
+    'Licencias': 'Licenses', 'Licencia B1, B2 o B3 al día': 'Valid B1, B2 or B3 license', 'Currículum completo': 'Complete résumé',
+    'Experiencia mínima de 2 a 4 años, según el puesto': 'At least 2 to 4 years of experience, depending on the position',
+    'Hoja de delincuencia': 'Criminal record certificate', 'Lista de trabajos anteriores de la CCSS': 'CCSS employment history',
+    '3 referencias laborales': '3 work references', 'Disponibilidad para trasladarse dentro del GAM': 'Available to travel within the GAM',
+    'Suba aquí su currículum': 'Upload your résumé here', 'PDF, Word o foto. Arrástrelo o toque para elegirlo.': 'PDF, Word or photo. Drag it here or tap to choose.',
+    'Enviar mi currículum por WhatsApp': 'Send my résumé via WhatsApp', 'También puede enviarlo a': 'You can also send it to',
+    'Asistente de reclutamiento': 'Recruiting assistant', 'En línea': 'Online', 'Agente de IA': 'AI agent',
+    'Vista previa del agente · en esta demo no se guarda ni se envía nada': 'Agent preview · nothing is stored or sent in this demo',
+    'Cada solicitud le llega a Recursos Humanos ordenada en una ficha.': 'Every application reaches Human Resources organized in a profile card.',
+    'Hablemos de su': 'Let’s talk about your', 'próximo traslado': 'next move',
+    'Escríbanos por WhatsApp, por correo o en Facebook. Atendemos en toda la Gran Área Metropolitana.': 'Reach us on WhatsApp, by email or on Facebook. We serve the entire Greater Metropolitan Area.',
+    'WhatsApp y teléfono': 'WhatsApp and phone', 'Escribir ahora →': 'Message now →', 'Ver página →': 'View page →', 'Correo': 'Email', 'Enviar correo →': 'Send email →',
+    'Ubicación': 'Location', 'Trabajamos en todo el GAM': 'We work across the GAM',
+    '¿Qué necesita': 'What do you need to', 'mover?': 'move?',
+    'Cuéntenos la carga, dónde se recoge y dónde se entrega. Le respondemos con la cotización.': 'Tell us the cargo, where it’s picked up and where it goes. We’ll reply with your quote.',
+    'O escríbanos al 8983 8585': 'Or message us at 8983 8585',
+    '© 2026 Transportes Pohlond · Santa Ana, San José, Costa Rica': '© 2026 Transportes Pohlond · Santa Ana, San José, Costa Rica',
+    'Asistente Pohlond': 'Pohlond Assistant', '¿Le ayudo a cotizar?': 'Need a quote?',
+    'Transportes Pohlond, inicio': 'Transportes Pohlond, home', 'Principal': 'Main', 'Facebook de Transportes Pohlond': 'Transportes Pohlond on Facebook',
+    'Escribir por WhatsApp al 8983 8585': 'Message us on WhatsApp at 8983 8585',
+    'Camión Mack de Transportes Pohlond trasladando un montacargas y una cargadora': 'Transportes Pohlond Mack truck hauling a forklift and a loader',
+    'Montacargas descargando una caja grande junto al camión': 'Forklift unloading a large crate next to the truck',
+    'Camión de plataforma con carga amarrada y un montacargas a bordo': 'Flatbed truck with strapped cargo and a forklift on board',
+    'Camión con grúa cargando estructuras de acero': 'Crane truck loading steel structures',
+    'Camión con grúa de Transportes Pohlond entregando una oficina contenedor': 'Transportes Pohlond crane truck delivering a container office',
+    'Montacargas cargando una caja grande': 'Forklift loading a large crate', 'Camión Mack trasladando un montacargas rojo': 'Mack truck hauling a red forklift',
+    'Grúa articulada descargando en la plataforma del camión': 'Knuckle-boom crane unloading on the truck bed', 'Camión con grúa trabajando en un tajo': 'Crane truck working at a quarry',
+    'Camión de Transportes Pohlond con grúa listo para salir': 'Transportes Pohlond crane truck ready to roll',
+    'Ver publicación en Facebook': 'View post on Facebook',
+    'Publicación: el equipo necesario para la carga y descarga': 'Post: the right equipment for loading and unloading',
+    'Publicación: evite riesgos innecesarios al mover su mercancía': 'Post: avoid unnecessary risks when moving your goods',
+    'Publicación: la mejor tecnología necesita el mejor talento humano': 'Post: the best technology needs the best people',
+    'Ej.: próximo lunes': 'E.g.: next Monday', 'Ej.: Santa Ana': 'E.g.: Santa Ana', 'Ej.: Heredia': 'E.g.: Heredia',
+    'Peso o medidas aproximadas, si necesita montacargas o grúa, etc.': 'Approximate weight or size, whether you need a forklift or crane, etc.',
+    'Licencias aceptadas': 'Accepted licenses', 'Empezar de nuevo': 'Start over', 'Adjuntar currículum': 'Attach résumé', 'Escriba aquí…': 'Type here…',
+    'Mensaje': 'Message', 'Enviar': 'Send', 'Asistente virtual de Transportes Pohlond': 'Transportes Pohlond virtual assistant', 'Cerrar': 'Close',
+    'Adjuntar archivo': 'Attach file', 'Cerrar sugerencia': 'Dismiss tip', 'Abrir asistente': 'Open assistant', 'Idioma': 'Language',
+    // WhatsApp prefilled messages
+    'Hola, quiero cotizar un transporte': 'Hi, I’d like a quote for a transport job',
+    'Hola, quiero aplicar como chofer': 'Hi, I’d like to apply as a driver',
+    'Hola, quiero hablar con alguien de Transportes Pohlond': 'Hi, I’d like to talk to someone at Transportes Pohlond',
+    // Dynamic strings (chat agents, dropzone, quote form)
+    'Escribiendo…': 'Typing…', 'Volver al inicio': 'Back to start', 'Recibido: {f}': 'Received: {f}', '{s} · El asistente ya lo tiene.': '{s} · The assistant has it.',
+    'Hola, quiero cotizar un transporte.': 'Hi, I’d like a quote for a transport job.', 'Tipo de carga: {v}': 'Type of cargo: {v}', 'Se recoge en: {v}': 'Pickup: {v}',
+    'Se entrega en: {v}': 'Delivery: {v}', 'Fecha: {v}': 'Date: {v}', 'Detalles: {v}': 'Details: {v}',
+    '¡Hola! Soy el asistente de reclutamiento de <b>Transportes Pohlond</b>.': 'Hi! I’m the recruiting assistant at <b>Transportes Pohlond</b>.',
+    'Le hago unas preguntas rápidas y le paso su ficha a Recursos Humanos. Toma unos 2 minutos. ¿Cómo se llama?': 'I’ll ask you a few quick questions and pass your profile to Human Resources. It takes about 2 minutes. What’s your name?',
+    'Nombre y apellido': 'First and last name', 'Mucho gusto, {n}. ¿Qué licencia de conducir tiene?': 'Nice to meet you, {n}. What driver’s license do you have?', 'Otra': 'Other',
+    'Gracias por su interés. Por ahora buscamos choferes con licencia B1, B2 o B3, así que esta vez no puedo pasar su solicitud.': 'Thanks for your interest. Right now we’re looking for drivers with a B1, B2 or B3 license, so I can’t forward your application this time.',
+    'Cuando abramos un puesto para su licencia lo publicaremos en nuestro Facebook. ¡Mucho éxito!': 'When we open a position for your license we’ll post it on our Facebook. Best of luck!',
+    '¿Cuántos años de experiencia tiene manejando camión?': 'How many years have you been driving trucks?',
+    'Menos de 2 años': 'Less than 2 years', 'De 2 a 4 años': '2 to 4 years', 'Más de 4 años': 'More than 4 years',
+    'Le agradezco la sinceridad. Para este puesto pedimos al menos 2 años de experiencia manejando camión.': 'Thanks for being upfront. For this position we ask for at least 2 years of truck-driving experience.',
+    'Le invitamos a aplicar de nuevo cuando la tenga. ¡Mucho éxito, {n}!': 'You’re welcome to apply again once you have it. Best of luck, {n}!',
+    'Excelente. ¿En qué zona vive?': 'Great. Where do you live?', 'Ej.: Alajuelita': 'E.g.: Alajuelita',
+    'Anotado. El trabajo es dentro del GAM. ¿Qué horario puede trabajar?': 'Got it. The job is within the GAM. What shift can you work?',
+    'Diurno': 'Day', 'Nocturno': 'Night', 'Mixto': 'Mixed', 'Cualquiera': 'Any',
+    '¿Cuál es su aspiración salarial mensual?': 'What monthly salary are you looking for?', 'Ej.: ₡450 000': 'E.g.: ₡450,000',
+    '¿Tiene al día la hoja de delincuencia y la lista de trabajos anteriores de la CCSS?': 'Do you have an up-to-date criminal record certificate and your CCSS employment history?',
+    'Sí, ambas': 'Yes, both', 'Me falta alguna': 'I’m missing one',
+    'Ya tengo el currículum que subió: <b>{f}</b>.': 'I already have the résumé you uploaded: <b>{f}</b>.',
+    'Por último, adjunte su currículum con el clip o en el recuadro de al lado. Puede ser PDF, Word o una foto.': 'Finally, attach your résumé with the clip or in the box next to this chat. It can be a PDF, Word file or a photo.',
+    'Revisando su currículum…': 'Reviewing your résumé…',
+    'Ficha para RH': 'HR profile card', 'Cumple requisitos': 'Meets requirements', 'Revisar documentos': 'Check documents',
+    'Candidato': 'Candidate', 'Licencia': 'License', 'Experiencia': 'Experience', 'Zona': 'Area', 'Horario': 'Shift', 'Aspiración': 'Expected salary',
+    'Documentos': 'Documents', 'Al día': 'Up to date', 'Pendientes': 'Pending', 'Currículum': 'Résumé',
+    '¡Listo, {n}! Su ficha ya está con Recursos Humanos. Si avanza en el proceso, le escribimos por WhatsApp.': 'All set, {n}! Your profile is now with Human Resources. If you move forward in the process, we’ll message you on WhatsApp.',
+    ' Mientras tanto, vaya sacando los documentos que le faltan.': ' Meanwhile, start getting the documents you’re missing.',
+    '¡Hola! Soy el asistente virtual de <b>Transportes Pohlond</b>. ¿En qué le ayudo?': 'Hi! I’m the virtual assistant at <b>Transportes Pohlond</b>. How can I help?',
+    'Cotizar un transporte': 'Get a transport quote', 'Trabajar como chofer': 'Work as a driver', 'Hablar con una persona': 'Talk to a person',
+    '¡Qué bien! Le atiende nuestro asistente de reclutamiento: le hace unas preguntas y recibe su currículum.': 'Great! Our recruiting assistant will help you: it asks a few questions and takes your résumé.',
+    'Ir a «Trabaje con nosotros»': 'Go to “Work with us”', 'Claro. Le comunico por WhatsApp con nuestro equipo.': 'Sure. I’ll connect you with our team on WhatsApp.',
+    'Abrir WhatsApp': 'Open WhatsApp', 'Con gusto. ¿Qué necesita mover?': 'Happy to help. What do you need to move?', 'Carga especial': 'Special cargo',
+    '¿Dónde se recoge la carga?': 'Where should we pick up the load?', '¿Y dónde se entrega?': 'And where does it go?', '¿Para cuándo lo necesita?': 'When do you need it?',
+    'Hoy o mañana': 'Today or tomorrow', 'Esta semana': 'This week', 'Más adelante': 'Later on',
+    '¿Hace falta montacargas o grúa para cargar o descargar?': 'Do you need a forklift or crane to load or unload?',
+    'Montacargas': 'Forklift', 'Grúa': 'Crane', 'No sé, que me asesoren': 'Not sure, please advise me', 'No hace falta': 'Not needed',
+    'Resumen de cotización': 'Quote summary', 'Listo': 'Ready', 'Carga': 'Cargo', 'Recoger en': 'Pick up at', 'Entregar en': 'Deliver to', 'Para': 'When',
+    'Le paso este resumen a nuestro equipo por WhatsApp para que le coticen.': 'I’ll send this summary to our team on WhatsApp so they can quote it.',
+    // Redesign (corporate version)
+    'Abrir menú': 'Open menu', 'Menú': 'Menu', 'Cerrar menú': 'Close menu', 'Menú móvil': 'Mobile menu',
+    'Transporte de carga especial · Costa Rica': 'Special cargo transport · Costa Rica',
+    'Cargamos,': 'We load,', 'transportamos': 'haul', 'y descargamos': 'and unload',
+    'Camiones con montacargas o grúa a bordo para mover maquinaria, esculturas, vidrio y mercadería en Santa Ana y toda la Gran Área Metropolitana.': 'Trucks with a forklift or crane on board to move machinery, sculptures, glass and goods in Santa Ana and across the Greater Metropolitan Area.',
+    'Solicitar cotización': 'Request a quote',
+    'Equipo a bordo': 'On-board equipment', 'Montacargas y grúa articulada': 'Forklift and knuckle-boom crane', 'Cobertura': 'Coverage',
+    'Gran Área Metropolitana': 'Greater Metropolitan Area', 'Base': 'Home base', 'Cotizaciones': 'Quotes',
+    'La empresa': 'The company',
+    'Transportes Pohlond es una empresa costarricense de transporte de carga.': 'Transportes Pohlond is a Costa Rican freight transport company.',
+    'Llegamos con el equipo para subir y bajar la carga, así que su traslado no depende de montacargas ni de personal en el sitio.': 'We arrive with the equipment to load and unload, so your move never depends on a forklift or crew at the site.',
+    'Ver servicios': 'View services', 'Grúa articulada': 'Knuckle-boom crane', 'Carga pesada': 'Heavy cargo',
+    'Del punto de carga al de entrega, con el equipo a bordo.': 'From pickup to drop-off, with the equipment on board.',
+    'Plataforma': 'Flatbed', 'Desde maquinaria hasta esculturas.': 'From machinery to sculptures.',
+    'Grúa · eslingas': 'Crane · slings', 'Embalaje · amarre': 'Packing · strapping', 'Plataforma · grúa': 'Flatbed · crane',
+    'Seguridad en cada movimiento.': 'Safety in every move.', 'Cuéntenos qué necesita mover.': 'Tell us what you need to move.',
+    'Se solicitan choferes.': 'We’re hiring drivers.', 'Empleo': 'Careers', 'Síganos': 'Follow us', 'Recursos Humanos': 'Human Resources',
+    'Transporte de carga y cargas especiales en la Gran Área Metropolitana de Costa Rica.': 'Freight and special cargo transport in Costa Rica’s Greater Metropolitan Area.',
+    'Demo preparado por HacksinCodigos': 'Demo prepared by HacksinCodigos',
+    'Transportes Pohlond · Transporte y cargas especiales en todo Costa Rica': 'Transportes Pohlond · Transport and special cargo across Costa Rica',
+    'Camiones con montacargas o grúa a bordo para mover maquinaria, esculturas, vidrio y mercadería en todo Costa Rica, de Limón a Guanacaste.': 'Trucks with a forklift or crane on board to move machinery, sculptures, glass and goods all over Costa Rica, from Limón to Guanacaste.',
+    'Flota': 'Fleet', 'Más de 80 camiones': '80+ trucks', 'Trayectoria': 'Track record', 'Más de 20 años': '20+ years', 'Todo Costa Rica': 'All of Costa Rica',
+    'Transportes Pohlond es una empresa costarricense de transporte de carga, con más de 20 años de trayectoria y más de 80 camiones.': 'Transportes Pohlond is a Costa Rican freight transport company with more than 20 years in business and over 80 trucks.',
+    'Desde mercadería y materiales hasta maquinaria y cargas delicadas, con el equipo adecuado para cada traslado, en todo Costa Rica.': 'From goods and materials to machinery and delicate loads, with the right equipment for every move, all over Costa Rica.',
+    'De Limón a Guanacaste': 'From Limón to Guanacaste', 'Entregas en todo el país': 'Deliveries nationwide',
+    'Entregas en todo Costa Rica, de Limón a Guanacaste, coordinadas con usted de principio a fin.': 'Deliveries all over Costa Rica, from Limón to Guanacaste, coordinated with you from start to finish.',
+    'La carga viaja amarrada y protegida, en la plataforma adecuada para su tamaño y peso, a cualquier punto del país.': 'The load travels strapped and protected, on the right flatbed for its size and weight, to any point in the country.',
+    'Escríbanos por WhatsApp, por correo o en redes. Atendemos en todo Costa Rica.': 'Reach us on WhatsApp, by email or on social media. We serve all of Costa Rica.',
+    'Más de 20 años en transporte de carga y cargas especiales en todo Costa Rica.': '20+ years in freight and special cargo transport across Costa Rica.',
+    'Servicio en todo Costa Rica': 'Serving all of Costa Rica', '© 2026 Transportes Pohlond · Costa Rica': '© 2026 Transportes Pohlond · Costa Rica',
+    'Instagram de Transportes Pohlond': 'Transportes Pohlond on Instagram',
+    'Master Move, división de cargas especializadas de Transportes Pohlond': 'Master Move, the specialized cargo division of Transportes Pohlond',
+    'Master Move es nuestra división de cargas especializadas, con el equipo más pesado y fuerte de la flota: maquinaria, estructuras, esculturas y vidrio, movidos con planificación, camión con grúa y maniobras cuidadosas.': 'Master Move is our specialized cargo division, with the heaviest and strongest equipment in the fleet: machinery, structures, sculptures and glass, moved with a plan, a crane truck and careful handling.',
+    'y descargamos.': 'and unload.', 'Del punto de carga al de entrega,': 'From pickup to drop-off,', 'con el equipo a bordo.': 'with the equipment on board.',
+    'Desde maquinaria': 'From machinery', 'hasta esculturas.': 'to sculptures.', 'cada movimiento.': 'every move.', 'necesita mover.': 'need to move.', 'choferes.': 'drivers.',
+    'Así movemos': 'This is how we move', 'su carga.': 'your cargo.', 'Ruta de ejemplo': 'Sample route',
+    'Cargando': 'Loading', 'En ruta': 'En route', 'Descargando': 'Unloading', 'Entregado': 'Delivered', '{la}° N · {lo}° O': '{la}° N · {lo}° W',
+    'Mapa de la Gran Área Metropolitana con una ruta de ejemplo de Santa Ana a Heredia': 'Map of the Greater Metropolitan Area with a sample route from Santa Ana to Heredia',
+    'Master Move': 'Master Move', 'Clientes': 'Customers', 'Necesito mover algo': 'I need to move something', 'Cotice en 3 pasos': 'Get a quote in 3 steps',
+    'Choferes': 'Drivers', 'Licencias B1, B2 y B3': 'B1, B2 and B3 licenses', 'Quiero manejar con Pohlond': 'I want to drive for Pohlond', 'Vea si califica en 1 minuto': 'See if you qualify in 1 minute',
+    'Más de 80 camiones,': 'Over 80 trucks,', 'el equipo correcto para cada carga.': 'the right equipment for every load.',
+    'Cada tipo de camión resuelve un trabajo distinto. Le asignamos el que su carga necesita; las capacidades exactas se las confirmamos al cotizar.': 'Each type of truck does a different job. We assign the one your load needs, and confirm exact capacities when we quote.',
+    'Hace': 'Does', 'Ideal para': 'Best for', 'Ventaja': 'Advantage', 'Camión plataforma con montacargas': 'Flatbed truck with forklift',
+    'Carga, transporta y descarga': 'Loads, hauls and unloads', 'Tarimas, cajas, equipo y materiales': 'Pallets, crates, equipment and materials', 'No depende de montacargas en el sitio': 'No need for a forklift on site',
+    'Camión grúa con brazo articulado': 'Knuckle-boom crane truck', 'Iza y coloca la carga': 'Lifts and places the load', 'Estructuras, contenedores y esculturas': 'Structures, containers and sculptures',
+    'Levanta sobre obstáculos y deja la pieza en su lugar': 'Lifts over obstacles and sets the piece in place', 'Cabezal con plataforma para equipo pesado': 'Tractor with heavy-equipment trailer',
+    'Traslada maquinaria pesada': 'Hauls heavy machinery', 'Montacargas, cargadores y equipo de obra': 'Forklifts, loaders and construction equipment', 'El equipo más pesado y fuerte de la flota': 'The heaviest, strongest equipment in the fleet',
+    'Carga general': 'General cargo', 'Camión plataforma': 'Flatbed truck', 'Fletes de mercadería y materiales': 'Freight for goods and materials', 'Materiales de construcción y mercadería': 'Construction materials and goods',
+    'Carga amarrada y protegida en todo el país': 'Strapped, protected loads nationwide', '¿Qué camión necesita?': 'Which truck do you need?',
+    '¿Es maquinaria pesada o equipo de obra?': 'Is it heavy machinery or construction equipment?', '¿Hay que levantarla sobre un muro o meterla en un patio?': 'Does it need lifting over a wall or into a yard?',
+    '¿Es una pieza delicada, como una escultura o vidrio?': 'Is it a delicate piece, like a sculpture or glass?', '¿Hay montacargas donde se carga y donde se entrega?': 'Is there a forklift at pickup and delivery?',
+    'Sí': 'Yes', 'No': 'No', 'Nuestra recomendación': 'Our recommendation', 'Responda las preguntas y le decimos qué camión le sirve.': 'Answer the questions and we’ll tell you which truck fits.',
+    'Cotizar por WhatsApp': 'Get a quote on WhatsApp', 'Master Move: cabezal con plataforma para equipo pesado': 'Master Move: tractor with heavy-equipment trailer',
+    'Hola, creo que necesito un {v}. ¿Me cotizan?': 'Hi, I think I need a {v}. Can you quote it?',
+    'División de cargas especializadas': 'Specialized cargo division', 'Lo más pesado,': 'The heaviest loads,', 'con el equipo más fuerte.': 'with the strongest equipment.',
+    'Master Move es la división de Transportes Pohlond para cargas especializadas: maquinaria pesada, estructuras y piezas que requieren grúa, planificación y maniobras cuidadosas.': 'Master Move is the Transportes Pohlond division for specialized cargo: heavy machinery, structures and pieces that call for a crane, planning and careful handling.',
+    'Cada maniobra se planifica antes de mover la carga.': 'Every maneuver is planned before the load moves.', 'Camión grúa con brazo articulado y plataformas para equipo pesado.': 'Knuckle-boom crane trucks and heavy-equipment trailers.',
+    'Servicio en todo Costa Rica.': 'Service across Costa Rica.', 'Solicite un proyecto': 'Request a project', 'Conocer Master Move': 'Discover Master Move',
+    'Ilustración de un camión grúa con brazo articulado levantando una caja': 'Illustration of a knuckle-boom crane truck lifting a crate',
+    'Todo Costa Rica,': 'All of Costa Rica,', 'de Limón a Guanacaste.': 'from Limón to Guanacaste.',
+    'Nuestros camiones recorren las siete provincias. Usted nos dice dónde se recoge y dónde se entrega; nosotros llegamos.': 'Our trucks run through all seven provinces. You tell us where to pick up and where to deliver; we get there.',
+    'Cotizar un traslado': 'Quote a move', 'Mapa de Costa Rica con las siete provincias': 'Map of Costa Rica with its seven provinces',
+    'Tres pasos y se abre WhatsApp con el mensaje listo y ordenado. Le respondemos con la cotización.': 'Three steps and WhatsApp opens with a ready, organized message. We’ll reply with your quote.',
+    'Paso 1 de 3': 'Step 1 of 3', 'Paso {n} de 3': 'Step {n} of 3', '¿Qué necesita mover?': 'What do you need to move?',
+    'Mercadería o materiales': 'Goods or materials', 'Contenedor o estructura': 'Container or structure', 'Escultura u obra de arte': 'Sculpture or artwork', 'Vidrio o carga frágil': 'Glass or fragile cargo',
+    '¿Cómo es la carga?': 'What is the load like?', 'Peso aproximado': 'Approximate weight', 'No estoy seguro': 'Not sure', 'Menos de 1 tonelada': 'Under 1 ton',
+    'De 1 a 5 toneladas': '1 to 5 tons', 'De 5 a 15 toneladas': '5 to 15 tons', 'Más de 15 toneladas': 'Over 15 tons', 'Medidas aproximadas': 'Approximate size',
+    'Ej.: 3 × 2 × 2 metros': 'E.g.: 3 × 2 × 2 meters', '¿Hace falta montacargas o grúa?': 'Do you need a forklift or crane?', '¿De dónde a dónde, y cuándo?': 'From where to where, and when?',
+    'Acceso, horario, etc.': 'Access, schedule, etc.', 'Atrás': 'Back', 'Siguiente': 'Next',
+    'Sus datos no se guardan en esta página; solo se pasan al mensaje de WhatsApp. Ahí mismo puede adjuntar fotos de la carga.': 'Your details aren’t stored on this page; they only go into the WhatsApp message, where you can also attach photos of the load.',
+    'Peso aproximado: {v}': 'Approximate weight: {v}', 'Medidas: {v}': 'Size: {v}', 'Les adjunto fotos de la carga.': 'I’m attaching photos of the load.',
+    'Marque lo que ya tiene:': 'Tick what you already have:', '{n} de {t}': '{n} of {t}', '¡Cumple todo! Suba su currículum y aplique.': 'You meet everything! Upload your résumé and apply.',
+    'Tiene {n} de {t}. Puede aplicar igual y completar lo que falte.': 'You have {n} of {t}. You can still apply and complete the rest.',
+    'Sitio desarrollado por': 'Website by', 'Asistente virtual': 'Virtual assistant', 'Esta página no guarda sus datos; usted los envía por WhatsApp.': 'This page doesn’t store your details; you send them via WhatsApp.',
+    'Preparando su ficha…': 'Preparing your profile…', '¡Listo, {n}! Toque el botón para enviar su ficha a Recursos Humanos por WhatsApp y adjunte ahí su currículum.': 'All set, {n}! Tap the button to send your profile to Human Resources on WhatsApp and attach your résumé there.',
+    'Hola, quiero aplicar como chofer.': 'Hi, I’d like to apply as a driver.', 'Nombre: {v}': 'Name: {v}', 'Licencia: {v}': 'License: {v}', 'Experiencia: {v}': 'Experience: {v}', 'Zona: {v}': 'Area: {v}',
+    'Horario: {v}': 'Shift: {v}', 'Aspiración salarial: {v}': 'Expected salary: {v}', 'Documentos: {v}': 'Documents: {v}', 'Les adjunto mi currículum.': 'I’m attaching my résumé.', 'Enviar mi ficha por WhatsApp': 'Send my profile on WhatsApp',
+    '{s} · Adjúntelo también en WhatsApp al enviar su ficha.': '{s} · Attach it in WhatsApp too when you send your profile.',
+    'Carga: {v}': 'Cargo: {v}', 'Recoger en: {v}': 'Pick up at: {v}', 'Entregar en: {v}': 'Deliver to: {v}', 'Para: {v}': 'When: {v}', 'Equipo: {v}': 'Equipment: {v}'
+  };
+  var TITLE_ES = document.title, DESC_ES = document.querySelector('meta[name=description]').content;
+  var DESC_EN = '20+ years in freight and special cargo transport across Costa Rica. 80+ trucks with a forklift or crane on board to load, haul and unload. Get a quote on WhatsApp at 8983 8585.';
   var lang = 'es';
-  try { lang = localStorage.getItem('pohlond-lang') === 'en' ? 'en' : 'es'; } catch (e) {}
+  try { lang = localStorage.getItem('pohlond-lang') || 'es'; } catch (e) {}
+  var q = /[?&]lang=(es|en)\b/.exec(location.search); if (q) lang = q[1];
+  if (lang !== 'en') lang = 'es';
+
+  // T('texto {n}', {n: 'Ana'}) → translated (when English) with placeholders filled in.
+  window.T = function (s, vars) {
+    var out = (lang === 'en' && EN[s]) || s;
+    if (vars) for (var k in vars) out = out.split('{' + k + '}').join(vars[k]);
+    return out;
+  };
+  window.getLang = function () { return lang; };
+  var hooks = [];
+  window.onLang = function (fn) { hooks.push(fn); };
+
+  var ATTRS = ['alt', 'aria-label', 'placeholder', 'title'];
+  var SKIP = 'script,style,svg,.chat-b,.st,#dropT,#dropS,.hud-s,.hud-c,#pickT,#reqMsg,#wizN';
   function apply() {
-    root.lang = lang; document.title = TITLE[lang];
-    document.querySelectorAll('[data-en]').forEach(function (el) {
-      if (el.__es === undefined) el.__es = el.innerHTML;
-      el.innerHTML = lang === 'en' ? el.dataset.en : el.__es;
+    var en = lang === 'en';
+    document.documentElement.lang = lang;
+    document.title = en ? (EN[TITLE_ES] || TITLE_ES) : TITLE_ES;
+    document.querySelector('meta[name=description]').content = en ? DESC_EN : DESC_ES;
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) { return n.parentElement && !n.parentElement.closest(SKIP) && n.nodeValue.trim() ? 1 : 2; }
     });
-    document.querySelectorAll('[data-en-href]').forEach(function (a) {
+    for (var n; (n = w.nextNode());) {
+      if (n.__es === undefined) n.__es = n.nodeValue;
+      var key = n.__es.trim(), tr = EN[key];
+      n.nodeValue = en && tr !== undefined ? n.__es.replace(key, tr) : n.__es;
+    }
+    document.querySelectorAll('[alt],[aria-label],[placeholder],[title]').forEach(function (el) {
+      if (el.closest('.chat-b')) return;
+      el.__esA = el.__esA || {};
+      ATTRS.forEach(function (a) {
+        if (!el.hasAttribute(a)) return;
+        if (el.__esA[a] === undefined) el.__esA[a] = el.getAttribute(a);
+        var v = el.__esA[a];
+        el.setAttribute(a, en && EN[v] !== undefined ? EN[v] : v);
+      });
+    });
+    document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function (a) {
       if (a.__esH === undefined) a.__esH = a.getAttribute('href');
-      a.setAttribute('href', lang === 'en' ? a.dataset.enHref : a.__esH);
-    });
-    document.querySelectorAll('[data-en-label]').forEach(function (el) {
-      if (el.__esL === undefined) el.__esL = el.getAttribute('aria-label');
-      el.setAttribute('aria-label', lang === 'en' ? el.dataset.enLabel : el.__esL);
+      var m = /text=([^&]*)/.exec(a.__esH), txt = m && decodeURIComponent(m[1]);
+      a.setAttribute('href', en && txt && EN[txt] ? a.__esH.replace(m[1], encodeURIComponent(EN[txt])) : a.__esH);
     });
     document.querySelectorAll('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
   }
-  document.querySelectorAll('.lang button').forEach(function (b) {
-    b.addEventListener('click', function () { lang = b.dataset.lang; try { localStorage.setItem('pohlond-lang', lang); } catch (e) {} apply(); });
+  window.setLang = function (l) {
+    if (l === lang) return;
+    lang = l;
+    try { localStorage.setItem('pohlond-lang', l); } catch (e) {}
+    apply();
+    hooks.forEach(function (fn) { fn(l); });
+  };
+  document.querySelectorAll('.lang button').forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); }); });
+  apply();
+})();
+</script>
+<script>
+(function () {
+  var hasIO = 'IntersectionObserver' in window;
+
+  // Hero: one orchestrated entrance (headline, livery stripe, photo)
+  var hero = document.getElementById('hero');
+  requestAnimationFrame(function () { requestAnimationFrame(function () { hero.classList.add('go'); }); });
+
+  // Reveal blocks as they enter the viewport
+  var io = hasIO ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 }) : null;
+  document.querySelectorAll('.rv').forEach(function (el) { io ? io.observe(el) : el.classList.add('in'); });
+
+  // Header turns solid once the demo strip scrolls away
+  var top = document.getElementById('top');
+  function hdr() { top.classList.toggle('solid', scrollY > 8); }
+  addEventListener('scroll', hdr, { passive: true }); hdr();
+
+  // Mobile menu
+  var mb = document.getElementById('menuBtn'), mn = document.getElementById('mnav');
+  function menu(open) {
+    document.body.classList.toggle('menu-open', open);
+    mb.setAttribute('aria-expanded', String(open));
+    mn.inert = !open;
+    document.documentElement.style.overflow = open ? 'hidden' : '';
+  }
+  mb.addEventListener('click', function () { menu(!document.body.classList.contains('menu-open')); });
+  document.getElementById('mnavX').addEventListener('click', function () { menu(false); });
+  mn.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { menu(false); }); });
+  addEventListener('keydown', function (e) { if (e.key === 'Escape') menu(false); });
+
+  // Services: the row in focus (scroll, hover or keyboard) drives the photo panel
+  var rows = [].slice.call(document.querySelectorAll('.svc-row')), figs = [].slice.call(document.querySelectorAll('.svc-media figure'));
+  function act(i) {
+    rows.forEach(function (r, k) { r.classList.toggle('on', k === i); });
+    figs.forEach(function (f, k) { f.classList.toggle('on', k === i); });
+  }
+  rows.forEach(function (r, i) {
+    r.addEventListener('mouseenter', function () { act(i); });
+    r.addEventListener('focusin', function () { act(i); });
   });
-  if (lang === 'en') apply();
+  if (hasIO) {
+    var mid = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) act(rows.indexOf(e.target)); });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    rows.forEach(function (r) { mid.observe(r); });
+  }
+  act(0);
+
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var clamp = function (v, a, b) { return v < a ? a : v > b ? b : v; };
+
+  // Route story: the truck drives a sample route as the visitor scrolls through the pinned section
+  (function () {
+    var track = document.getElementById('routeTrack'); if (!track) return;
+    var NS = 'http://www.w3.org/2000/svg', topo = document.getElementById('topo');
+    // Contour lines around the volcanoes north and east of the valley, and the southern hills
+    [[250, -170, 30, 15, 1.3], [470, -80, 24, 14, 2.1], [830, 180, 22, 15, .7], [330, 430, 9, 13, 2.9], [640, 610, 14, 16, 4.2]].forEach(function (c) {
+      for (var i = 1; i <= c[2]; i++) {
+        var r = i * c[3], d = '';
+        for (var k = 0; k <= 72; k++) {
+          var t = k / 72 * Math.PI * 2, rr = r * (1 + .07 * Math.sin(3 * t + c[4] + i * .12) + .04 * Math.sin(5 * t - c[4] * 1.7 + i * .07));
+          d += (k ? 'L' : 'M') + (c[0] + Math.cos(t) * rr * 1.25).toFixed(1) + ' ' + (c[1] + Math.sin(t) * rr).toFixed(1);
+        }
+        var pth = document.createElementNS(NS, 'path'); pth.setAttribute('d', d + 'Z');
+        if (i % 5 === 0) pth.setAttribute('stroke-opacity', '.13');
+        topo.appendChild(pth);
+      }
+    });
+    var path = document.getElementById('rpath'), trail = document.getElementById('rtrail'), truck = document.getElementById('rtruck'), cam = document.getElementById('rcam');
+    var pinB = document.getElementById('pinB'), hudS = document.getElementById('hudS'), hudC = document.getElementById('hudC'), bar = document.getElementById('hudBar');
+    var steps = [].slice.call(document.querySelectorAll('#rsteps li'));
+    var L = path.getTotalLength(), last = -1;
+    trail.style.strokeDasharray = L;
+    function render(p) {
+      var m = clamp((p - .16) / .68, 0, 1), e = m < .5 ? 2 * m * m : 1 - Math.pow(-2 * m + 2, 2) / 2;
+      var len = e * L, pt = path.getPointAtLength(len), a = path.getPointAtLength(Math.max(0, len - 2)), b = path.getPointAtLength(Math.min(L, len + 2));
+      var ang = Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI;
+      trail.style.strokeDashoffset = L - len;
+      truck.setAttribute('transform', 'translate(' + pt.x.toFixed(1) + ' ' + pt.y.toFixed(1) + ') rotate(' + ang.toFixed(1) + ')');
+      var k = Math.sin(Math.PI * e), z = 1 + .45 * k, cx = 400 + (pt.x - 400) * k, cy = 260 + (pt.y - 260) * k;
+      cam.setAttribute('transform', 'translate(400 260) scale(' + z.toFixed(3) + ') translate(' + (-cx).toFixed(1) + ' ' + (-cy).toFixed(1) + ')');
+      var st = p < .16 ? 0 : p < .84 ? 1 : 2;
+      if (st !== last) { steps.forEach(function (li, i) { li.classList.toggle('on', i === st); }); last = st; }
+      pinB.classList.toggle('done', p >= .84);
+      hudS.textContent = T(p < .16 ? 'Cargando' : p < .84 ? 'En ruta' : p < .97 ? 'Descargando' : 'Entregado');
+      hudC.textContent = T('{la}° N · {lo}° O', { la: (10.08 - pt.y / 520 * .28).toFixed(3), lo: (84.32 - pt.x / 800 * .47).toFixed(3) });
+      bar.style.transform = 'scaleX(' + p.toFixed(3) + ')';
+    }
+    if (reduce) { render(1); steps.forEach(function (li) { li.classList.add('on'); }); onLang(function () { render(1); }); return; }
+    var cur = -1, tgt = 0, running = false;
+    function prog() { var r = track.getBoundingClientRect(), h = track.offsetHeight - innerHeight; return h > 0 ? clamp(-r.top / h, 0, 1) : 1; }
+    function tick() {
+      cur = cur < 0 ? tgt : cur + (tgt - cur) * .12;
+      if (Math.abs(tgt - cur) < .0004) cur = tgt;
+      render(cur);
+      if (cur !== tgt) requestAnimationFrame(tick); else running = false;
+    }
+    function go() { tgt = prog(); if (!running) { running = true; requestAnimationFrame(tick); } }
+    addEventListener('scroll', go, { passive: true }); addEventListener('resize', go); go();
+    onLang(function () { render(cur < 0 ? 0 : cur); });
+  })();
+
+  // Night band: headlights ignite once the band is in view
+  (function () {
+    var band = document.getElementById('band'), img = band.querySelector('img'), glows = band.querySelectorAll('.glow');
+    function place() {
+      var W = img.offsetWidth, H = img.offsetHeight, sc = Math.max(W / 1640, H / 525), rw = 1640 * sc, rh = 525 * sc;
+      var op = getComputedStyle(img).objectPosition.split(' ').map(parseFloat), ox = (W - rw) * op[0] / 100, oy = (H - rh) * op[1] / 100;
+      glows.forEach(function (g) {
+        g.style.left = (img.offsetLeft + ox + rw * g.dataset.x) + 'px';
+        g.style.top = (img.offsetTop + oy + rh * g.dataset.y) + 'px';
+        g.style.setProperty('--s', (rh * g.dataset.s) + 'px');
+      });
+    }
+    place(); addEventListener('resize', place); img.addEventListener('load', place);
+    if (!hasIO) { band.classList.add('lit'); return; }
+    var o = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { band.classList.add('lit'); o.disconnect(); } }, { threshold: .5 });
+    o.observe(band);
+  })();
+
+  // Hero photo parallax + livery progress line in the header
+  (function () {
+    var pic = document.querySelector('.hero-ph picture'), ph = document.querySelector('.hero-ph'), ticking = false;
+    function frame() {
+      ticking = false;
+      var y = scrollY, doc = document.documentElement.scrollHeight - innerHeight;
+      top.style.setProperty('--p', doc > 0 ? (y / doc).toFixed(4) : 0);
+      if (!reduce && y < ph.offsetTop + ph.offsetHeight) pic.style.transform = 'translate3d(0,' + Math.min(y * .2, ph.offsetHeight * .14).toFixed(1) + 'px,0)';
+    }
+    addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, { passive: true });
+    frame();
+  })();
+
+  // "Lo que transportamos": a photo follows the cursor over each row (desktop with a mouse)
+  (function () {
+    if (reduce || !matchMedia('(hover:hover) and (pointer:fine) and (min-width:1101px)').matches) return;
+    var peek = document.getElementById('peek'), pimg = peek.querySelector('img'), list = document.querySelector('.ct-list');
+    var px = 0, py = 0, tx = 0, ty = 0, vx = 0, loop = false;
+    function step() {
+      var dx = tx - px; px += dx * .16; py += (ty - py) * .16; vx = vx * .8 + dx * .2;
+      var x = Math.min(px + 32, innerWidth - 372), y = clamp(py - 128, 12, innerHeight - 268);
+      peek.style.transform = 'translate3d(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px,0) rotate(' + clamp(vx * .06, -7, 7).toFixed(2) + 'deg)';
+      if (peek.classList.contains('on') || Math.abs(dx) > .5) requestAnimationFrame(step); else loop = false;
+    }
+    list.addEventListener('mousemove', function (e) { tx = e.clientX; ty = e.clientY; });
+    document.querySelectorAll('.ct-row').forEach(function (r) {
+      var im = r.querySelector('.ct-th img');
+      r.addEventListener('mouseenter', function (e) {
+        if (!im) { peek.classList.remove('on'); return; }
+        if (!peek.classList.contains('on') && !loop) { px = tx = e.clientX; py = ty = e.clientY; }
+        pimg.src = im.currentSrc || im.src; pimg.style.objectPosition = im.style.objectPosition || '50% 50%';
+        peek.classList.add('on');
+        if (!loop) { loop = true; requestAnimationFrame(step); }
+      });
+      r.addEventListener('mouseleave', function () { peek.classList.remove('on'); });
+    });
+  })();
+
+  // A3 · truck picker: four yes/no questions recommend a fleet card
+  (function () {
+    var box = document.getElementById('picker'); if (!box) return;
+    var ans = {}, cards = document.querySelectorAll('.fc'), out = document.getElementById('pickT'), wa = document.getElementById('pickWa');
+    var NAMES = { mont: 'Camión plataforma con montacargas', grua: 'Camión grúa con brazo articulado', mm: 'Master Move: cabezal con plataforma para equipo pesado', plat: 'Camión plataforma' };
+    function decide() {
+      var n = Object.keys(ans).length;
+      cards.forEach(function (c) { c.classList.remove('pick'); });
+      if (!n) { out.textContent = T('Responda las preguntas y le decimos qué camión le sirve.'); return; }
+      var t = ans.pesada === '1' ? 'mm' : (ans.izar === '1' || ans.fragil === '1') ? 'grua' : ans.montasitio === '0' ? 'mont' : ans.montasitio === '1' ? 'plat' : null;
+      if (!t) { out.textContent = T('Responda las preguntas y le decimos qué camión le sirve.'); return; }
+      var card = document.querySelector('.fc[data-truck="' + t + '"]'); card.classList.add('pick');
+      out.textContent = T(NAMES[t]);
+      wa.href = 'https://wa.me/50689838585?text=' + encodeURIComponent(T('Hola, creo que necesito un {v}. ¿Me cotizan?', { v: T(NAMES[t]) }));
+    }
+    box.querySelectorAll('.pq').forEach(function (q) {
+      q.querySelectorAll('button').forEach(function (b) {
+        b.setAttribute('aria-pressed', 'false');
+        b.addEventListener('click', function () {
+          q.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+          ans[q.dataset.q] = b.dataset.v; decide();
+        });
+      });
+    });
+    onLang(decide);
+  })();
+
+  // A5 · articulated crane unfolds with scroll, lowers the hook and lifts the crate
+  (function () {
+    var wrap = document.getElementById('crane'); if (!wrap) return;
+    var $ = function (id) { return document.getElementById(id); };
+    var b1 = $('crB1'), b2 = $('crB2'), j1 = $('crJ1'), j2 = $('crJ2'), rope = $('crRope'), hook = $('crHook'), crate = $('crCrate'), sh = $('crSh');
+    var P = { x: 463, y: 226 }, L1 = 140, L2 = 158, G = 330, CH = 50, rad = Math.PI / 180;
+    var lerp = function (a, b, t) { return a + (b - a) * t; }, ease = function (t) { return t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; };
+    function tip(u) {
+      var a1 = lerp(185, 215, u) * rad, a2 = lerp(355, 170, u) * rad;
+      var x1 = P.x + L1 * Math.cos(a1), y1 = P.y + L1 * Math.sin(a1);
+      return { x1: x1, y1: y1, x2: x1 + L2 * Math.cos(a2), y2: y1 + L2 * Math.sin(a2) };
+    }
+    var end = tip(1), restTop = G - CH;
+    function draw(p) {
+      var t = tip(ease(clamp(p / .6, 0, 1)));
+      b1.setAttribute('x1', P.x); b1.setAttribute('y1', P.y); b1.setAttribute('x2', t.x1); b1.setAttribute('y2', t.y1);
+      b2.setAttribute('x1', t.x1); b2.setAttribute('y1', t.y1); b2.setAttribute('x2', t.x2); b2.setAttribute('y2', t.y2);
+      j1.setAttribute('cx', t.x1); j1.setAttribute('cy', t.y1); j2.setAttribute('cx', t.x2); j2.setAttribute('cy', t.y2);
+      var lower = clamp((p - .6) / .15, 0, 1), lift = ease(clamp((p - .75) / .25, 0, 1));
+      var hy = lerp(t.y2 + 16, restTop - 4, ease(lower)) - lift * 90;
+      rope.setAttribute('x1', t.x2); rope.setAttribute('y1', t.y2); rope.setAttribute('x2', t.x2); rope.setAttribute('y2', hy);
+      hook.setAttribute('transform', 'translate(' + (t.x2 - 1).toFixed(1) + ' ' + hy.toFixed(1) + ')');
+      var top = lower >= 1 ? hy + 14 : restTop;
+      crate.setAttribute('transform', 'translate(' + (end.x2 - 32).toFixed(1) + ' ' + Math.min(top, restTop).toFixed(1) + ')');
+      sh.setAttribute('cx', end.x2); sh.setAttribute('opacity', (.14 - lift * .08).toFixed(3));
+    }
+    if (reduce) { draw(1); return; }
+    var ticking = false;
+    function frame() {
+      ticking = false;
+      var r = wrap.getBoundingClientRect();
+      draw(clamp((innerHeight * .92 - r.top) / (r.height + innerHeight * .35), 0, 1));
+    }
+    addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, { passive: true });
+    addEventListener('resize', frame); frame();
+  })();
+
+  // A6 · Costa Rica as a dot map; provinces light up when the map comes into view
+  (function () {
+    var map = document.getElementById('crMap'); if (!map) return;
+    var NS = 'http://www.w3.org/2000/svg';
+    var X = function (lon) { return (lon + 86) * 150 + 20; }, Y = function (lat) { return (11.35 - lat) * 150 + 10; };
+    var OUT = [[-85.69,11.07],[-85.62,11.21],[-85.30,11.15],[-85.05,11.08],[-84.80,11.05],[-84.60,10.95],[-84.40,10.92],[-84.20,10.80],[-84.00,10.75],[-83.85,10.73],[-83.68,10.80],
+      [-83.62,10.70],[-83.48,10.45],[-83.30,10.25],[-83.15,10.10],[-83.03,9.99],[-82.92,9.85],[-82.78,9.70],[-82.57,9.57],
+      [-82.75,9.50],[-82.92,9.44],[-82.93,9.20],[-82.94,9.00],[-82.75,8.85],[-82.84,8.60],[-82.89,8.03],
+      [-83.02,8.20],[-83.15,8.37],[-83.30,8.55],[-83.40,8.38],[-83.60,8.45],[-83.73,8.62],[-83.65,8.80],[-83.78,9.05],[-83.90,9.25],[-84.15,9.40],[-84.45,9.58],[-84.65,9.80],[-84.85,9.97],
+      [-85.05,10.10],[-85.18,10.18],[-85.05,9.95],[-85.08,9.75],[-85.12,9.57],[-85.35,9.68],[-85.62,9.88],[-85.84,10.05],[-85.88,10.32],[-85.82,10.58],[-85.75,10.82]
+    ].map(function (c) { return [X(c[0]), Y(c[1])]; });
+    function inside(x, y) {
+      var c = false;
+      for (var i = 0, j = OUT.length - 1; i < OUT.length; j = i++) {
+        var xi = OUT[i][0], yi = OUT[i][1], xj = OUT[j][0], yj = OUT[j][1];
+        if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi) c = !c;
+      }
+      return c;
+    }
+    var dots = document.getElementById('crDots'), STEP = 9, all = [];
+    for (var y = 6; y < 520; y += STEP) for (var x = 6; x < 560; x += STEP) {
+      if (!inside(x, y)) continue;
+      var d = document.createElementNS(NS, 'circle'); d.setAttribute('cx', x); d.setAttribute('cy', y); d.setAttribute('r', 2.7); d.setAttribute('class', 'crd');
+      dots.appendChild(d); all.push(d);
+    }
+    var CAP = [['Liberia', -85.44, 10.63], ['Puntarenas', -84.83, 9.98], ['Alajuela', -84.21, 10.02], ['Heredia', -84.12, 10.0], ['San José', -84.08, 9.93], ['Cartago', -83.92, 9.86], ['Limón', -83.03, 9.99]];
+    var hub = [X(-84.08), Y(9.93)], routes = document.getElementById('crRoutes'), pins = document.getElementById('crPins');
+    CAP.forEach(function (c, i) {
+      var x = X(c[1]), y = Y(c[2]);
+      if (c[0] !== 'San José') {
+        var mx = (hub[0] + x) / 2, my = Math.min(hub[1], y) - Math.abs(hub[0] - x) * .22 - 8;
+        var r = document.createElementNS(NS, 'path'); r.setAttribute('d', 'M' + hub[0] + ' ' + hub[1] + ' Q' + mx + ' ' + my + ' ' + x + ' ' + y);
+        r.setAttribute('class', 'cr-route'); routes.appendChild(r);
+        var L = r.getTotalLength(); r.style.setProperty('--l', L); r.style.transitionDelay = (.2 + i * .15) + 's';
+      }
+      var g = document.createElementNS(NS, 'g'); g.setAttribute('class', 'cr-pin'); g.style.transitionDelay = (.5 + i * .15) + 's';
+      var lab = { 'Heredia': [6, -12], 'Alajuela': [-72, -6], 'San José': [-70, 22], 'Cartago': [10, 20], 'Puntarenas': [-88, 4], 'Liberia': [10, 4], 'Limón': [10, 4] }[c[0]];
+      g.innerHTML = '<circle class="ring" cx="' + x + '" cy="' + y + '" r="11" fill="#ec5022" opacity=".22"/><circle cx="' + x + '" cy="' + y + '" r="5.5" fill="#ec5022" stroke="#fff" stroke-width="2"/><text x="' + (x + lab[0]) + '" y="' + (y + lab[1]) + '">' + c[0] + '</text>';
+      pins.appendChild(g);
+    });
+    var items = document.querySelectorAll('#provList li');
+    function light() {
+      map.classList.add('lit');
+      all.forEach(function (d) { d.classList.add('on'); });
+      items.forEach(function (li, i) { setTimeout(function () { li.classList.add('on'); }, 300 + i * 150); });
+    }
+    if (reduce || !hasIO) { light(); return; }
+    var o = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { light(); o.disconnect(); } }, { threshold: .35 });
+    o.observe(map);
+  })();
+
+  // A8 · drivers tick what they have; the bar fills and the message updates
+  (function () {
+    var list = document.getElementById('req'); if (!list) return;
+    var boxes = list.querySelectorAll('input'), bar = document.getElementById('reqBar'), msg = document.getElementById('reqMsg');
+    function upd() {
+      var n = [].filter.call(boxes, function (b) { return b.checked; }).length, total = boxes.length;
+      bar.style.width = (n / total * 100) + '%';
+      msg.classList.toggle('ok', n === total);
+      msg.textContent = n === 0 ? T('{n} de {t}', { n: n, t: total }) : n === total ? T('¡Cumple todo! Suba su currículum y aplique.') : T('Tiene {n} de {t}. Puede aplicar igual y completar lo que falte.', { n: n, t: total });
+    }
+    boxes.forEach(function (b) { b.addEventListener('change', upd); });
+    onLang(upd); upd();
+  })();
+
+  // A2 · three-step quote that ends in WhatsApp
+  (function () {
+    var form = document.getElementById('qform'); if (!form) return;
+    var steps = form.querySelectorAll('.step-f'), cur = 1, picked = {};
+    var back = document.getElementById('wizBack'), next = document.getElementById('wizNext'), send = document.getElementById('wizSend');
+    var bar = document.getElementById('wizBar'), num = document.getElementById('wizN');
+    form.querySelectorAll('.chips').forEach(function (g) {
+      g.querySelectorAll('.chip').forEach(function (c) {
+        c.setAttribute('aria-pressed', 'false');
+        c.addEventListener('click', function () {
+          g.querySelectorAll('.chip').forEach(function (x) { x.setAttribute('aria-pressed', String(x === c)); });
+          picked[g.dataset.name] = c; if (g.dataset.name === 'tipo') { next.disabled = false; setTimeout(function () { go(2); }, 220); }
+        });
+      });
+    });
+    function go(n) {
+      cur = n;
+      steps.forEach(function (s) { s.classList.toggle('on', +s.dataset.step === n); });
+      bar.style.width = (n / 3 * 100) + '%';
+      num.textContent = T('Paso {n} de 3', { n: n });
+      back.hidden = n === 1; next.hidden = n === 3; send.hidden = n !== 3;
+      next.disabled = n === 1 && !picked.tipo;
+    }
+    back.addEventListener('click', function () { go(cur - 1); });
+    next.addEventListener('click', function () { go(cur + 1); });
+    onLang(function () { num.textContent = T('Paso {n} de 3', { n: cur }); });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var v = function (id) { return document.getElementById(id).value.trim(); };
+      var lines = [T('Hola, quiero cotizar un transporte.')];
+      if (picked.tipo) lines.push(T('Carga: {v}', { v: picked.tipo.textContent }));
+      lines.push(T('Peso aproximado: {v}', { v: document.getElementById('q-peso').selectedOptions[0].textContent }));
+      if (v('q-med')) lines.push(T('Medidas: {v}', { v: v('q-med') }));
+      if (picked.equipo) lines.push(T('Equipo: {v}', { v: picked.equipo.textContent }));
+      if (v('q-origen')) lines.push(T('Se recoge en: {v}', { v: v('q-origen') }));
+      if (v('q-destino')) lines.push(T('Se entrega en: {v}', { v: v('q-destino') }));
+      if (v('q-fecha')) lines.push(T('Fecha: {v}', { v: v('q-fecha') }));
+      if (v('q-det')) lines.push(T('Detalles: {v}', { v: v('q-det') }));
+      lines.push(T('Les adjunto fotos de la carga.'));
+      window.open('https://wa.me/50689838585?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
+      if (window.__hscSend) window.__hscSend('whatsapp');
+    });
+  })();
+})();
+</script>
+<script>
+// Scripted preview of the AI agents (recruiting + quotes). Nothing is stored or sent.
+(function () {
+  var WA = 'https://wa.me/50689838585?text=';
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var sleep = function (ms) { return new Promise(function (r) { setTimeout(r, ms); }); };
+  var kb = function (n) { return n > 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB'; };
+
+  function Chat(root, flow) {
+    this.root = root; this.flow = flow;
+    this.b = root.querySelector('.chat-b');
+    this.form = root.querySelector('.chat-f');
+    this.input = this.form.querySelector('input[type=text]');
+    this.sendBtn = this.form.querySelector('.send');
+    this.attach = this.form.querySelector('.js-attach');
+    this.st = root.querySelector('.st');
+    this.picker = document.createElement('input');
+    this.picker.type = 'file'; this.picker.accept = '.pdf,.doc,.docx,image/*'; this.picker.hidden = true;
+    root.appendChild(this.picker);
+    var self = this;
+    this.form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var v = self.input.value.trim();
+      if (v && self._text) { var r = self._text; self._text = null; self.input.value = ''; self.lock(); self.me(v); r(v); }
+    });
+    this.attach.addEventListener('click', function () { self.picker.click(); });
+    this.picker.addEventListener('change', function () { if (self.picker.files[0]) self.offer(self.picker.files[0]); self.picker.value = ''; });
+    this.run = 0; this.started = false;
+  }
+  Chat.prototype.start = function () {
+    var self = this, id = ++this.run;
+    this.started = true; this.b.innerHTML = ''; this.lock(); this._text = this._file = null;
+    this.flow(this, function () { if (id !== self.run) throw 'reset'; }).catch(function () {});
+  };
+  Chat.prototype.add = function (node) { this.b.appendChild(node); this.b.scrollTop = this.b.scrollHeight; return node; };
+  Chat.prototype.el = function (cls, html) { var d = document.createElement('div'); d.className = cls; d.innerHTML = html; return this.add(d); };
+  Chat.prototype.say = async function (html, ms) {
+    var id = this.run;
+    var t = this.el('typing', '<i></i><i></i><i></i>');
+    this.st.textContent = T('Escribiendo…');
+    await sleep(ms || Math.min(1700, 450 + html.replace(/<[^>]+>/g, '').length * 14));
+    t.remove(); this.st.textContent = T('En línea');
+    if (id !== this.run) throw 'reset';
+    this.el('msg bot', html);
+  };
+  Chat.prototype.me = function (text) { this.el('msg me', esc(text)); };
+  Chat.prototype.lock = function () { this.input.disabled = this.sendBtn.disabled = this.attach.disabled = true; this.attach.classList.remove('hot'); this.input.placeholder = T('Escriba aquí…'); };
+  Chat.prototype.choose = function (opts) {
+    var self = this, id = this.run;
+    return new Promise(function (res, rej) {
+      var box = self.el('opts', '');
+      opts.forEach(function (o) {
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'opt'; b.textContent = o;
+        b.onclick = function () { box.remove(); if (id !== self.run) return rej('reset'); self.me(o); res(o); };
+        box.appendChild(b);
+      });
+      self.b.scrollTop = self.b.scrollHeight;
+    });
+  };
+  Chat.prototype.ask = function (ph) {
+    var self = this;
+    this.input.disabled = this.sendBtn.disabled = false; this.input.placeholder = ph;
+    if (matchMedia('(hover:hover)').matches) this.input.focus({ preventScroll: true });
+    return new Promise(function (res) { self._text = res; });
+  };
+  Chat.prototype.askFile = function () {
+    var self = this;
+    this.attach.disabled = false; this.attach.classList.add('hot');
+    return new Promise(function (res) { self._file = res; });
+  };
+  Chat.prototype.fileMsg = function (f) {
+    this.el('msg me file', '<svg><use href="#i-doc"/></svg><span>' + esc(f.name) + '<small>' + kb(f.size) + '</small></span>');
+  };
+  Chat.prototype.offer = function (f) {
+    this.cv = f;
+    if (this._file) { var r = this._file; this._file = null; this.lock(); this.fileMsg(f); r(f); }
+  };
+  Chat.prototype.card = function (title, badge, ok, rows) {
+    this.el('ficha', '<div class="ficha-h">' + esc(title) + '<span class="' + (ok ? '' : 'no') + '">' + esc(badge) + '</span></div><dl>' +
+      rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>');
+  };
+  Chat.prototype.link = function (label, href, onclick) {
+    var a = document.createElement('a'); a.className = 'btn btn-wa'; a.style.alignSelf = 'flex-start'; a.style.fontSize = '14px'; a.style.padding = '11px 18px';
+    a.innerHTML = '<svg><use href="#i-wa"/></svg>' + esc(label);
+    if (href) { a.href = href; a.target = '_blank'; a.rel = 'noopener'; a.classList.add('js-wa'); }
+    if (onclick) { a.href = '#'; a.onclick = function (e) { e.preventDefault(); onclick(); }; a.querySelector('svg').remove(); }
+    this.add(a);
+  };
+  Chat.prototype.again = async function (label) { await this.choose([label || T('Empezar de nuevo')]); this.start(); };
+
+  // Recruiting agent
+  async function recruitFlow(c, alive) {
+    await c.say(T('¡Hola! Soy el asistente de reclutamiento de <b>Transportes Pohlond</b>.'));
+    await c.say(T('Le hago unas preguntas rápidas y le paso su ficha a Recursos Humanos. Toma unos 2 minutos. ¿Cómo se llama?'));
+    var name = await c.ask(T('Nombre y apellido')); alive();
+    var first = name.split(T(' '))[0];
+    await c.say(T('Mucho gusto, {n}. ¿Qué licencia de conducir tiene?', { n: esc(first) }));
+    var lic = await c.choose(['B1', 'B2', 'B3', T('Otra')]);
+    if (lic === T('Otra')) {
+      await c.say(T('Gracias por su interés. Por ahora buscamos choferes con licencia B1, B2 o B3, así que esta vez no puedo pasar su solicitud.'));
+      await c.say(T('Cuando abramos un puesto para su licencia lo publicaremos en nuestro Facebook. ¡Mucho éxito!'));
+      return c.again();
+    }
+    await c.say(T('¿Cuántos años de experiencia tiene manejando camión?'));
+    var exp = await c.choose([T('Menos de 2 años'), T('De 2 a 4 años'), T('Más de 4 años')]);
+    if (exp === T('Menos de 2 años')) {
+      await c.say(T('Le agradezco la sinceridad. Para este puesto pedimos al menos 2 años de experiencia manejando camión.'));
+      await c.say(T('Le invitamos a aplicar de nuevo cuando la tenga. ¡Mucho éxito, {n}!', { n: esc(first) }));
+      return c.again();
+    }
+    await c.say(T('Excelente. ¿En qué zona vive?'));
+    var zona = await c.ask(T('Ej.: Alajuelita')); alive();
+    await c.say(T('Anotado. El trabajo es dentro del GAM. ¿Qué horario puede trabajar?'));
+    var hor = await c.choose([T('Diurno'), T('Nocturno'), T('Mixto'), T('Cualquiera')]);
+    await c.say(T('¿Cuál es su aspiración salarial mensual?'));
+    var sal = await c.ask(T('Ej.: ₡450 000')); alive();
+    await c.say(T('¿Tiene al día la hoja de delincuencia y la lista de trabajos anteriores de la CCSS?'));
+    var docs = await c.choose([T('Sí, ambas'), T('Me falta alguna')]);
+    if (c.cv) {
+      await c.say(T('Ya tengo el currículum que subió: <b>{f}</b>.', { f: esc(c.cv.name) }));
+    } else {
+      await c.say(T('Por último, adjunte su currículum con el clip o en el recuadro de al lado. Puede ser PDF, Word o una foto.'));
+      await c.askFile(); alive();
+    }
+    await c.say(T('Preparando su ficha…'), 1400);
+    var ok = docs === T('Sí, ambas');
+    c.card(T('Ficha para RH'), ok ? T('Cumple requisitos') : T('Revisar documentos'), ok, [
+      [T('Candidato'), name], [T('Licencia'), lic], [T('Experiencia'), exp], [T('Zona'), zona], [T('Horario'), hor],
+      [T('Aspiración'), sal], [T('Documentos'), ok ? T('Al día') : T('Pendientes')], [T('Currículum'), c.cv ? c.cv.name : '—']
+    ]);
+    await sleep(500); alive();
+    await c.say(T('¡Listo, {n}! Toque el botón para enviar su ficha a Recursos Humanos por WhatsApp y adjunte ahí su currículum.', { n: esc(first) }) + (ok ? '' : T(' Mientras tanto, vaya sacando los documentos que le faltan.')));
+    var ficha = [T('Hola, quiero aplicar como chofer.'), T('Nombre: {v}', { v: name }), T('Licencia: {v}', { v: lic }), T('Experiencia: {v}', { v: exp }), T('Zona: {v}', { v: zona }),
+      T('Horario: {v}', { v: hor }), T('Aspiración salarial: {v}', { v: sal }), T('Documentos: {v}', { v: ok ? T('Al día') : T('Pendientes') }), T('Les adjunto mi currículum.')].join('\n');
+    c.link(T('Enviar mi ficha por WhatsApp'), WA + encodeURIComponent(ficha));
+    return c.again();
+  }
+
+  // General assistant (quotes)
+  async function assistFlow(c, alive) {
+    await c.say(T('¡Hola! Soy el asistente virtual de <b>Transportes Pohlond</b>. ¿En qué le ayudo?'));
+    var o = await c.choose([T('Cotizar un transporte'), T('Trabajar como chofer'), T('Hablar con una persona')]);
+    if (o === T('Trabajar como chofer')) {
+      await c.say(T('¡Qué bien! Le atiende nuestro asistente de reclutamiento: le hace unas preguntas y recibe su currículum.'));
+      c.link(T('Ir a «Trabaje con nosotros»'), null, function () { closePanel(); document.getElementById('trabaje').scrollIntoView({ behavior: 'smooth' }); if (!recruit.started) recruit.start(); });
+      return c.again(T('Volver al inicio'));
+    }
+    if (o === T('Hablar con una persona')) {
+      await c.say(T('Claro. Le comunico por WhatsApp con nuestro equipo.'));
+      c.link(T('Abrir WhatsApp'), WA + encodeURIComponent(T('Hola, quiero hablar con alguien de Transportes Pohlond')));
+      return c.again(T('Volver al inicio'));
+    }
+    await c.say(T('Con gusto. ¿Qué necesita mover?'));
+    var tipo = await c.choose([T('Mercadería'), T('Maquinaria o equipo'), T('Materiales'), T('Carga especial')]);
+    await c.say(T('¿Dónde se recoge la carga?'));
+    var de = await c.ask(T('Ej.: Santa Ana')); alive();
+    await c.say(T('¿Y dónde se entrega?'));
+    var a = await c.ask(T('Ej.: Heredia')); alive();
+    await c.say(T('¿Para cuándo lo necesita?'));
+    var cuando = await c.choose([T('Hoy o mañana'), T('Esta semana'), T('Más adelante')]);
+    await c.say(T('¿Hace falta montacargas o grúa para cargar o descargar?'));
+    var eq = await c.choose([T('Montacargas'), T('Grúa'), T('No sé, que me asesoren'), T('No hace falta')]);
+    c.card(T('Resumen de cotización'), T('Listo'), true, [[T('Carga'), tipo], [T('Recoger en'), de], [T('Entregar en'), a], [T('Para'), cuando], [T('Equipo'), eq]]);
+    await sleep(400); alive();
+    await c.say(T('Le paso este resumen a nuestro equipo por WhatsApp para que le coticen.'));
+    var msg = [T('Hola, quiero cotizar un transporte.'), T('Carga: {v}', { v: tipo }), T('Recoger en: {v}', { v: de }), T('Entregar en: {v}', { v: a }), T('Para: {v}', { v: cuando }), T('Equipo: {v}', { v: eq })].join('\n');
+    c.link(T('Enviar por WhatsApp'), WA + encodeURIComponent(msg));
+    return c.again(T('Volver al inicio'));
+  }
+
+  var recruit = new Chat(document.getElementById('recruit'), recruitFlow);
+  recruit.root.querySelector('.js-restart').addEventListener('click', function () { recruit.cv = null; resetDrop(); recruit.start(); });
+  if ('IntersectionObserver' in window) {
+    var seen = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { seen.disconnect(); if (!recruit.started) recruit.start(); } }, { threshold: 0.35 });
+    seen.observe(recruit.root);
+  } else recruit.start();
+
+  // CV dropzone feeds the recruiting chat
+  var drop = document.getElementById('drop'), cvInput = document.getElementById('cvFile'), dropFile = null;
+  function resetDrop() { drop.classList.remove('ok'); dropFile = null; document.getElementById('dropT').textContent = T('Suba aquí su currículum'); document.getElementById('dropS').textContent = T('PDF, Word o foto. Arrástrelo o toque para elegirlo.'); }
+  function dropOk(f) { document.getElementById('dropT').textContent = T('Recibido: {f}', { f: f.name }); document.getElementById('dropS').textContent = T('{s} · Adjúntelo también en WhatsApp al enviar su ficha.', { s: kb(f.size) }); }
+  function takeCV(f) {
+    if (!f) return;
+    drop.classList.add('ok'); dropFile = f; dropOk(f);
+    if (!recruit.started) recruit.start();
+    recruit.offer(f);
+    if (innerWidth < 1080) recruit.root.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  cvInput.addEventListener('change', function () { takeCV(cvInput.files[0]); cvInput.value = ''; });
+  ['dragenter', 'dragover'].forEach(function (t) { drop.addEventListener(t, function (e) { e.preventDefault(); drop.classList.add('over'); }); });
+  ['dragleave', 'drop'].forEach(function (t) { drop.addEventListener(t, function (e) { e.preventDefault(); drop.classList.remove('over'); }); });
+  drop.addEventListener('drop', function (e) { takeCV(e.dataTransfer.files[0]); });
+
+  // Floating assistant
+  var panel = document.getElementById('cpanel'), fab = document.getElementById('fab'), tip = document.getElementById('fabTip');
+  var assist = new Chat(document.getElementById('assist'), assistFlow);
+  function openPanel() { document.body.classList.add('chat-open'); panel.classList.add('open'); fab.classList.add('on'); fab.setAttribute('aria-expanded', 'true'); tip.classList.remove('show'); if (!assist.started) assist.start(); }
+  function closePanel() { document.body.classList.remove('chat-open'); panel.classList.remove('open'); fab.classList.remove('on'); fab.setAttribute('aria-expanded', 'false'); }
+  fab.addEventListener('click', function () { panel.classList.contains('open') ? closePanel() : openPanel(); });
+  assist.root.querySelector('.js-close').addEventListener('click', closePanel);
+  document.querySelectorAll('.js-open').forEach(function (b) { b.addEventListener('click', openPanel); });
+  // Switching language refreshes the dynamic texts and restarts any chat already on screen
+  onLang(function () {
+    if (dropFile) dropOk(dropFile); else resetDrop();
+    [recruit, assist].forEach(function (c) { c.st.textContent = T('En línea'); c.input.placeholder = T('Escriba aquí…'); if (c.started) c.start(); });
+  });
+  // The button only appears once the visitor leaves the hero, so it never covers the first screen.
+  // The tip shows once, can be dismissed, and stays dismissed for the session.
+  var fabRow = document.getElementById('fabRow'), tipOff = false;
+  try { tipOff = sessionStorage.getItem('pohlond-tip') === '1'; } catch (e) {}
+  document.getElementById('tipX').addEventListener('click', function () {
+    tip.classList.remove('show'); tipOff = true;
+    try { sessionStorage.setItem('pohlond-tip', '1'); } catch (e) {}
+  });
+  function fabVis() {
+    var nearEnd = scrollY + innerHeight > document.documentElement.scrollHeight - 160;
+    fabRow.classList.toggle('vis', (scrollY > innerHeight * 0.7 && !nearEnd) || panel.classList.contains('open'));
+  }
+  addEventListener('scroll', fabVis, { passive: true }); fabVis();
+  addEventListener('scroll', function nudge() {
+    if (scrollY < innerHeight * 1.2) return;
+    removeEventListener('scroll', nudge);
+    setTimeout(function () { if (!assist.started && !tipOff) { tip.classList.add('show'); setTimeout(function () { tip.classList.remove('show'); }, 8000); } }, 2500);
+  }, { passive: true });
 })();
 </script>
 </body>
