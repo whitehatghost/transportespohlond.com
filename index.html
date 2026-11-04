@@ -293,6 +293,7 @@ h3{font-size:clamp(19px,1.8vw,24px);line-height:1.2;font-weight:700;letter-spaci
 /* Hero load sequence: the stripe runs across like a truck passing, uncovering the photo */
 .js .hero .ln>span{transform:translateY(105%)}
 .js .hero .fx{opacity:0;transform:translateY(14px)}
+.js .hero .hero-side{opacity:1} /* the lead paragraph only slides, so it paints at first render (LCP) */
 .js .hero .livery i{transform:scaleX(0);transform-origin:left}
 .js .hero-ph img{clip-path:inset(0 100% 0 0);transform:scale(1.06)}
 .hero.go .ln>span{transform:none;transition:transform 1s var(--out)}
