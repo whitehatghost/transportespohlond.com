@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página no encontrada · Transportes Pohlond</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/img/icono.png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0b1736;--orange:#ec5022;--amber:#f9a91a;--rust:#87431b;--navy:#1e3264}
+*{box-sizing:border-box;margin:0}
+body{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:48px 24px;background:var(--ink);color:#fff;font-family:Montserrat,sans-serif}
+main{max-width:620px;margin:0 auto;width:100%}
+img{width:210px;height:auto;display:block;margin-bottom:56px}
+.tag{font:700 13px/1 Montserrat;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+h1{margin-top:14px;font:800 clamp(34px,7vw,54px)/1.05 Montserrat;letter-spacing:-.015em}
+h1 em{font-style:normal;color:var(--orange)}
+p{margin-top:18px;font:500 18px/1.55 Montserrat;color:rgba(255,255,255,.8)}
+.stripe{display:flex;height:6px;margin:34px 0;max-width:220px}.stripe i{flex:1}
+.stripe i:nth-child(1){background:var(--amber)}.stripe i:nth-child(2){background:var(--orange)}.stripe i:nth-child(3){background:var(--rust)}.stripe i:nth-child(4){background:var(--navy)}
+.acts{display:flex;flex-wrap:wrap;gap:12px}
+a.b{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:999px;font:800 16px/1 Montserrat;text-decoration:none;color:#fff}
+a.b:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.home{background:var(--orange)}.wa{background:#15803d}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SXP4LP19F"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1SXP4LP19F');
+(function(){
+  function canal(u){ u = String(u || ''); return u.indexOf('wa.me/') > -1 ? 'whatsapp' : u.indexOf('tel:') === 0 ? 'telefono' : u.indexOf('mailto:') === 0 ? 'correo' : ''; }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
+    var c = canal(a.getAttribute('href')); if (c) gtag('event', 'contacto_' + c, { pagina: location.pathname });
+  }, true);
+  var abrir = window.open;
+  window.open = function(u){ if (canal(u) === 'whatsapp') gtag('event', 'cotizacion_formulario', { pagina: location.pathname }); return abrir.apply(window, arguments); };
+})();
+</script>
+</head>
+<body>
+<main>
+<img src="/img/logo-blanco.webp" alt="Transportes Pohlond">
+<p class="tag">Error 404</p>
+<h1>Esta página <em>no existe.</em></h1>
+<p>Puede que la dirección haya cambiado. Lo que busca sigue aquí: transporte de carga y cargas especiales en todo Costa Rica.</p>
+<div class="stripe" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+<div class="acts">
+<a class="b home" href="/">Ir al inicio</a>
+<a class="b wa" href="https://wa.me/50689838585">Cotizar por WhatsApp 8983 8585</a>
+</div>
+</main>
+</body>
+</html>
