@@ -28,7 +28,7 @@
   "telephone": "+506 8983 8585",
   "email": "nlosilla@transportespohlond.com",
   "areaServed": { "@type": "Country", "name": "Costa Rica" },
-  "sameAs": ["https://www.facebook.com/transportesgrupopohlond"]
+  "sameAs": ["https://www.facebook.com/transportesgrupopohlond", "https://www.instagram.com/transportespohlond/"]
 }
 </script>
 <style>
@@ -91,15 +91,16 @@ h1 em{display:block;font:italic 400 1.18em/1 var(--serif);letter-spacing:-.005em
 
 /* Contact cards */
 .contact{position:relative;z-index:2;padding-bottom:clamp(28px,4vh,44px)}
-.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
 .card{display:flex;flex-direction:column;gap:6px;padding:20px 20px 18px;border:1px solid var(--line);border-radius:10px;background:rgba(11,23,54,.62);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);text-decoration:none;transition:border-color .25s,background .25s,transform .25s var(--out)}
 .card:hover{border-color:rgba(255,255,255,.4);background:rgba(16,31,71,.8);transform:translateY(-3px)}
 .card .ic{width:40px;height:40px;border-radius:8px;display:grid;place-items:center;margin-bottom:8px;color:#fff}
 .card .ic svg{width:21px;height:21px}
-.ic.wa{background:#25d366}.ic.fb{background:#1877f2}.ic.mail{background:var(--orange)}.ic.job{background:var(--amber);color:var(--ink)}
+.ic.wa{background:#25d366}.ic.fb{background:#1877f2}.ic.ig{background:linear-gradient(45deg,#f58529,#dd2a7b 50%,#8134af)}.ic.mail{background:var(--orange)}.ic.job{background:var(--amber);color:var(--ink)}
 .card small{font:400 11px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5)}
 .card b{font:700 16px/1.3 var(--disp);letter-spacing:-.005em;overflow-wrap:anywhere}
 .card span{font-size:14px;color:var(--muted)}
+.card b.em{font-size:13.5px;overflow-wrap:normal;word-break:normal}
 
 /* Livery + footer */
 .livery{position:relative;z-index:2;display:grid;grid-template-rows:5px 9px 5px}
@@ -121,6 +122,7 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 .lit .fx{opacity:1;transform:none;transition:opacity .9s var(--out),transform .9s var(--out)}
 .lit .fx.d1{transition-delay:.1s}.lit .fx.d2{transition-delay:.2s}.lit .fx.d3{transition-delay:.3s}.lit .fx.d4{transition-delay:.45s}
 
+@media (max-width:1200px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:1000px){.cards{grid-template-columns:1fr 1fr}}
 @media (max-width:760px){
   .stage>img{position:relative;inset:auto;height:240px;object-position:62% 50%;order:2}
@@ -147,6 +149,7 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.1-1.3A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3 .8.8-2.95-.2-.3a8.2 8.2 0 1 1 6.9 3.78Zm4.5-6.15c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.55.12-.17.25-.64.8-.78.97-.14.16-.29.18-.53.06a6.7 6.7 0 0 1-3.34-2.92c-.25-.43.25-.4.72-1.34.08-.16.04-.3-.02-.43-.06-.12-.55-1.33-.76-1.820-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 0 0-.65.3 2.75 2.75 0 0 0-.86 2.04 4.77 4.77 0 0 0 1 2.53c.12.16 1.74 2.66 4.22 3.73 1.57.68 2.18.74 2.97.62.48-.07 1.46-.6 1.67-1.18.2-.58.2-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></symbol>
   <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 22v-8.2h2.75l.41-3.2H13.5V8.56c0-.93.26-1.56 1.59-1.56h1.7V4.14A22.7 22.7 0 0 0 14.32 4C11.87 4 10.2 5.49 10.2 8.24v2.36H7.44v3.2h2.76V22h3.3Z"/></symbol>
   <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" d="M5 3.5h3.5l1.7 4.3-2.2 1.4a11 11 0 0 0 6.8 6.8l1.4-2.2 4.3 1.7V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.1 1.5 1.5 0 0 1 5 3.5Z"/></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3.5 5.5h17v13h-17z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="m3.5 6 8.5 7 8.5-7"/></symbol>
@@ -180,7 +183,7 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
           <li data-en="80+ trucks">Más de 80 camiones</li>
           <li data-en="Nationwide">Todo el país</li>
           <li data-en="Freight transport">Transporte de carga</li>
-          <li data-en="Special cargo">Cargas especiales</li>
+          <li data-en="Master Move · specialized cargo">Master Move · cargas especializadas</li>
           <li data-en="Forklift on board">Montacargas a bordo</li>
           <li data-en="Knuckle-boom crane">Grúa articulada</li>
         </ul>
@@ -195,13 +198,16 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
           <span class="ic wa"><svg><use href="#i-wa"/></svg></span><small data-en="WhatsApp and phone">WhatsApp y teléfono</small><b>+506 8983 8585</b><span data-en="Quotes and coordination">Cotizaciones y coordinación</span>
         </a>
         <a class="card fx d2" href="mailto:nlosilla@transportespohlond.com">
-          <span class="ic mail"><svg><use href="#i-mail"/></svg></span><small data-en="Email">Correo</small><b>nlosilla<wbr>@transportespohlond.com</b><span data-en="Administration">Administración</span>
+          <span class="ic mail"><svg><use href="#i-mail"/></svg></span><small data-en="Email">Correo</small><b class="em">nlosilla<wbr>@transportespohlond.com</b><span data-en="Administration">Administración</span>
         </a>
         <a class="card fx d3" href="mailto:rh-administracion@transportespohlond.com">
-          <span class="ic job"><svg><use href="#i-job"/></svg></span><small data-en="We’re hiring drivers · B1 B2 B3">Se solicitan choferes · B1 B2 B3</small><b>rh-administracion<wbr>@transportespohlond.com</b><span data-en="Send your résumé">Envíe su currículum</span>
+          <span class="ic job"><svg><use href="#i-job"/></svg></span><small data-en="We’re hiring drivers · B1 B2 B3">Se solicitan choferes · B1 B2 B3</small><b class="em">rh-administracion<wbr>@transportespohlond.com</b><span data-en="Send your résumé">Envíe su currículum</span>
         </a>
         <a class="card fx d4" href="https://www.facebook.com/transportesgrupopohlond" target="_blank" rel="noopener">
           <span class="ic fb"><svg><use href="#i-fb"/></svg></span><small>Facebook</small><b>Transportes Pohlond</b><span data-en="Our work and job openings">Nuestros trabajos y vacantes</span>
+        </a>
+        <a class="card fx d4" href="https://www.instagram.com/transportespohlond/" target="_blank" rel="noopener">
+          <span class="ic ig"><svg><use href="#i-ig"/></svg></span><small>Instagram</small><b>@transportespohlond</b><span data-en="Photos of our work">Fotos de nuestros trabajos</span>
         </a>
       </div>
     </div>
@@ -211,7 +217,7 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 <div class="livery" aria-hidden="true"><i></i><i></i><i></i></div>
 <footer>
   <div class="wrap">
-    <span data-en="© 2026 Transportes Pohlond · Costa Rica">© 2026 Transportes Pohlond · Costa Rica</span>
+    <span data-en="© 2026 Transportes Pohlond · Serving all of Costa Rica">© 2026 Transportes Pohlond · Servicio en todo Costa Rica</span>
     <a class="made" href="https://hacksincodigos.com" target="_blank" rel="noopener"><span data-en="Website by">Sitio desarrollado por</span><img src="img/hacksincodigos.webp" alt="HacksinCodigos" width="817" height="269"></a>
   </div>
 </footer>
