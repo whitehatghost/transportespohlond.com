@@ -12,8 +12,8 @@ gtag('config', 'G-1SXP4LP19F');
       var t = x.searchParams.get('text') || 'Hola, quiero información.';
       if (t.indexOf('[Vengo de') > -1) return u;
       var pag = (document.title.split(' · ')[0] || 'Inicio').trim();
-      x.searchParams.set('text', t + '\n\n[Vengo de la página: ' + pag + ']');
-      return x.toString();
+      // encodeURIComponent, not searchParams.set: that one writes spaces as "+", which WhatsApp can show literally.
+      return x.origin + x.pathname + '?text=' + encodeURIComponent(t + '\n\n[Vengo de la página: ' + pag + ']');
     } catch (e) { return u; }
   }
   document.addEventListener('click', function(e){
