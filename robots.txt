@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /rh
+Disallow: /api/
 
 Sitemap: https://www.transportespohlond.com/sitemap.xml
