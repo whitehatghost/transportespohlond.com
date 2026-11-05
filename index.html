@@ -483,6 +483,9 @@ html:not(.js) .rv{opacity:1;transform:none}
 .cbtn:disabled{opacity:.4;cursor:default}
 .cbtn.send{background:var(--orange);border-color:var(--orange);color:#fff}
 .cbtn.hot{border-color:var(--orange);color:var(--orange);animation:ring 1.6s infinite}
+.cbtn.rec{background:#c0392b;border-color:#c0392b;color:#fff;animation:blink 1s infinite}
+.chat-f{gap:6px}
+@media (prefers-reduced-motion:reduce){.cbtn.rec{animation:none}}
 .demo-note{margin:0;padding:0 12px 10px;background:#fff;text-align:center;font:400 10.5px/1.4 var(--mono);color:var(--muted)}
 @keyframes blink{0%,60%,100%{opacity:.35}30%{opacity:1}}
 @keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
@@ -1260,6 +1263,7 @@ html:not(.js) .rv{opacity:1;transform:none}
           <form class="chat-f">
             <button class="cbtn js-attach" type="button" aria-label="Adjuntar currículum" disabled><svg><use href="#i-clip"/></svg></button>
             <input type="text" placeholder="Escriba aquí…" aria-label="Mensaje" disabled>
+            <button class="cbtn js-mic" type="button" aria-label="Grabar nota de voz" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>
             <button class="cbtn send" type="submit" aria-label="Enviar" disabled><svg><use href="#i-send"/></svg></button>
           </form>
           <p class="demo-note">Asistente con IA. Sus datos se usan solo para el proceso de selección (Ley 8968).</p>
@@ -1365,7 +1369,8 @@ html:not(.js) .rv{opacity:1;transform:none}
     <form class="chat-f">
       <button class="cbtn js-attach" type="button" aria-label="Adjuntar archivo" disabled><svg><use href="#i-clip"/></svg></button>
       <input type="text" placeholder="Escriba aquí…" aria-label="Mensaje" disabled>
-      <button class="cbtn send" type="submit" aria-label="Enviar" disabled><svg><use href="#i-send"/></svg></button>
+      <button class="cbtn js-mic" type="button" aria-label="Grabar nota de voz" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>
+            <button class="cbtn send" type="submit" aria-label="Enviar" disabled><svg><use href="#i-send"/></svg></button>
     </form>
     <p class="demo-note">Asistente con IA. Para hablar con una persona: WhatsApp 8983 8585.</p>
   </div>
@@ -1377,8 +1382,8 @@ html:not(.js) .rv{opacity:1;transform:none}
 </div>
 <a class="wa-float js-wa" href="https://wa.me/50689838585?text=Hola%2C%20quiero%20cotizar%20un%20transporte" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp al 8983 8585"><svg><use href="#i-wa"/></svg></a>
 
-<script src="/js/554ae41c729f.js"></script>
+<script src="/js/8cee95e13963.js"></script>
 <script src="/js/1bd8cebfed99.js"></script>
-<script src="/js/88db3c3c3400.js"></script>
+<script src="/js/766b018ea5e7.js"></script>
 </body>
 </html>

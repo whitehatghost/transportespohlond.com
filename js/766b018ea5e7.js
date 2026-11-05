@@ -13,6 +13,7 @@
     this.input = this.form.querySelector('input[type=text]');
     this.sendBtn = this.form.querySelector('.send');
     this.attach = this.form.querySelector('.js-attach');
+    this.mic = this.form.querySelector('.js-mic');
     this.st = root.querySelector('.st');
     this.picker = document.createElement('input');
     this.picker.type = 'file'; this.picker.accept = '.pdf,.doc,.docx,image/*'; this.picker.hidden = true;
@@ -24,6 +25,7 @@
       if (v && self._text) { var r = self._text; self._text = null; self.input.value = ''; self.lock(); self.me(v); r(v); }
     });
     this.attach.addEventListener('click', function () { self.picker.click(); });
+    if (this.mic) this.mic.addEventListener('click', function () { self.record(); });
     this.picker.addEventListener('change', function () { if (self.picker.files[0]) self.offer(self.picker.files[0]); self.picker.value = ''; });
     this.run = 0; this.started = false;
   }
@@ -44,7 +46,45 @@
     this.el('msg bot', html);
   };
   Chat.prototype.me = function (text) { this.el('msg me', esc(text)); };
-  Chat.prototype.lock = function () { this.input.disabled = this.sendBtn.disabled = this.attach.disabled = true; this.attach.classList.remove('hot'); this.input.placeholder = T('Escriba aquí…'); };
+  Chat.prototype.lock = function () { this.input.disabled = this.sendBtn.disabled = this.attach.disabled = true; if (this.mic && !this.rec) this.mic.disabled = true; this.attach.classList.remove('hot'); this.input.placeholder = T('Escriba aquí…'); };
+  // Voice notes: recorded here, converted to 16 kHz mono WAV (what the transcriber always reads), one minute at most.
+  async function toWav(blob) {
+    var ac = new (window.AudioContext || window.webkitAudioContext)();
+    var buf = await ac.decodeAudioData(await blob.arrayBuffer()); ac.close();
+    var off = new OfflineAudioContext(1, Math.max(1, Math.ceil(buf.duration * 16000)), 16000);
+    var src = off.createBufferSource(); src.buffer = buf; src.connect(off.destination); src.start();
+    var pcm = (await off.startRendering()).getChannelData(0);
+    var v = new DataView(new ArrayBuffer(44 + pcm.length * 2));
+    var put = function (o, s) { for (var i = 0; i < s.length; i++) v.setUint8(o + i, s.charCodeAt(i)); };
+    put(0, 'RIFF'); v.setUint32(4, 36 + pcm.length * 2, true); put(8, 'WAVE'); put(12, 'fmt ');
+    v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true); v.setUint32(24, 16000, true);
+    v.setUint32(28, 32000, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true); put(36, 'data'); v.setUint32(40, pcm.length * 2, true);
+    for (var i = 0; i < pcm.length; i++) { var x = Math.max(-1, Math.min(1, pcm[i])); v.setInt16(44 + i * 2, x < 0 ? x * 0x8000 : x * 0x7fff, true); }
+    return new Blob([v], { type: 'audio/wav' });
+  }
+  Chat.prototype.record = async function () {
+    var self = this;
+    if (this.rec) { this.rec.stop(); return; }
+    var stream;
+    try { stream = await navigator.mediaDevices.getUserMedia({ audio: true }); }
+    catch (e) { this.el('msg bot', esc(T('El navegador no dejó usar el micrófono. Puede escribirme.'))); return; }
+    var mr = new MediaRecorder(stream), parts = [], t0 = Date.now();
+    this.rec = mr; this.mic.classList.add('rec'); this.mic.setAttribute('aria-label', T('Detener y enviar'));
+    var tick = setInterval(function () { var s = Math.round((Date.now() - t0) / 1000); self.st.textContent = T('Grabando…') + ' 0:' + ('0' + s).slice(-2) + ' / 1:00'; }, 250);
+    var limit = setTimeout(function () { if (mr.state === 'recording') mr.stop(); }, 60000);
+    mr.ondataavailable = function (e) { if (e.data.size) parts.push(e.data); };
+    mr.onstop = async function () {
+      clearInterval(tick); clearTimeout(limit); stream.getTracks().forEach(function (t) { t.stop(); });
+      self.rec = null; self.mic.classList.remove('rec'); self.mic.setAttribute('aria-label', T('Grabar nota de voz')); self.st.textContent = T('En línea');
+      if (Date.now() - t0 < 700 || !self._voice) return;
+      var wav;
+      try { wav = await toWav(new Blob(parts, { type: mr.mimeType })); } catch (e) { self.el('msg bot', esc(T('No pude procesar el audio. Intente de nuevo o escríbame.'))); return; }
+      var r = self._voice; self._voice = null; self.lock();
+      wav.bubble = self.el('msg me', '🎤 ' + esc(T('Nota de voz')));
+      r(wav);
+    };
+    mr.start();
+  };
   Chat.prototype.choose = function (opts) {
     var self = this, id = this.run;
     return new Promise(function (res, rej) {
@@ -103,11 +143,12 @@
   // Waits for whatever the visitor sends next: typed text or a file (clip or the CV dropzone).
   function next(c) {
     if (c.cv && !c.cv.sent) { var f = c.cv; f.sent = true; c.fileMsg(f); return Promise.resolve(f); }
-    c.input.disabled = c.sendBtn.disabled = c.attach.disabled = false; c.input.placeholder = T('Escriba aquí…');
+    c.input.disabled = c.sendBtn.disabled = c.attach.disabled = false; if (c.mic) c.mic.disabled = false; c.input.placeholder = T('Escriba aquí…');
     if (matchMedia('(hover:hover)').matches) c.input.focus({ preventScroll: true });
     return new Promise(function (res) {
-      c._text = function (v) { c._file = null; res(v); };
-      c._file = function (f) { f.sent = true; c._text = null; res(f); };
+      c._text = function (v) { c._file = c._voice = null; res(v); };
+      c._file = function (f) { f.sent = true; c._text = c._voice = null; res(f); };
+      c._voice = function (w) { c._text = c._file = null; res(w); };
     });
   }
   function chooseOrType(c, opts) {
@@ -115,7 +156,7 @@
     return new Promise(function (res) {
       opts.forEach(function (o) {
         var b = document.createElement('button'); b.type = 'button'; b.className = 'opt'; b.textContent = o;
-        b.onclick = function () { if (done) return; done = true; box.remove(); c._text = c._file = null; c.lock(); c.me(o); res(o); };
+        b.onclick = function () { if (done) return; done = true; box.remove(); c._text = c._file = c._voice = null; c.lock(); c.me(o); res(o); };
         box.appendChild(b);
       });
       c.b.scrollTop = c.b.scrollHeight;
@@ -128,12 +169,16 @@
       var fd = new FormData();
       fd.append('sesion', session()); fd.append('seccion', section);
       fd.append('idioma', document.documentElement.lang === 'en' ? 'en' : 'es');
-      if (send instanceof File) fd.append('archivo', send); else fd.append('texto', send);
+      if (send instanceof File) fd.append('archivo', send);
+      else if (send instanceof Blob) fd.append('audio', send, 'nota.wav');
+      else fd.append('texto', send);
       var t = c.el('typing', '<i></i><i></i><i></i>'); c.st.textContent = T('Escribiendo…');
       var j;
       try { var r = await fetch('/api/asistente', { method: 'POST', body: fd }); j = await r.json(); }
       catch (e) { j = { respuesta: T('No hubo conexión. Intente de nuevo o escríbanos al WhatsApp 8983 8585.') }; }
       t.remove(); c.st.textContent = T('En línea'); alive();
+      // Show the visitor what the assistant understood from the voice note.
+      if (send instanceof Blob && !(send instanceof File) && send.bubble && j.transcripcion) send.bubble.textContent = '🎤 «' + j.transcripcion + '»';
       var txt = j.error || j.respuesta || '';
       if (txt) c.el('msg bot', esc(txt).replace(/\n/g, '<br>'));
       if (j.whatsapp && j.whatsapp.mensaje) c.link(j.whatsapp.boton || T('Enviar por WhatsApp'), WA + encodeURIComponent(j.whatsapp.mensaje));
