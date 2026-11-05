@@ -203,6 +203,39 @@
       next(c).then(function (v) { if (done) return; close(); res(v); });
     });
   }
+  // A small form inside the chat for the employee's ID number, PIN or activation code.
+  // The PIN never shows: the bubble says •••• and the field is a password field.
+  function fieldForm(c, o) {
+    c.lock();
+    var card = c.el('req-card form-card', '<label class="f-l">' + esc(o.label) + '</label>' + (o.help ? '<p class="req-n">' + esc(o.help) + '</p>' : ''));
+    var row = document.createElement('div'); row.className = 'f-row';
+    var inp = document.createElement('input');
+    inp.type = o.secret ? 'password' : 'text'; inp.inputMode = 'numeric'; inp.autocomplete = 'off';
+    inp.placeholder = o.placeholder || ''; inp.maxLength = o.max || 20; inp.className = 'f-in' + (o.secret ? ' f-pin' : '');
+    inp.setAttribute('aria-label', o.label);
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'btn btn-o'; b.textContent = T('Continuar');
+    row.appendChild(inp); row.appendChild(b); card.appendChild(row);
+    var skip = null;
+    if (o.skip) { skip = document.createElement('button'); skip.type = 'button'; skip.className = 'f-skip'; skip.textContent = o.skip; card.appendChild(skip); }
+    c.b.scrollTop = c.b.scrollHeight;
+    setTimeout(function () { inp.focus({ preventScroll: true }); }, 60);
+    return new Promise(function (res) {
+      function go() {
+        var v = inp.value.replace(/\D/g, '');
+        if (o.len ? v.length !== o.len : v.length < (o.min || 1)) { inp.classList.add('bad'); inp.focus(); return; }
+        card.remove(); c.me(o.mask ? '•'.repeat(v.length) : inp.value.trim()); res(v);
+      }
+      b.onclick = go;
+      inp.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); go(); } });
+      inp.addEventListener('input', function () { inp.classList.remove('bad'); });
+      if (skip) skip.onclick = function () { card.remove(); c.skipped = o.paso; c.me(o.skip); res(o.skipText || o.skip); };
+    });
+  }
+  // What an employee can ask for, as buttons.
+  function employeeMenu() {
+    return [T('Constancia salarial'), T('Constancia de trabajo'), T('Carta del FCL'), T('Mi último pago'), T('Mis préstamos'),
+      T('Mis vacaciones'), T('Pedir vacaciones'), T('Reportar incapacidad'), T('Reportar un accidente'), T('Otra consulta')];
+  }
   // A button inside the chat to upload the document the assistant just asked for.
   function uploadButton(c, que) {
     var a = document.createElement('button'); a.type = 'button'; a.className = 'btn btn-o up-btn';
@@ -236,7 +269,31 @@
       var txt = j.error || j.respuesta || '';
       if (txt) c.el('msg bot', esc(txt).replace(/\n/g, '<br>'));
       if (j.whatsapp && j.whatsapp.mensaje) c.link(j.whatsapp.boton || T('Enviar por WhatsApp'), WA + encodeURIComponent(j.whatsapp.mensaje));
-      c.b.querySelectorAll('.up-btn').forEach(function (e) { e.remove(); });
+      c.b.querySelectorAll('.up-btn,.menu-chip').forEach(function (e) { e.remove(); });
+      // Employee identification: the box that fits the step (ID number, PIN, activation code).
+      if (j.paso_pin === 'esperando_pin' && c.skipped !== 'esperando_pin') { send = await fieldForm(c, { label: T('Escriba su PIN de 4 números'), secret: true, mask: true, len: 4, max: 4, skip: T('Olvidé mi PIN'), skipText: T('Olvidé mi PIN'), paso: 'esperando_pin' }); alive(); continue; }
+      if (j.paso_pin === 'esperando_codigo' && c.skipped !== 'esperando_codigo') { send = await fieldForm(c, { label: T('Código de activación (6 números)'), help: T('Se lo da Recursos Humanos en persona o por llamada.'), mask: true, len: 6, max: 6, skip: T('Todavía no lo tengo'), skipText: T('Todavía no tengo el código de activación.'), paso: 'esperando_codigo' }); alive(); continue; }
+      if (j.paso_pin === 'nuevo_pin') { send = await fieldForm(c, { label: T('Cree su PIN de 4 números'), help: T('Solo usted lo sabe. No use 1234 ni números repetidos.'), secret: true, mask: true, len: 4, max: 4 }); alive(); continue; }
+      if (j.paso_pin === 'confirmar_pin') { send = await fieldForm(c, { label: T('Repita su PIN'), secret: true, mask: true, len: 4, max: 4 }); alive(); continue; }
+      if (j.empleado && !c.menuShown) {
+        c.menuShown = true;
+        var op = await chooseOrType(c, employeeMenu()); alive();
+        send = op === T('Otra consulta') ? T('Tengo otra consulta.') : op; continue;
+      }
+      if (j.empleado) {
+        // After each answer, a small button to bring the menu back.
+        var chip = document.createElement('button'); chip.type = 'button'; chip.className = 'opt menu-chip'; chip.textContent = T('Ver opciones');
+        chip.onclick = function () {
+          chip.remove(); var box = c.el('opts', '');
+          employeeMenu().forEach(function (o2) {
+            var b2 = document.createElement('button'); b2.type = 'button'; b2.className = 'opt'; b2.textContent = o2;
+            b2.onclick = function () { if (!c._text) return; var r = c._text; c._text = c._file = c._voice = null; box.remove(); c.lock(); c.me(o2); r(o2 === T('Otra consulta') ? T('Tengo otra consulta.') : o2); };
+            box.appendChild(b2);
+          });
+          c.b.scrollTop = c.b.scrollHeight;
+        };
+        c.add(chip);
+      }
       if (j.checklist && j.checklist.items && j.checklist.items.length) { send = await checklist(c, j.checklist); alive(); continue; }
       if (j.opciones && j.opciones.length) { send = await chooseOrType(c, j.opciones); alive(); continue; }
       if (j.subir) uploadButton(c, j.subir);
@@ -255,7 +312,12 @@
   // General assistant (quotes, questions)
   async function assistFlow(c, alive) {
     await c.say(T('¡Hola! Soy el asistente virtual de <b>Transportes Pohlond</b>. ¿En qué le ayudo?'));
-    var o = await chooseOrType(c, [T('Cotizar un transporte'), T('Trabajar como chofer'), T('Hablar con una persona')]); alive();
+    var o = await chooseOrType(c, [T('Cotizar un transporte'), T('Soy empleado de Pohlond'), T('Trabajar como chofer'), T('Hablar con una persona')]); alive();
+    if (o === T('Soy empleado de Pohlond')) {
+      await c.say(T('Con gusto. Para proteger sus datos, primero confirmo que es usted.'));
+      var ced = await fieldForm(c, { label: T('Su número de cédula'), placeholder: '1-0000-0000', min: 9, max: 15 }); alive();
+      return converse(c, alive, 'empleado', T('Soy empleado de Pohlond. Mi cédula es {c}.', { c: ced }));
+    }
     if (o === T('Trabajar como chofer')) {
       await c.say(T('¡Qué bien! Le atiende nuestro asistente de reclutamiento: le hace unas preguntas y recibe su currículum.'));
       c.link(T('Ir a «Trabaje con nosotros»'), null, function () { closePanel(); document.getElementById('trabaje').scrollIntoView({ behavior: 'smooth' }); if (!recruit.started) recruit.start(); });
