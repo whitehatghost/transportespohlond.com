@@ -88,58 +88,71 @@
   };
   Chat.prototype.again = async function (label) { await this.choose([label || T('Empezar de nuevo')]); this.start(); };
 
+  // The live AI agent (Cloudflare Worker behind /api/asistente). The greeting and the first
+  // buttons are fixed text, so they cost nothing; only real questions reach the model.
+  var SES = 'pohlond-chat';
+  function newSession() {
+    var s = Array.prototype.map.call(crypto.getRandomValues(new Uint8Array(12)), function (b) { return ('0' + b.toString(16)).slice(-2); }).join('');
+    try { localStorage.setItem(SES, s); } catch (e) {}
+    return s;
+  }
+  function session() {
+    var s; try { s = localStorage.getItem(SES); } catch (e) {}
+    return s && /^[\w-]{12,40}$/.test(s) ? s : newSession();
+  }
+  // Waits for whatever the visitor sends next: typed text or a file (clip or the CV dropzone).
+  function next(c) {
+    if (c.cv && !c.cv.sent) { var f = c.cv; f.sent = true; c.fileMsg(f); return Promise.resolve(f); }
+    c.input.disabled = c.sendBtn.disabled = c.attach.disabled = false; c.input.placeholder = T('Escriba aquí…');
+    if (matchMedia('(hover:hover)').matches) c.input.focus({ preventScroll: true });
+    return new Promise(function (res) {
+      c._text = function (v) { c._file = null; res(v); };
+      c._file = function (f) { f.sent = true; c._text = null; res(f); };
+    });
+  }
+  function chooseOrType(c, opts) {
+    var box = c.el('opts', ''), done = false;
+    return new Promise(function (res) {
+      opts.forEach(function (o) {
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'opt'; b.textContent = o;
+        b.onclick = function () { if (done) return; done = true; box.remove(); c._text = c._file = null; c.lock(); c.me(o); res(o); };
+        box.appendChild(b);
+      });
+      c.b.scrollTop = c.b.scrollHeight;
+      next(c).then(function (v) { if (done) return; done = true; box.remove(); res(v); });
+    });
+  }
+  async function converse(c, alive, section, first) {
+    var send = first;
+    for (;;) {
+      var fd = new FormData();
+      fd.append('sesion', session()); fd.append('seccion', section);
+      fd.append('idioma', document.documentElement.lang === 'en' ? 'en' : 'es');
+      if (send instanceof File) fd.append('archivo', send); else fd.append('texto', send);
+      var t = c.el('typing', '<i></i><i></i><i></i>'); c.st.textContent = T('Escribiendo…');
+      var j;
+      try { var r = await fetch('/api/asistente', { method: 'POST', body: fd }); j = await r.json(); }
+      catch (e) { j = { respuesta: T('No hubo conexión. Intente de nuevo o escríbanos al WhatsApp 8983 8585.') }; }
+      t.remove(); c.st.textContent = T('En línea'); alive();
+      var txt = j.error || j.respuesta || '';
+      if (txt) c.el('msg bot', esc(txt).replace(/\n/g, '<br>'));
+      if (j.whatsapp && j.whatsapp.mensaje) c.link(j.whatsapp.boton || T('Enviar por WhatsApp'), WA + encodeURIComponent(j.whatsapp.mensaje));
+      send = await next(c); alive();
+    }
+  }
+
   // Recruiting agent
   async function recruitFlow(c, alive) {
     await c.say(T('¡Hola! Soy el asistente de reclutamiento de <b>Transportes Pohlond</b>.'));
-    await c.say(T('Le hago unas preguntas rápidas y le paso su ficha a Recursos Humanos. Toma unos 2 minutos. ¿Cómo se llama?'));
-    var name = await c.ask(T('Nombre y apellido')); alive();
-    var first = name.split(T(' '))[0];
-    await c.say(T('Mucho gusto, {n}. ¿Qué licencia de conducir tiene?', { n: esc(first) }));
-    var lic = await c.choose(['B1', 'B2', 'B3', T('Otra')]);
-    if (lic === T('Otra')) {
-      await c.say(T('Gracias por su interés. Por ahora buscamos choferes con licencia B1, B2 o B3, así que esta vez no puedo pasar su solicitud.'));
-      await c.say(T('Cuando abramos un puesto para su licencia lo publicaremos en nuestro Facebook. ¡Mucho éxito!'));
-      return c.again();
-    }
-    await c.say(T('¿Cuántos años de experiencia tiene manejando camión?'));
-    var exp = await c.choose([T('Menos de 2 años'), T('De 2 a 4 años'), T('Más de 4 años')]);
-    if (exp === T('Menos de 2 años')) {
-      await c.say(T('Le agradezco la sinceridad. Para este puesto pedimos al menos 2 años de experiencia manejando camión.'));
-      await c.say(T('Le invitamos a aplicar de nuevo cuando la tenga. ¡Mucho éxito, {n}!', { n: esc(first) }));
-      return c.again();
-    }
-    await c.say(T('Excelente. ¿En qué zona vive?'));
-    var zona = await c.ask(T('Ej.: Alajuelita')); alive();
-    await c.say(T('Anotado. El trabajo es dentro del GAM. ¿Qué horario puede trabajar?'));
-    var hor = await c.choose([T('Diurno'), T('Nocturno'), T('Mixto'), T('Cualquiera')]);
-    await c.say(T('¿Cuál es su aspiración salarial mensual?'));
-    var sal = await c.ask(T('Ej.: ₡450 000')); alive();
-    await c.say(T('¿Tiene al día la hoja de delincuencia y la lista de trabajos anteriores de la CCSS?'));
-    var docs = await c.choose([T('Sí, ambas'), T('Me falta alguna')]);
-    if (c.cv) {
-      await c.say(T('Ya tengo el currículum que subió: <b>{f}</b>.', { f: esc(c.cv.name) }));
-    } else {
-      await c.say(T('Por último, adjunte su currículum con el clip o en el recuadro de al lado. Puede ser PDF, Word o una foto.'));
-      await c.askFile(); alive();
-    }
-    await c.say(T('Preparando su ficha…'), 1400);
-    var ok = docs === T('Sí, ambas');
-    c.card(T('Ficha para RH'), ok ? T('Cumple requisitos') : T('Revisar documentos'), ok, [
-      [T('Candidato'), name], [T('Licencia'), lic], [T('Experiencia'), exp], [T('Zona'), zona], [T('Horario'), hor],
-      [T('Aspiración'), sal], [T('Documentos'), ok ? T('Al día') : T('Pendientes')], [T('Currículum'), c.cv ? c.cv.name : '—']
-    ]);
-    await sleep(500); alive();
-    await c.say(T('¡Listo, {n}! Toque el botón para enviar su ficha a Recursos Humanos por WhatsApp y adjunte ahí su currículum.', { n: esc(first) }) + (ok ? '' : T(' Mientras tanto, vaya sacando los documentos que le faltan.')));
-    var ficha = [T('Hola, quiero aplicar como chofer.'), T('Nombre: {v}', { v: name }), T('Licencia: {v}', { v: lic }), T('Experiencia: {v}', { v: exp }), T('Zona: {v}', { v: zona }),
-      T('Horario: {v}', { v: hor }), T('Aspiración salarial: {v}', { v: sal }), T('Documentos: {v}', { v: ok ? T('Al día') : T('Pendientes') }), T('Les adjunto mi currículum.')].join('\n');
-    c.link(T('Enviar mi ficha por WhatsApp'), WA + encodeURIComponent(ficha));
-    return c.again();
+    await c.say(T('Cuénteme un poco de usted o adjunte su currículum con el clip. Le hago unas preguntas y le dejo su ficha a Recursos Humanos.'));
+    var first = await next(c); alive();
+    await converse(c, alive, 'reclutamiento', first);
   }
 
-  // General assistant (quotes)
+  // General assistant (quotes, questions)
   async function assistFlow(c, alive) {
     await c.say(T('¡Hola! Soy el asistente virtual de <b>Transportes Pohlond</b>. ¿En qué le ayudo?'));
-    var o = await c.choose([T('Cotizar un transporte'), T('Trabajar como chofer'), T('Hablar con una persona')]);
+    var o = await chooseOrType(c, [T('Cotizar un transporte'), T('Trabajar como chofer'), T('Hablar con una persona')]); alive();
     if (o === T('Trabajar como chofer')) {
       await c.say(T('¡Qué bien! Le atiende nuestro asistente de reclutamiento: le hace unas preguntas y recibe su currículum.'));
       c.link(T('Ir a «Trabaje con nosotros»'), null, function () { closePanel(); document.getElementById('trabaje').scrollIntoView({ behavior: 'smooth' }); if (!recruit.started) recruit.start(); });
@@ -150,26 +163,11 @@
       c.link(T('Abrir WhatsApp'), WA + encodeURIComponent(T('Hola, quiero hablar con alguien de Transportes Pohlond')));
       return c.again(T('Volver al inicio'));
     }
-    await c.say(T('Con gusto. ¿Qué necesita mover?'));
-    var tipo = await c.choose([T('Mercadería'), T('Maquinaria o equipo'), T('Materiales'), T('Carga especial')]);
-    await c.say(T('¿Dónde se recoge la carga?'));
-    var de = await c.ask(T('Ej.: Santa Ana')); alive();
-    await c.say(T('¿Y dónde se entrega?'));
-    var a = await c.ask(T('Ej.: Heredia')); alive();
-    await c.say(T('¿Para cuándo lo necesita?'));
-    var cuando = await c.choose([T('Hoy o mañana'), T('Esta semana'), T('Más adelante')]);
-    await c.say(T('¿Hace falta montacargas o grúa para cargar o descargar?'));
-    var eq = await c.choose([T('Montacargas'), T('Grúa'), T('No sé, que me asesoren'), T('No hace falta')]);
-    c.card(T('Resumen de cotización'), T('Listo'), true, [[T('Carga'), tipo], [T('Recoger en'), de], [T('Entregar en'), a], [T('Para'), cuando], [T('Equipo'), eq]]);
-    await sleep(400); alive();
-    await c.say(T('Le paso este resumen a nuestro equipo por WhatsApp para que le coticen.'));
-    var msg = [T('Hola, quiero cotizar un transporte.'), T('Carga: {v}', { v: tipo }), T('Recoger en: {v}', { v: de }), T('Entregar en: {v}', { v: a }), T('Para: {v}', { v: cuando }), T('Equipo: {v}', { v: eq })].join('\n');
-    c.link(T('Enviar por WhatsApp'), WA + encodeURIComponent(msg));
-    return c.again(T('Volver al inicio'));
+    await converse(c, alive, 'general', o === T('Cotizar un transporte') ? T('Quiero cotizar un transporte.') : o);
   }
 
   var recruit = new Chat(document.getElementById('recruit'), recruitFlow);
-  recruit.root.querySelector('.js-restart').addEventListener('click', function () { recruit.cv = null; resetDrop(); recruit.start(); });
+  recruit.root.querySelector('.js-restart').addEventListener('click', function () { recruit.cv = null; resetDrop(); newSession(); recruit.start(); });
   if ('IntersectionObserver' in window) {
     var seen = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { seen.disconnect(); if (!recruit.started) recruit.start(); } }, { threshold: 0.35 });
     seen.observe(recruit.root);
@@ -178,7 +176,7 @@
   // CV dropzone feeds the recruiting chat
   var drop = document.getElementById('drop'), cvInput = document.getElementById('cvFile'), dropFile = null;
   function resetDrop() { drop.classList.remove('ok'); dropFile = null; document.getElementById('dropT').textContent = T('Suba aquí su currículum'); document.getElementById('dropS').textContent = T('PDF, Word o foto. Arrástrelo o toque para elegirlo.'); }
-  function dropOk(f) { document.getElementById('dropT').textContent = T('Recibido: {f}', { f: f.name }); document.getElementById('dropS').textContent = T('{s} · Adjúntelo también en WhatsApp al enviar su ficha.', { s: kb(f.size) }); }
+  function dropOk(f) { document.getElementById('dropT').textContent = T('Recibido: {f}', { f: f.name }); document.getElementById('dropS').textContent = T('{s} · El asistente ya lo tiene.', { s: kb(f.size) }); }
   function takeCV(f) {
     if (!f) return;
     drop.classList.add('ok'); dropFile = f; dropOk(f);
