@@ -163,11 +163,30 @@
       next(c).then(function (v) { if (done) return; done = true; box.remove(); res(v); });
     });
   }
+  // Cloudflare's "I'm human" box (Turnstile), only when the server asks for it: once per visitor.
+  var TS_KEY = '0x4AAAAAAF0RKoTBbEADkZHE', tsLoad = null;
+  function humanCheck(c) {
+    if (!tsLoad) tsLoad = new Promise(function (res, rej) {
+      var s = document.createElement('script'); s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+      s.async = true; s.onload = res; s.onerror = rej; document.head.appendChild(s);
+    });
+    return tsLoad.then(function () {
+      return new Promise(function (res) {
+        var box = c.el('cf-box', '');
+        window.turnstile.render(box, {
+          sitekey: TS_KEY, language: document.documentElement.lang === 'en' ? 'en' : 'es', theme: 'light',
+          callback: function (tok) { setTimeout(function () { box.remove(); }, 500); res(tok); },
+          'error-callback': function () { box.remove(); res(''); }
+        });
+      });
+    }).catch(function () { return ''; });
+  }
   async function converse(c, alive, section, first) {
-    var send = first;
+    var send = first, token = '';
     for (;;) {
       var fd = new FormData();
       fd.append('sesion', session()); fd.append('seccion', section);
+      if (token) { fd.append('turnstile', token); token = ''; }
       fd.append('idioma', document.documentElement.lang === 'en' ? 'en' : 'es');
       if (send instanceof File) fd.append('archivo', send);
       else if (send instanceof Blob) fd.append('audio', send, 'nota.wav');
@@ -177,6 +196,12 @@
       try { var r = await fetch('/api/asistente', { method: 'POST', body: fd }); j = await r.json(); }
       catch (e) { j = { respuesta: T('No hubo conexión. Intente de nuevo o escríbanos al WhatsApp 8983 8585.') }; }
       t.remove(); c.st.textContent = T('En línea'); alive();
+      if (j.captcha) {
+        c.el('msg bot', esc(T('Antes de seguir, confirme que es una persona:')));
+        token = await humanCheck(c); alive();
+        if (!token) { c.el('msg bot', esc(T('No se pudo confirmar. Recargue la página o escríbanos al WhatsApp 8983 8585.'))); send = await next(c); alive(); }
+        continue;
+      }
       // Show the visitor what the assistant understood from the voice note.
       if (send instanceof Blob && !(send instanceof File) && send.bubble && j.transcripcion) send.bubble.textContent = '🎤 «' + j.transcripcion + '»';
       var txt = j.error || j.respuesta || '';
