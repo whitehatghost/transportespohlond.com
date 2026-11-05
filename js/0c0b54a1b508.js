@@ -34,6 +34,8 @@
     'Cargas delicadas': 'Delicate cargo', 'desde maquinaria hasta esculturas': 'anything from machinery to sculptures',
     'Frágil': 'Fragile', 'Esculturas': 'Sculptures', 'Vidrio': 'Glass', 'Contenedores': 'Containers',
     'Maquinaria, estructuras, esculturas y vidrio: cargas pesadas o delicadas que se mueven con planificación, camión con grúa y maniobras cuidadosas.': 'Machinery, structures, sculptures and glass: heavy or delicate loads moved with a plan, a crane truck and careful handling.',
+    // tanda:ingles
+    'También movemos': 'We also move', 'Tanques de agua': 'Water tanks', 'Casas contenedor': 'Container homes', 'Mármol y granito': 'Marble and granite', 'Paneles solares': 'Solar panels', 'Cajas fuertes': 'Safes', 'Plantas eléctricas': 'Generators', 'Transformadores': 'Transformers', 'Minicargadores': 'Skid steers', 'Montacargas a domicilio': 'Forklift on call', 'Flete con grúa': 'Crane freight', 'Izaje de cargas': 'Crane lifting', 'Cama baja (lowboy)': 'Lowboy transport', 'Subir muebles y materiales': 'Crane for furniture and materials', 'Grúa telescópica': 'Telescopic crane', 'Peso de un contenedor': 'Container weights',
     // "Lo que transportamos"
     'Lo que transportamos': 'What we move', 'Cada pieza llega': 'Every piece arrives', 'como salió': 'the way it left',
     'Cuando la carga es frágil, cada detalle cuenta: el embalaje, el amarre, la maniobra y la descarga.': 'When the load is fragile, every detail counts: the packing, the strapping, the lift and the drop-off.',
