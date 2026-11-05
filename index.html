@@ -485,6 +485,18 @@ html:not(.js) .rv{opacity:1;transform:none}
 .cbtn.hot{border-color:var(--orange);color:var(--orange);animation:ring 1.6s infinite}
 .cbtn.rec{background:#c0392b;border-color:#c0392b;color:#fff;animation:blink 1s infinite}
 .cf-box{align-self:flex-start;min-height:65px}
+.req-card{align-self:stretch;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;animation:pop .35s var(--out)}
+.req-h{font-weight:700;color:var(--ink);font-size:14.5px}
+.req-n{margin:4px 0 6px;font-size:12.5px;color:var(--muted)}
+.req-i{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px solid var(--line);font-size:14px;cursor:pointer}
+.req-i input{width:18px;height:18px;flex:none;accent-color:var(--orange);margin:1px 0 0}
+.req-ok{margin-top:10px}
+.up-btn{align-self:flex-start;font-size:14px;padding:11px 18px}
+.up-btn svg{width:18px;height:18px}
+.puestos{list-style:none;margin:22px 0 26px;padding:0;display:grid;gap:10px}
+.puestos li{background:#fff;border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:8px;padding:13px 16px}
+.puestos b{display:block;font-size:16px;color:var(--ink)}
+.puestos span{display:block;margin-top:3px;font-size:14px;color:var(--muted)}
 .chat-f{gap:6px}
 @media (prefers-reduced-motion:reduce){.cbtn.rec{animation:none}}
 .demo-note{margin:0;padding:0 12px 10px;background:#fff;text-align:center;font:400 10.5px/1.4 var(--mono);color:var(--muted)}
@@ -1228,25 +1240,13 @@ html:not(.js) .rv{opacity:1;transform:none}
     <div class="wrap jobs-grid">
       <div class="rv">
         <p class="label">Trabaje con nosotros</p>
-        <h2>Se solicitan <em>choferes.</em></h2>
-        <p class="lede">Si tiene experiencia manejando camión y quiere trabajar dentro del GAM, envíenos sus documentos.</p>
-        <div class="lic" aria-label="Licencias aceptadas">Licencias <span>B1</span><span>B2</span><span>B3</span></div>
-        <p class="req-t">Marque lo que ya tiene:</p>
-        <ul class="req" id="req">
-          <li><label><input type="checkbox"><span class="box"><svg><use href="#i-check"/></svg></span><span>Licencia B1, B2 o B3 al día</span></label></li>
-          <li><label><input type="checkbox"><span class="box"><svg><use href="#i-check"/></svg></span><span>Currículum completo</span></label></li>
-          <li><label><input type="checkbox"><span class="box"><svg><use href="#i-check"/></svg></span><span>Experiencia mínima de 2 a 4 años, según el puesto</span></label></li>
-          <li><label><input type="checkbox"><span class="box"><svg><use href="#i-check"/></svg></span><span>Hoja de delincuencia</span></label></li>
-          <li><label><input type="checkbox"><span class="box"><svg><use href="#i-check"/></svg></span><span>Lista de trabajos anteriores de la CCSS</span></label></li>
-          <li><label><input type="checkbox"><span class="box"><svg><use href="#i-check"/></svg></span><span>3 referencias laborales</span></label></li>
-          <li><label><input type="checkbox"><span class="box"><svg><use href="#i-check"/></svg></span><span>Disponibilidad para trasladarse dentro del GAM</span></label></li>
+        <h2>Estamos <em>contratando.</em></h2>
+        <p class="lede">Aplique aquí mismo en el chat: el asistente le dice los requisitos de cada puesto, usted marca lo que tiene y le sube sus documentos.</p>
+        <ul class="puestos" aria-label="Puestos abiertos">
+          <li><b>Ayudante de camión</b><span>Currículum, hoja de delincuencia y cartas de recomendación. Con licencia B1, mejor.</span></li>
+          <li><b>Chofer B2</b><span>Licencia B2 al día y 4 años de experiencia.</span></li>
+          <li><b>Chofer B4 y D3</b><span>Operador de grúa de brazo articulado y cabezal, con 3 años de experiencia.</span></li>
         </ul>
-        <div class="req-meter"><div class="rm-bar" aria-hidden="true"><i id="reqBar"></i></div><p id="reqMsg">0 de 7</p></div>
-        <label class="drop" id="drop" for="cvFile">
-          <span class="ic"><svg><use href="#i-upload"/></svg></span>
-          <span><b id="dropT">Suba aquí su currículum</b><span id="dropS">PDF, Word o foto. Arrástrelo o toque para elegirlo.</span></span>
-        </label>
-        <input type="file" id="cvFile" accept=".pdf,.doc,.docx,image/*" hidden>
         <div class="jobs-actions">
           <a class="btn btn-o js-wa" href="https://wa.me/50689838585?text=Hola%2C%20quiero%20aplicar%20como%20chofer" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enviar mi currículum por WhatsApp</a>
         </div>
@@ -1383,8 +1383,8 @@ html:not(.js) .rv{opacity:1;transform:none}
 </div>
 <a class="wa-float js-wa" href="https://wa.me/50689838585?text=Hola%2C%20quiero%20cotizar%20un%20transporte" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp al 8983 8585"><svg><use href="#i-wa"/></svg></a>
 
-<script src="/js/dae2dd01ba87.js"></script>
+<script src="/js/2bfd83f8ace9.js"></script>
 <script src="/js/1bd8cebfed99.js"></script>
-<script src="/js/6194fca95adb.js"></script>
+<script src="/js/ec91d6243ca0.js"></script>
 </body>
 </html>

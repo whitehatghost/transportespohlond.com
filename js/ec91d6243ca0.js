@@ -181,6 +181,35 @@
       });
     }).catch(function () { return ''; });
   }
+  // The job's requirements as a checklist inside the chat; "Listo" sends what the person marked.
+  function checklist(c, d) {
+    var card = c.el('req-card', '<div class="req-h">' + esc(d.titulo) + '</div>' + (d.nota ? '<p class="req-n">' + esc(d.nota) + '</p>' : ''));
+    var boxes = d.items.map(function (it) {
+      var l = document.createElement('label'); l.className = 'req-i';
+      l.innerHTML = '<input type="checkbox"><span>' + esc(it) + '</span>'; card.appendChild(l);
+      return { it: it, cb: l.querySelector('input') };
+    });
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'opt req-ok'; b.textContent = T('Listo'); card.appendChild(b);
+    c.b.scrollTop = c.b.scrollHeight;
+    var done = false, close = function () { done = true; boxes.forEach(function (x) { x.cb.disabled = true; }); b.remove(); };
+    return new Promise(function (res) {
+      b.onclick = function () {
+        if (done) return; close(); c._text = c._file = c._voice = null; c.lock();
+        var si = boxes.filter(function (x) { return x.cb.checked; }).map(function (x) { return x.it; });
+        var no = boxes.filter(function (x) { return !x.cb.checked; }).map(function (x) { return x.it; });
+        var msg = (si.length ? T('Tengo: ') + si.join(', ') + '.' : T('Todavía no tengo ninguno.')) + (no.length && si.length ? ' ' + T('Me falta: ') + no.join(', ') + '.' : '');
+        c.me(msg); res(msg);
+      };
+      next(c).then(function (v) { if (done) return; close(); res(v); });
+    });
+  }
+  // A button inside the chat to upload the document the assistant just asked for.
+  function uploadButton(c, que) {
+    var a = document.createElement('button'); a.type = 'button'; a.className = 'btn btn-o up-btn';
+    a.innerHTML = '<svg><use href="#i-upload"/></svg>' + esc(T('Subir {q}', { q: que }));
+    a.onclick = function () { c.picker.click(); };
+    c.add(a);
+  }
   async function converse(c, alive, section, first) {
     var send = first, token = '';
     for (;;) {
@@ -207,6 +236,10 @@
       var txt = j.error || j.respuesta || '';
       if (txt) c.el('msg bot', esc(txt).replace(/\n/g, '<br>'));
       if (j.whatsapp && j.whatsapp.mensaje) c.link(j.whatsapp.boton || T('Enviar por WhatsApp'), WA + encodeURIComponent(j.whatsapp.mensaje));
+      c.b.querySelectorAll('.up-btn').forEach(function (e) { e.remove(); });
+      if (j.checklist && j.checklist.items && j.checklist.items.length) { send = await checklist(c, j.checklist); alive(); continue; }
+      if (j.opciones && j.opciones.length) { send = await chooseOrType(c, j.opciones); alive(); continue; }
+      if (j.subir) uploadButton(c, j.subir);
       send = await next(c); alive();
     }
   }
@@ -214,9 +247,9 @@
   // Recruiting agent
   async function recruitFlow(c, alive) {
     await c.say(T('¡Hola! Soy el asistente de reclutamiento de <b>Transportes Pohlond</b>.'));
-    await c.say(T('Cuénteme un poco de usted o adjunte su currículum con el clip. Le hago unas preguntas y le dejo su ficha a Recursos Humanos.'));
-    var first = await next(c); alive();
-    await converse(c, alive, 'reclutamiento', first);
+    await c.say(T('¿A cuál puesto quiere aplicar?'));
+    var p = await chooseOrType(c, [T('Ayudante de camión'), T('Chofer B2'), T('Chofer B4 y D3')]); alive();
+    await converse(c, alive, 'reclutamiento', typeof p === 'string' ? T('Quiero aplicar al puesto: {p}', { p: p }) : p);
   }
 
   // General assistant (quotes, questions)
@@ -237,27 +270,11 @@
   }
 
   var recruit = new Chat(document.getElementById('recruit'), recruitFlow);
-  recruit.root.querySelector('.js-restart').addEventListener('click', function () { recruit.cv = null; resetDrop(); newSession(); recruit.start(); });
+  recruit.root.querySelector('.js-restart').addEventListener('click', function () { recruit.cv = null; newSession(); recruit.start(); });
   if ('IntersectionObserver' in window) {
     var seen = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { seen.disconnect(); if (!recruit.started) recruit.start(); } }, { threshold: 0.35 });
     seen.observe(recruit.root);
   } else recruit.start();
-
-  // CV dropzone feeds the recruiting chat
-  var drop = document.getElementById('drop'), cvInput = document.getElementById('cvFile'), dropFile = null;
-  function resetDrop() { drop.classList.remove('ok'); dropFile = null; document.getElementById('dropT').textContent = T('Suba aquí su currículum'); document.getElementById('dropS').textContent = T('PDF, Word o foto. Arrástrelo o toque para elegirlo.'); }
-  function dropOk(f) { document.getElementById('dropT').textContent = T('Recibido: {f}', { f: f.name }); document.getElementById('dropS').textContent = T('{s} · El asistente ya lo tiene.', { s: kb(f.size) }); }
-  function takeCV(f) {
-    if (!f) return;
-    drop.classList.add('ok'); dropFile = f; dropOk(f);
-    if (!recruit.started) recruit.start();
-    recruit.offer(f);
-    if (innerWidth < 1080) recruit.root.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-  cvInput.addEventListener('change', function () { takeCV(cvInput.files[0]); cvInput.value = ''; });
-  ['dragenter', 'dragover'].forEach(function (t) { drop.addEventListener(t, function (e) { e.preventDefault(); drop.classList.add('over'); }); });
-  ['dragleave', 'drop'].forEach(function (t) { drop.addEventListener(t, function (e) { e.preventDefault(); drop.classList.remove('over'); }); });
-  drop.addEventListener('drop', function (e) { takeCV(e.dataTransfer.files[0]); });
 
   // Floating assistant
   var panel = document.getElementById('cpanel'), fab = document.getElementById('fab'), tip = document.getElementById('fabTip');
@@ -269,7 +286,6 @@
   document.querySelectorAll('.js-open').forEach(function (b) { b.addEventListener('click', openPanel); });
   // Switching language refreshes the dynamic texts and restarts any chat already on screen
   onLang(function () {
-    if (dropFile) dropOk(dropFile); else resetDrop();
     [recruit, assist].forEach(function (c) { c.st.textContent = T('En línea'); c.input.placeholder = T('Escriba aquí…'); if (c.started) c.start(); });
   });
   // The button only appears once the visitor leaves the hero, so it never covers the first screen.
