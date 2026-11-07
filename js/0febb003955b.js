@@ -305,7 +305,7 @@
   async function recruitFlow(c, alive) {
     await c.say(T('¡Hola! Soy el asistente de reclutamiento de <b>Transportes Pohlond</b>.'));
     await c.say(T('¿A cuál puesto quiere aplicar?'));
-    var p = await chooseOrType(c, [T('Ayudante de camión'), T('Chofer B2'), T('Chofer B4 y D3')]); alive();
+    var p = await chooseOrType(c, [T('Ayudante de camión'), T('Chofer B2 o B3'), T('Chofer B4 y D3')]); alive();
     await converse(c, alive, 'reclutamiento', typeof p === 'string' ? T('Quiero aplicar al puesto: {p}', { p: p }) : p);
   }
 
